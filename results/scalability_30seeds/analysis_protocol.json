@@ -1,0 +1,11 @@
+{
+  "source_hashes": {
+    "scalability/analysis.py": "7c349a84a5afa4d639a22af9b6308871bfd283b6cb86bf9cd4b762aa580e8e8e",
+    "scalability/presentation.py": "c2fc518c1ae8b2996dbbc525d7e76899bde16bf2c8170af0111434c11db8fb1b",
+    "scalability/validation.py": "081bb29f83e365dec24ec5f2b781804ffd724ac5f3721d6a7ecd8d14eee88c1f"
+  },
+  "main_family": 12,
+  "secondary_family": 12,
+  "bootstrap_resamples": 10000,
+  "statistical_primitives": "unchanged paper_evaluation.statistics"
+}

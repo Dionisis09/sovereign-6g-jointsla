@@ -1,0 +1,26 @@
+{
+  "metrics_verified": [
+    "total_requests",
+    "sla_breach_rate",
+    "mean_request_latency_ms",
+    "median_latency_ms",
+    "p95_latency_ms",
+    "p99_latency_ms",
+    "average_replicas",
+    "average_vram_residency_gib",
+    "total_actions",
+    "cold_starts",
+    "migrations"
+  ],
+  "only_excluded_fields": "nondeterministic instrumentation runtime/cpu time",
+  "passed": true,
+  "runs": 6,
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "trace_tables_verified": 54,
+  "traffic_hash_exact": true,
+  "workload_hash_exact": true
+}

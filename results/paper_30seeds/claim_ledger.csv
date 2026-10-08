@@ -1,0 +1,13 @@
+claim_id,metric,baseline,relative_improvement_percent,p_value_holm,sentence
+primary_0,sla_breach_rate,static,21.0065454162092,2.2351741790771484e-08,The SLA-aware policy reduced sla breach rate by 21.01% relative to Static across 30 paired synthetic workloads (Holm-adjusted p=2.24e-08).
+primary_1,mean_request_latency_ms,static,64.77859013382566,2.2351741790771484e-08,The SLA-aware policy reduced mean request latency by 64.78% relative to Static across 30 paired synthetic workloads (Holm-adjusted p=2.24e-08).
+primary_2,p95_latency_ms,static,63.38038645039023,2.2351741790771484e-08,The SLA-aware policy reduced p95 latency by 63.38% relative to Static across 30 paired synthetic workloads (Holm-adjusted p=2.24e-08).
+primary_3,p99_latency_ms,static,59.56814565201788,5.126166501450015e-06,The SLA-aware policy reduced p99 latency by 59.57% relative to Static across 30 paired synthetic workloads (Holm-adjusted p=5.13e-06).
+primary_4,sla_breach_rate,reactive,19.86983980199397,2.2351741790771484e-08,The SLA-aware policy reduced sla breach rate by 19.87% relative to Reactive across 30 paired synthetic workloads (Holm-adjusted p=2.24e-08).
+primary_5,mean_request_latency_ms,reactive,64.03901934011803,2.2351741790771484e-08,The SLA-aware policy reduced mean request latency by 64.04% relative to Reactive across 30 paired synthetic workloads (Holm-adjusted p=2.24e-08).
+primary_6,p95_latency_ms,reactive,62.96000101369368,2.2351741790771484e-08,The SLA-aware policy reduced p95 latency by 62.96% relative to Reactive across 30 paired synthetic workloads (Holm-adjusted p=2.24e-08).
+primary_7,p99_latency_ms,reactive,59.31850907707123,5.126166501450015e-06,The SLA-aware policy reduced p99 latency by 59.32% relative to Reactive across 30 paired synthetic workloads (Holm-adjusted p=5.13e-06).
+primary_8,sla_breach_rate,periodic,21.41274704160278,2.2351741790771484e-08,The SLA-aware policy reduced sla breach rate by 21.41% relative to Periodic across 30 paired synthetic workloads (Holm-adjusted p=2.24e-08).
+primary_9,mean_request_latency_ms,periodic,64.99381605963741,2.2351741790771484e-08,The SLA-aware policy reduced mean request latency by 64.99% relative to Periodic across 30 paired synthetic workloads (Holm-adjusted p=2.24e-08).
+primary_10,p95_latency_ms,periodic,63.73090495641215,2.2351741790771484e-08,The SLA-aware policy reduced p95 latency by 63.73% relative to Periodic across 30 paired synthetic workloads (Holm-adjusted p=2.24e-08).
+primary_11,p99_latency_ms,periodic,59.53400312456735,2.2351741790771484e-08,The SLA-aware policy reduced p99 latency by 59.53% relative to Periodic across 30 paired synthetic workloads (Holm-adjusted p=2.24e-08).

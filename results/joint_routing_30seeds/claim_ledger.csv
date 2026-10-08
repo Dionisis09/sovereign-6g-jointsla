@@ -1,0 +1,5 @@
+metric,relative_improvement_percent,p_value_holm,sentence
+sla_breach_rate,10.481022979078434,3.1851232051849365e-07,JointSLA reduced sla failure by 10.48% relative to existing SLA-aware across 30 paired synthetic workloads (Holm p=3.19e-07).
+mean_request_latency_ms,29.29840431591534,5.990266799926758e-06,JointSLA reduced request mean latency by 29.30% relative to existing SLA-aware across 30 paired synthetic workloads (Holm p=5.99e-06).
+p95_latency_ms,33.29701512345276,2.0753592252731323e-05,JointSLA reduced p95 latency by 33.30% relative to existing SLA-aware across 30 paired synthetic workloads (Holm p=2.08e-05).
+p99_latency_ms,25.67744956366069,0.0003449581563472,JointSLA reduced p99 latency by 25.68% relative to existing SLA-aware across 30 paired synthetic workloads (Holm p=0.000345).

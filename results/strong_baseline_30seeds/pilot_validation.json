@@ -1,0 +1,77 @@
+{
+  "successful": true,
+  "deterministic": [
+    {
+      "scale": "SMALL",
+      "seed": 1,
+      "hash_equal": true,
+      "trace_hash": "644fde0894f7ddf9dc68b0f1fbb68c13235a0d4638bbb1155eb5c8d2c015a36d"
+    },
+    {
+      "scale": "SMALL",
+      "seed": 2,
+      "hash_equal": true,
+      "trace_hash": "029f46db0823aa3eaad021c75264f0248a985ac9c1a063c600bfef4094e0b122"
+    },
+    {
+      "scale": "SMALL",
+      "seed": 3,
+      "hash_equal": true,
+      "trace_hash": "55f6eeef599f311fa0fdcd8a15e8efbe8cdc93d3ae5eaddee5a5a1335eb55f76"
+    },
+    {
+      "scale": "MEDIUM",
+      "seed": 1,
+      "hash_equal": true,
+      "trace_hash": "d41ce5e1da2b2a30ef4aca19b9710b662a34091144971f19800cca393293e8c5"
+    },
+    {
+      "scale": "MEDIUM",
+      "seed": 2,
+      "hash_equal": true,
+      "trace_hash": "ca4026f5079a564ec8d0e671a3cc6fc2232e00953ef03200d87933dd55939341"
+    },
+    {
+      "scale": "MEDIUM",
+      "seed": 3,
+      "hash_equal": true,
+      "trace_hash": "8519100ff46bf5194a6ab5e73f2fa09556af5777661e875fa57cbf07c1130e02"
+    },
+    {
+      "scale": "LARGE",
+      "seed": 1,
+      "hash_equal": true,
+      "trace_hash": "a328d12677086bc9e16cee4924cda6025167e8319b7348cc6a1044d24955c7f9"
+    },
+    {
+      "scale": "LARGE",
+      "seed": 2,
+      "hash_equal": true,
+      "trace_hash": "a61bdae7c219391ffd694e490b24dff5d3fe792198b6dc24496b5fa68d52d7c1"
+    },
+    {
+      "scale": "LARGE",
+      "seed": 3,
+      "hash_equal": true,
+      "trace_hash": "3ede9201e79370bf5d177c6a10d89bb24c6a7a9b0880cadfbdd82c677665f700"
+    }
+  ],
+  "completed_runs": 36,
+  "wall_seconds": 247.10242659998767,
+  "estimated_full_seconds": {
+    "SMALL": 84.75256699995953,
+    "MEDIUM": 202.75301500005298,
+    "LARGE": 429.99552799999947
+  },
+  "estimated_total_seconds": 717.501110000012,
+  "source_hashes": {
+    "strong_baseline/__init__.py": "1174e1e183b742fbb4f98cb9dc2dfd210b6e788a2128eb0e486f7c1dce10cc1a",
+    "strong_baseline/optimization.py": "6fe9aa87084513150724e8d56ae6131f56047b6cead98546ea564ae5e00c4b81",
+    "strong_baseline/simulator.py": "73cdaab7d5e52a2edac9f89d5bccb67a5aaf775f59873a338b4ba2e9ba75e66e",
+    "strong_baseline/protocol.py": "6585ab4448afb0d28e1ddeebf7fe0120c60310e533a453e1fd23154b12951f68",
+    "strong_baseline/experiment.py": "12d0bd23fb9dd8d8c9c8eecb2c0e5d02fcfb1bdff90c309d41cb15c659e67e56",
+    "run_strong_baseline.py": "64dc8e2483262f110b5e6c876bfab45470106a6be25f675fb1f516972e76f429"
+  },
+  "failures": 0,
+  "maximum_rss_mib": 400.54296875
+}

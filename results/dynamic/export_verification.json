@@ -1,0 +1,13 @@
+{
+  "runs": 120,
+  "requests_checked": 704544,
+  "slot_rows": 12000,
+  "node_rows": 60000,
+  "input_hashes_verified": true,
+  "source_hashes_verified": true,
+  "request_components_verified": true,
+  "latency_and_sla_reconstructed": true,
+  "summary_mean_std_count_reconstructed": true,
+  "reservation_ledger_verified": true,
+  "physical_utilization_bounded": true
+}

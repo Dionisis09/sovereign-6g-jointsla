@@ -1,0 +1,9 @@
+{
+  "caveat": "Component interventions include frozen global controller estimator inputs as well as worker physics; attribution within this simulator is not proof of an isolated real-world causal mechanism.",
+  "dominant_sla_factor_by_absolute_shapley": "vram",
+  "exact_factorial_decomposition": true,
+  "exploratory_n": 10,
+  "extension_reason": "Full paired factorial isolates E/V/C combinations; existing DIRECT 30-seed endpoint plus full pressure sweep supply confirmatory endpoint evidence. No additional 30-seed factor run selected from outcomes; factorial magnitudes remain exploratory.",
+  "extension_to_30_seeds": false,
+  "shapley_identity_verified": true
+}

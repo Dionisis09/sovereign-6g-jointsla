@@ -1,0 +1,125 @@
+[
+  {
+    "after": {
+      "ac_power": true,
+      "gpu": [
+        {
+          "clocks.current.graphics": "1432",
+          "clocks.current.memory": "12001",
+          "driver_version": "617.42",
+          "memory.total": "8151",
+          "memory.used": "1730",
+          "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+          "power.draw": "11.41",
+          "power.limit": null,
+          "pstate": "P0",
+          "temperature.gpu": "48",
+          "utilization.gpu": "0"
+        }
+      ],
+      "utc": "2026-10-07T10:26:13.650236+00:00"
+    },
+    "before": {
+      "ac_power": true,
+      "gpu": [
+        {
+          "clocks.current.graphics": "1432",
+          "clocks.current.memory": "12001",
+          "driver_version": "617.42",
+          "memory.total": "8151",
+          "memory.used": "1712",
+          "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+          "power.draw": "11.16",
+          "power.limit": null,
+          "pstate": "P0",
+          "temperature.gpu": "46",
+          "utilization.gpu": "0"
+        }
+      ],
+      "utc": "2026-10-07T10:25:52.646298+00:00"
+    },
+    "model": "mobilenet"
+  },
+  {
+    "after": {
+      "ac_power": true,
+      "gpu": [
+        {
+          "clocks.current.graphics": "1432",
+          "clocks.current.memory": "11001",
+          "driver_version": "617.42",
+          "memory.total": "8151",
+          "memory.used": "1739",
+          "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+          "power.draw": "10.35",
+          "power.limit": null,
+          "pstate": "P2",
+          "temperature.gpu": "50",
+          "utilization.gpu": "0"
+        }
+      ],
+      "utc": "2026-10-07T10:26:27.571514+00:00"
+    },
+    "before": {
+      "ac_power": true,
+      "gpu": [
+        {
+          "clocks.current.graphics": "1432",
+          "clocks.current.memory": "12001",
+          "driver_version": "617.42",
+          "memory.total": "8151",
+          "memory.used": "1730",
+          "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+          "power.draw": "11.41",
+          "power.limit": null,
+          "pstate": "P0",
+          "temperature.gpu": "48",
+          "utilization.gpu": "0"
+        }
+      ],
+      "utc": "2026-10-07T10:26:13.697781+00:00"
+    },
+    "model": "resnet50"
+  },
+  {
+    "after": {
+      "ac_power": true,
+      "gpu": [
+        {
+          "clocks.current.graphics": "1417",
+          "clocks.current.memory": "12001",
+          "driver_version": "617.42",
+          "memory.total": "8151",
+          "memory.used": "1795",
+          "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+          "power.draw": "11.58",
+          "power.limit": null,
+          "pstate": "P0",
+          "temperature.gpu": "52",
+          "utilization.gpu": "0"
+        }
+      ],
+      "utc": "2026-10-07T10:26:59.473698+00:00"
+    },
+    "before": {
+      "ac_power": true,
+      "gpu": [
+        {
+          "clocks.current.graphics": "1432",
+          "clocks.current.memory": "11001",
+          "driver_version": "617.42",
+          "memory.total": "8151",
+          "memory.used": "1739",
+          "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+          "power.draw": "10.35",
+          "power.limit": null,
+          "pstate": "P2",
+          "temperature.gpu": "50",
+          "utilization.gpu": "0"
+        }
+      ],
+      "utc": "2026-10-07T10:26:27.623546+00:00"
+    },
+    "model": "vit_b16"
+  }
+]

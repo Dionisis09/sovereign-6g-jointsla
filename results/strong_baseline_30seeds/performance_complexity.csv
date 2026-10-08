@@ -1,0 +1,7 @@
+scale,policy,sla_breach_rate,p95_ms,full_controller_mean_ms,controller_cpu_ms_per_request,sla_improvement_pp_per_controller_ms,scope
+SMALL,joint_sla,0.5090501514695327,877.2602073550248,1.0686138666666667,0.05419766987394375,5.577355510759978,descriptive; historical SLA-aware scientific reference; fresh primary-policy timing; not an efficiency law
+SMALL,mjo,0.539179807854224,1190.903287769894,1.3138484666666665,0.2549167924843349,2.243085008985609,descriptive; historical SLA-aware scientific reference; fresh primary-policy timing; not an efficiency law
+MEDIUM,joint_sla,0.5490887188390212,871.3054052455631,2.238672666666667,0.050983905894793895,2.1509609464646364,descriptive; historical SLA-aware scientific reference; fresh primary-policy timing; not an efficiency law
+MEDIUM,mjo,0.5749748070706356,1007.791489828647,3.4227813666666673,0.25983208281101644,0.6505494848258162,descriptive; historical SLA-aware scientific reference; fresh primary-policy timing; not an efficiency law
+LARGE,joint_sla,0.5670727054948116,1006.886638790266,6.850867433333333,0.06933421518235489,0.6990200533538317,descriptive; historical SLA-aware scientific reference; fresh primary-policy timing; not an efficiency law
+LARGE,mjo,0.579664532409233,893.6211688200402,13.748099733333332,0.3205574353789372,0.25674173855231036,descriptive; historical SLA-aware scientific reference; fresh primary-policy timing; not an efficiency law

@@ -1,0 +1,10 @@
+policy,sla_reduction_pp,latency_reduction_ms,additional_average_replicas,additional_vram_residency_pp,additional_actions,sla_pp_per_additional_replica,sla_pp_per_additional_vram_pp,latency_ms_per_additional_action,ratio_definition
+static,-15.121991537534774,-545.0740814156845,-7.092999999999986,-22.2344459097298,-51.06666666666667,,,,"undefined when extra resource/action <=0; diagnostic ratios of means, not universal metrics"
+reactive,-14.10080202192483,-527.7690550377811,-6.205999999999992,-19.739726240356873,-46.76666666666667,,,,"undefined when extra resource/action <=0; diagnostic ratios of means, not universal metrics"
+periodic,-15.494078027919777,-550.2474551539126,-7.092999999999986,-22.448215603240257,-49.800000000000004,,,,"undefined when extra resource/action <=0; diagnostic ratios of means, not universal metrics"
+sla_aware,0.0,0.0,0.0,0.0,0.0,,,,"undefined when extra resource/action <=0; diagnostic ratios of means, not universal metrics"
+sla_rr,-1.3429132426194479,-33.99623384752704,0.1456666666666635,0.24334444960197743,-4.63333333333334,-9.219084045442635,-5.5185694385713875,,"undefined when extra resource/action <=0; diagnostic ratios of means, not universal metrics"
+sla_shortest_queue,-0.2503382892767081,-3.381266538655325,-0.009000000000003894,0.05382873793165288,-1.63333333333334,,-4.650643854859949,,"undefined when extra resource/action <=0; diagnostic ratios of means, not universal metrics"
+joint_sla,5.960039438127862,86.83098829115346,-1.1666666666666679,-3.164125471978764,-7.06666666666667,,,,"undefined when extra resource/action <=0; diagnostic ratios of means, not universal metrics"
+joint_no_queue,-2.23266434000734,6.2973185401003775,-0.759000000000011,-1.6969090257458248,-21.16666666666667,,,,"undefined when extra resource/action <=0; diagnostic ratios of means, not universal metrics"
+joint_no_slack,5.684265107347919,94.8546747528849,-1.2163333333333348,-3.2655562597957726,-6.833333333333336,,,,"undefined when extra resource/action <=0; diagnostic ratios of means, not universal metrics"

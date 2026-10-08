@@ -1,0 +1,18 @@
+{
+  "HW1": false,
+  "HW2": false,
+  "HW3": true,
+  "HW4": true,
+  "HW5": false,
+  "criteria": "Preregistered PLAN.md; HW3 5% descriptive guardrail, HW5 benefit in >=2 classes, not significance/non-inferiority claims.",
+  "model_class_breach_improvement": {
+    "HEAVY": -0.12532023509266538,
+    "LIGHT": -0.0924031040868683,
+    "MEDIUM": -0.09787616940064803
+  },
+  "resource_ratios_joint_over_sla": {
+    "average_replicas": 0.650332559485267,
+    "average_vram_residency_gib": 0.6408560670978516,
+    "total_actions": 0.47820895522388057
+  }
+}

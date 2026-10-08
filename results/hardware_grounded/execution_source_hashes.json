@@ -1,0 +1,8 @@
+{
+  "hardware_grounded/PLAN.md": "8ae39eb9a4598823f75c2485fec35430e4784ddb81c41cc809eb6e02814b6fe6",
+  "hardware_grounded/SIMULATOR_MAPPING.md": "4cdc169d13cf00d72a81eb181baab6d45365725e82d2d400476f1896de13b30f",
+  "hardware_grounded/audit.py": "85186eb7eeaff33e6c4c50c533c9b4c6db70ced681e3483d1defd22440285691",
+  "hardware_grounded/calibration.py": "6c34fd18d37b6e00094f15d7855ffb48b4733a737e90b8a24aab7cd3fdd2caa3",
+  "hardware_grounded/experiment.py": "604c6e5681e8a571e9434bd57d1c49a26dedc24a726db74b4618fa385e55611b",
+  "hardware_grounded/physics.py": "4b3592b6c8f91f8bac2df03df1328188875f4a648c4f975e9e637ba406494bba"
+}

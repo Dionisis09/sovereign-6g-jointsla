@@ -1,0 +1,130 @@
+{
+  "source_report": "C:\\Users\\dioni\\Documents\\ChatGPT\\6g\\results\\jointsla_v2_heldout\\report.md",
+  "source_report_sha256": "4cdff552978e7907e2bb620ec86a1d2b38e3992f1d02f820fd30b8714486028d",
+  "document": "C:\\Users\\dioni\\Documents\\ChatGPT\\6g\\docs\\jointsla_v2_report\\JointSLA_v2_Experimental_Report.docx",
+  "source_sections": [
+    "Motivation",
+    "Why v2 Was Introduced",
+    "Prior Failure Mechanism",
+    "Frozen Design",
+    "Recovery-Aware Headroom",
+    "Gold Protection",
+    "Causality / No-Future Information",
+    "Development Seeds",
+    "Freeze Procedure",
+    "Held-Out Seeds",
+    "1.0x Hardware-Grounded Results",
+    "2.0x High-Pressure Results",
+    "Aggregate SLA",
+    "Gold / Silver / Bronze",
+    "Mean / p95 / p99",
+    "Resource Cost",
+    "Warm Replica Behavior",
+    "Burst Recovery",
+    "Controller Overhead",
+    "Statistical Tests",
+    "Performance-Resource Frontier",
+    "V2-H1 to V2-H6",
+    "Negative Results",
+    "Threats to Validity",
+    "Safe Paper Claims",
+    "Claims We Cannot Make",
+    "Final B-Level Assessment"
+  ],
+  "figures": [
+    {
+      "number": 1,
+      "title": "Aggregate SLA breaches at 1x load",
+      "source": "C:\\Users\\dioni\\Documents\\ChatGPT\\6g\\results\\jointsla_v2_heldout\\figures\\01_sla_1x.png",
+      "sha256": "bae7d2c79ceb3560f9b5922c566541526c764335f34c27961a59a5fd983d8382"
+    },
+    {
+      "number": 2,
+      "title": "Aggregate SLA breaches at 2x load",
+      "source": "C:\\Users\\dioni\\Documents\\ChatGPT\\6g\\results\\jointsla_v2_heldout\\figures\\04_sla_2x.png",
+      "sha256": "b1fb7b939cb7a130642065a4eeadf0f0a515f3de7acf5d903663abd028fb3d84"
+    },
+    {
+      "number": 3,
+      "title": "Gold SLA breaches at 1x load",
+      "source": "C:\\Users\\dioni\\Documents\\ChatGPT\\6g\\results\\jointsla_v2_heldout\\figures\\02_gold_1x.png",
+      "sha256": "42b3b8cfa0ea00d63fe11c9b42f3ca46c7b2a552c0885e99110e1d5313024000"
+    },
+    {
+      "number": 4,
+      "title": "Request p95 latency at 1x load",
+      "source": "C:\\Users\\dioni\\Documents\\ChatGPT\\6g\\results\\jointsla_v2_heldout\\figures\\03_p95_1x.png",
+      "sha256": "be58a32f5bb5a9fe572f956b64cf6e7a0ac66e6bf44d2713ace5d2022753e88d"
+    },
+    {
+      "number": 5,
+      "title": "Request p95 latency at 2x load",
+      "source": "C:\\Users\\dioni\\Documents\\ChatGPT\\6g\\results\\jointsla_v2_heldout\\figures\\05_p95_2x.png",
+      "sha256": "f40c723d056390bad1215bf94ae5a9f142f8629b6f7cb68b0682e9c150389d6f"
+    },
+    {
+      "number": 6,
+      "title": "Request p99 latency at 2x load",
+      "source": "C:\\Users\\dioni\\Documents\\ChatGPT\\6g\\results\\jointsla_v2_heldout\\figures\\06_p99_2x.png",
+      "sha256": "46f6f5c12979cfc64a02a630804684e6709996a5f59f91f5c07508d15decc323"
+    },
+    {
+      "number": 7,
+      "title": "Average replica occupancy across loads",
+      "source": "C:\\Users\\dioni\\Documents\\ChatGPT\\6g\\results\\jointsla_v2_heldout\\figures\\07_replicas.png",
+      "sha256": "9ee3f4bebb574b8c79c58c5b5e8786bd6b3c1be453e2e2198474035f78327b8f"
+    },
+    {
+      "number": 8,
+      "title": "Average VRAM residency across loads",
+      "source": "C:\\Users\\dioni\\Documents\\ChatGPT\\6g\\results\\jointsla_v2_heldout\\figures\\08_vram.png",
+      "sha256": "e3adad853b8ede42853f0486be372afe245d505607b22b63fe5e65f544ba4f8f"
+    },
+    {
+      "number": 9,
+      "title": "Accepted orchestration actions across loads",
+      "source": "C:\\Users\\dioni\\Documents\\ChatGPT\\6g\\results\\jointsla_v2_heldout\\figures\\09_actions.png",
+      "sha256": "ab96ac6e30b123114db511752dea7f4791d98c170cb7cb4011d611b3826aea59"
+    },
+    {
+      "number": 10,
+      "title": "Ready replica capacity before bursts",
+      "source": "C:\\Users\\dioni\\Documents\\ChatGPT\\6g\\results\\jointsla_v2_heldout\\figures\\13_ready_replicas_before_burst.png",
+      "sha256": "5b64d0627de8cd155ba2fae3ad44dde385836547c987e46b59a9f4aadefa4aeb"
+    },
+    {
+      "number": 11,
+      "title": "SLA breaches during burst recovery",
+      "source": "C:\\Users\\dioni\\Documents\\ChatGPT\\6g\\results\\jointsla_v2_heldout\\figures\\14_recovery_breaches.png",
+      "sha256": "1c1b9e3827722a5a726e2ce62c60f13d07adb6b60c3743ab0322c0df9cfd3e07"
+    },
+    {
+      "number": 12,
+      "title": "Controller decision overhead",
+      "source": "C:\\Users\\dioni\\Documents\\ChatGPT\\6g\\results\\jointsla_v2_heldout\\figures\\15_controller_overhead.png",
+      "sha256": "281c7c5d1e5bfd61f09940667dc45c56b2fc474e9163e00309c1a0de567e7bf3"
+    },
+    {
+      "number": 13,
+      "title": "Aggregate SLA and replica tradeoff",
+      "source": "C:\\Users\\dioni\\Documents\\ChatGPT\\6g\\results\\jointsla_v2_heldout\\figures\\10_sla_vs_replicas.png",
+      "sha256": "a4580d34c0f3f8bd7b4407f58e48658410f6c1cc27b4974397151c7fbcf5cb59"
+    },
+    {
+      "number": 14,
+      "title": "Gold SLA and replica tradeoff",
+      "source": "C:\\Users\\dioni\\Documents\\ChatGPT\\6g\\results\\jointsla_v2_heldout\\figures\\11_gold_vs_replicas.png",
+      "sha256": "19e0f8585b089f782725f53e6f068a0dab9c5195428cfbdab638df1fa80a0f6c"
+    },
+    {
+      "number": 15,
+      "title": "Request p95 and VRAM tradeoff",
+      "source": "C:\\Users\\dioni\\Documents\\ChatGPT\\6g\\results\\jointsla_v2_heldout\\figures\\12_p95_vs_vram.png",
+      "sha256": "954c9790ed67fe9152d1a168c97a85903173ea155663036d6317024b8aeb344a"
+    }
+  ],
+  "tables": 45,
+  "scope": "Complete JointSLA-v2 report and all 15 original figures",
+  "language": "Greek executive summary; English complete technical report",
+  "report_wording_correction": "Force replaces v2 outputs while preserving the generation ledger; no frozen sources or numerical results modified."
+}

@@ -1,0 +1,25 @@
+{
+  "files": {
+    "catalyst\\__init__.py": "23abb776c96ffa3ef5b80d8eace8d47b79b2af3e93514afda853551b6b77f58b",
+    "catalyst\\contracts.py": "938f8b51e711156934d8767e2c83858e4eaf775255a745fb65f944c3202ec3d6",
+    "catalyst\\engine.py": "b6e9650bf21515ae46fbf3a2a8611c621ecfdcb7b89236a596f746732a02bef4",
+    "catalyst\\experiment.py": "ce5b0c571c3a9fe7fc5297dcc4053f7eb6498d67062c822f5bfeae5f4de9028c",
+    "catalyst\\policies.py": "3c49f1dbd239fb1cf8e44108e02a1a6fc460305d17e9ff6494b6267f01b0772c",
+    "catalyst\\reused.py": "8db55dd5639ccb7b4450a9156d72e8144f205e34ebc9034f6230e6c4eb6b64c9",
+    "catalyst\\scenario.py": "6ee912f341e48519ad8fad61db8fc0baaa7e665d8b4a6a786dadd4a6b3325370",
+    "configs\\phase0.json": "9c8606f2bbe3587f3b55ceaea276a6695740fd9a8565ee6b3d978584741eb103",
+    "docs\\protocol.md": "ad534cad3e3da6341def77f1ea7ffb42e7f2d8ca018426833343b304b18f76e5"
+  },
+  "python": "3.12.14",
+  "dependencies": {
+    "simpy": "4.1.2",
+    "pydantic": "2.13.5",
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "matplotlib": "3.11.2",
+    "pytest": "9.1.1"
+  },
+  "branch": "codex/catalyst-phase0",
+  "protocol": "docs/protocol.md",
+  "tuned_after_results": false
+}

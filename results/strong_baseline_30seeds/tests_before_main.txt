@@ -1,0 +1,5 @@
+Command: .venv\Scripts\python.exe -m pytest -q
+Result: 171 passed in 11.17s
+Includes original 160 tests and 11 MJO tests.
+Run after timestamp guard, full telemetry CPU instrumentation, and causal
+future-arrival/workload perturbation test updates, before the full replay.

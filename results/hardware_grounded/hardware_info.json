@@ -1,0 +1,72 @@
+{
+  "background_load_caveat": "Single laptop; no clock/power control or background-process isolation. Reported readings are observations, not lab isolation.",
+  "compiled_cuda_architectures": [
+    "sm_70",
+    "sm_75",
+    "sm_80",
+    "sm_86",
+    "sm_90",
+    "sm_100",
+    "sm_120"
+  ],
+  "cpu_details": {
+    "Name": "Intel(R) Core(TM) Ultra 7 255HX",
+    "NumberOfCores": 20,
+    "NumberOfLogicalProcessors": 20
+  },
+  "cpu_model": "Intel(R) Core(TM) Ultra 7 255HX",
+  "cuda_available": true,
+  "cuda_build_version": "12.8",
+  "cuda_device_count": 1,
+  "cuda_kernel_success": true,
+  "devices": [
+    {
+      "compute_capability": [
+        12,
+        0
+      ],
+      "free_and_total_bytes": [
+        7353663488,
+        8518041600
+      ],
+      "index": 0,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "total_vram_bytes": 8518041600
+    }
+  ],
+  "errors": [],
+  "logical_cpu_count": 20,
+  "memory_state": {
+    "max_memory_allocated": 1024,
+    "max_memory_reserved": 2097152,
+    "memory_allocated": 512,
+    "memory_reserved": 2097152
+  },
+  "operating_system": "Windows-11-10.0.26300-SP0",
+  "python_executable": "C:\\Users\\dioni\\Documents\\ChatGPT\\6g\\.venv\\Scripts\\python.exe",
+  "python_version": "3.12.14",
+  "ready_for_gpu_profiling": true,
+  "system_ram_bytes": 33752997888,
+  "telemetry": {
+    "ac_power": true,
+    "gpu": [
+      {
+        "clocks.current.graphics": "1425",
+        "clocks.current.memory": "12001",
+        "driver_version": "617.42",
+        "memory.total": "8151",
+        "memory.used": "1569",
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "power.draw": "11.27",
+        "power.limit": null,
+        "pstate": "P0",
+        "temperature.gpu": "45",
+        "utilization.gpu": "0"
+      }
+    ],
+    "utc": "2026-10-07T10:25:48.498730+00:00"
+  },
+  "torch_version": "2.10.0+cu128",
+  "torchvision_import_success": true,
+  "torchvision_version": "0.25.0+cu128"
+}

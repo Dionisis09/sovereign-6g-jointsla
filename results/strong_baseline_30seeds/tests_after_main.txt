@@ -1,0 +1,4 @@
+Command: .venv\Scripts\python.exe -m pytest -q
+Result: 171 passed in 9.65s
+All original 160 tests and 11 MJO tests pass after completion of the 180 new
+simulations. No frozen simulator/controller/configuration/results were changed.

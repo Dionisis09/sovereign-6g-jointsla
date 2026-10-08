@@ -1,0 +1,22 @@
+{
+  "bootstrap_seed": 73001,
+  "resamples": 10000,
+  "confidence_level": 0.95,
+  "ci_method": "percentile bootstrap of seed means",
+  "comparisons": "3 baselines x 4 primary metrics; two-sided Wilcoxon; Holm family=12",
+  "effect": "paired rank-biserial; positive=baseline minus proposed improvement",
+  "relative": "100*(mean baseline - mean proposed)/mean baseline",
+  "rounding": "12 decimal places for signed ranks and win/tie/loss classification",
+  "source_hashes": {
+    "paper_evaluation/__init__.py": "1f68ca7f3e7c430ada1281143c4027eea4126409d213971542d638542793a8f5",
+    "paper_evaluation/accounting.py": "b9af8061ccd0c88f27e98471ed72429da73faf0348300384eb9c38e4b9973212",
+    "paper_evaluation/experiments.py": "74a2c0f673531814786644cc34c0714dc0582d01f158d19ed5531b5b209f07af",
+    "paper_evaluation/figures.py": "0224710effee70fc9b2ce428fb27e6d064d890bf378ad7e8bbd7b9dc4d38ab85",
+    "paper_evaluation/reporting.py": "1c32aa544eac8ad3cad4274c1930667cd4b0e6a1cc0443356abd83c7a4f49917",
+    "paper_evaluation/statistics.py": "8994ebd1d3779af6aa6d1f918405889f7d886e8593ac41c759c134151e16a8ec",
+    "paper_evaluation/supplementary.py": "c41dc9e76ae7208c8dfd7269044ea3bb23fdfcb13239677b7debb74cfa18ade5",
+    "paper_evaluation/validation.py": "7a397d80462eceee03ce106e7f89c2e698b39f6ab8a09b7da83476840157479d",
+    "requirements-paper.txt": "6acf1c5c58f70232253fb775f6e4b3c705a1f36338685d562f942742b2e598f9",
+    "run_paper_experiments.py": "527ecbf64669ce9400dbc5622f727552ea17dc55f9512a1da57a884ef86036f5"
+  }
+}

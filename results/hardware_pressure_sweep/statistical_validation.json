@@ -1,0 +1,6 @@
+{
+  "independent_bootstrap": true,
+  "independent_holm": true,
+  "independent_signed_rank": true,
+  "paired_rows_verified": 28
+}

@@ -1,0 +1,83 @@
+{
+  "exported_request_outcomes_verified": 69244,
+  "no_lost_or_duplicate_requests": true,
+  "per_run_checks": [
+    {
+      "accounting_complete": true,
+      "export_requests_verified": 10919,
+      "lifecycle_intervals_verified": 103,
+      "load_multiplier": 1.0,
+      "node_slots_verified": 1000,
+      "policy": "sla_aware",
+      "requests_verified": 10919,
+      "reservation_events_verified": 214,
+      "routing_choices_verified": 0,
+      "seed": 1
+    },
+    {
+      "accounting_complete": true,
+      "export_requests_verified": 10919,
+      "lifecycle_intervals_verified": 47,
+      "load_multiplier": 1.0,
+      "node_slots_verified": 1000,
+      "policy": "joint_sla",
+      "requests_verified": 10919,
+      "reservation_events_verified": 133,
+      "routing_choices_verified": 11540,
+      "seed": 1
+    },
+    {
+      "accounting_complete": true,
+      "export_requests_verified": 11916,
+      "lifecycle_intervals_verified": 100,
+      "load_multiplier": 1.0,
+      "node_slots_verified": 1000,
+      "policy": "sla_aware",
+      "requests_verified": 11916,
+      "reservation_events_verified": 213,
+      "routing_choices_verified": 0,
+      "seed": 2
+    },
+    {
+      "accounting_complete": true,
+      "export_requests_verified": 11916,
+      "lifecycle_intervals_verified": 39,
+      "load_multiplier": 1.0,
+      "node_slots_verified": 1000,
+      "policy": "joint_sla",
+      "requests_verified": 11916,
+      "reservation_events_verified": 117,
+      "routing_choices_verified": 12481,
+      "seed": 2
+    },
+    {
+      "accounting_complete": true,
+      "export_requests_verified": 11787,
+      "lifecycle_intervals_verified": 97,
+      "load_multiplier": 1.0,
+      "node_slots_verified": 1000,
+      "policy": "sla_aware",
+      "requests_verified": 11787,
+      "reservation_events_verified": 201,
+      "routing_choices_verified": 0,
+      "seed": 3
+    },
+    {
+      "accounting_complete": true,
+      "export_requests_verified": 11787,
+      "lifecycle_intervals_verified": 52,
+      "load_multiplier": 1.0,
+      "node_slots_verified": 1000,
+      "policy": "joint_sla",
+      "requests_verified": 11787,
+      "reservation_events_verified": 143,
+      "routing_choices_verified": 12546,
+      "seed": 3
+    }
+  ],
+  "requests_verified": 69244,
+  "routing_choices_verified": 36567,
+  "runs": 6,
+  "shared_tapes": true,
+  "wall_seconds": 16.051333600000362
+}

@@ -1,0 +1,19 @@
+{
+  "H1": true,
+  "H2": true,
+  "H3": true,
+  "H4": true,
+  "H5": true,
+  "replica_increase_percent_ci95": [
+    -5.808575241341068,
+    -2.871386666638182
+  ],
+  "vram_increase_pp_ci95": [
+    -4.2702815621174395,
+    -2.159862321593917
+  ],
+  "mean_controller_total_ms": 6.289262133333334,
+  "mean_seed_routing_p95_ms": 0.13103283333333332,
+  "decision": "supports additional coupled value in this model",
+  "interpretation": "hypothesis screens are conditional on this configuration; H4 is a comparable-resource check, not causal efficiency proof"
+}

@@ -1,0 +1,1085 @@
+{
+  "successful_runs": 120,
+  "per_run_checks": [
+    {
+      "seed": 1,
+      "policy": "static",
+      "requests_validated": 6227,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 1,
+      "policy": "reactive",
+      "requests_validated": 6227,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 1,
+      "policy": "periodic",
+      "requests_validated": 6227,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 1,
+      "policy": "sla_aware",
+      "requests_validated": 6227,
+      "reservation_events_validated": 53,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 2,
+      "policy": "static",
+      "requests_validated": 5410,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 2,
+      "policy": "reactive",
+      "requests_validated": 5410,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 2,
+      "policy": "periodic",
+      "requests_validated": 5410,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 2,
+      "policy": "sla_aware",
+      "requests_validated": 5410,
+      "reservation_events_validated": 101,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 3,
+      "policy": "static",
+      "requests_validated": 5356,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 3,
+      "policy": "reactive",
+      "requests_validated": 5356,
+      "reservation_events_validated": 27,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 3,
+      "policy": "periodic",
+      "requests_validated": 5356,
+      "reservation_events_validated": 24,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 3,
+      "policy": "sla_aware",
+      "requests_validated": 5356,
+      "reservation_events_validated": 52,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 4,
+      "policy": "static",
+      "requests_validated": 6369,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 4,
+      "policy": "reactive",
+      "requests_validated": 6369,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 4,
+      "policy": "periodic",
+      "requests_validated": 6369,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 4,
+      "policy": "sla_aware",
+      "requests_validated": 6369,
+      "reservation_events_validated": 105,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 5,
+      "policy": "static",
+      "requests_validated": 5322,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 5,
+      "policy": "reactive",
+      "requests_validated": 5322,
+      "reservation_events_validated": 28,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 5,
+      "policy": "periodic",
+      "requests_validated": 5322,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 5,
+      "policy": "sla_aware",
+      "requests_validated": 5322,
+      "reservation_events_validated": 101,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 6,
+      "policy": "static",
+      "requests_validated": 6620,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 6,
+      "policy": "reactive",
+      "requests_validated": 6620,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 6,
+      "policy": "periodic",
+      "requests_validated": 6620,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 6,
+      "policy": "sla_aware",
+      "requests_validated": 6620,
+      "reservation_events_validated": 41,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 7,
+      "policy": "static",
+      "requests_validated": 6350,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 7,
+      "policy": "reactive",
+      "requests_validated": 6350,
+      "reservation_events_validated": 30,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 7,
+      "policy": "periodic",
+      "requests_validated": 6350,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 7,
+      "policy": "sla_aware",
+      "requests_validated": 6350,
+      "reservation_events_validated": 61,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 8,
+      "policy": "static",
+      "requests_validated": 5914,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 8,
+      "policy": "reactive",
+      "requests_validated": 5914,
+      "reservation_events_validated": 27,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 8,
+      "policy": "periodic",
+      "requests_validated": 5914,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 8,
+      "policy": "sla_aware",
+      "requests_validated": 5914,
+      "reservation_events_validated": 71,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 9,
+      "policy": "static",
+      "requests_validated": 6142,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 9,
+      "policy": "reactive",
+      "requests_validated": 6142,
+      "reservation_events_validated": 22,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 9,
+      "policy": "periodic",
+      "requests_validated": 6142,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 9,
+      "policy": "sla_aware",
+      "requests_validated": 6142,
+      "reservation_events_validated": 75,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 10,
+      "policy": "static",
+      "requests_validated": 5192,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 10,
+      "policy": "reactive",
+      "requests_validated": 5192,
+      "reservation_events_validated": 25,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 10,
+      "policy": "periodic",
+      "requests_validated": 5192,
+      "reservation_events_validated": 26,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 10,
+      "policy": "sla_aware",
+      "requests_validated": 5192,
+      "reservation_events_validated": 104,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 11,
+      "policy": "static",
+      "requests_validated": 5886,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 11,
+      "policy": "reactive",
+      "requests_validated": 5886,
+      "reservation_events_validated": 22,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 11,
+      "policy": "periodic",
+      "requests_validated": 5886,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 11,
+      "policy": "sla_aware",
+      "requests_validated": 5886,
+      "reservation_events_validated": 60,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 12,
+      "policy": "static",
+      "requests_validated": 6182,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 12,
+      "policy": "reactive",
+      "requests_validated": 6182,
+      "reservation_events_validated": 22,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 12,
+      "policy": "periodic",
+      "requests_validated": 6182,
+      "reservation_events_validated": 24,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 12,
+      "policy": "sla_aware",
+      "requests_validated": 6182,
+      "reservation_events_validated": 55,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 13,
+      "policy": "static",
+      "requests_validated": 6368,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 13,
+      "policy": "reactive",
+      "requests_validated": 6368,
+      "reservation_events_validated": 21,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 13,
+      "policy": "periodic",
+      "requests_validated": 6368,
+      "reservation_events_validated": 30,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 13,
+      "policy": "sla_aware",
+      "requests_validated": 6368,
+      "reservation_events_validated": 32,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 14,
+      "policy": "static",
+      "requests_validated": 5349,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 14,
+      "policy": "reactive",
+      "requests_validated": 5349,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 14,
+      "policy": "periodic",
+      "requests_validated": 5349,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 14,
+      "policy": "sla_aware",
+      "requests_validated": 5349,
+      "reservation_events_validated": 93,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 15,
+      "policy": "static",
+      "requests_validated": 6318,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 15,
+      "policy": "reactive",
+      "requests_validated": 6318,
+      "reservation_events_validated": 21,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 15,
+      "policy": "periodic",
+      "requests_validated": 6318,
+      "reservation_events_validated": 22,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 15,
+      "policy": "sla_aware",
+      "requests_validated": 6318,
+      "reservation_events_validated": 67,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 16,
+      "policy": "static",
+      "requests_validated": 6441,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 16,
+      "policy": "reactive",
+      "requests_validated": 6441,
+      "reservation_events_validated": 25,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 16,
+      "policy": "periodic",
+      "requests_validated": 6441,
+      "reservation_events_validated": 32,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 16,
+      "policy": "sla_aware",
+      "requests_validated": 6441,
+      "reservation_events_validated": 90,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 17,
+      "policy": "static",
+      "requests_validated": 5864,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 17,
+      "policy": "reactive",
+      "requests_validated": 5864,
+      "reservation_events_validated": 26,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 17,
+      "policy": "periodic",
+      "requests_validated": 5864,
+      "reservation_events_validated": 34,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 17,
+      "policy": "sla_aware",
+      "requests_validated": 5864,
+      "reservation_events_validated": 55,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 18,
+      "policy": "static",
+      "requests_validated": 5998,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 18,
+      "policy": "reactive",
+      "requests_validated": 5998,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 18,
+      "policy": "periodic",
+      "requests_validated": 5998,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 18,
+      "policy": "sla_aware",
+      "requests_validated": 5998,
+      "reservation_events_validated": 62,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 19,
+      "policy": "static",
+      "requests_validated": 5550,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 19,
+      "policy": "reactive",
+      "requests_validated": 5550,
+      "reservation_events_validated": 25,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 19,
+      "policy": "periodic",
+      "requests_validated": 5550,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 19,
+      "policy": "sla_aware",
+      "requests_validated": 5550,
+      "reservation_events_validated": 121,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 20,
+      "policy": "static",
+      "requests_validated": 5266,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 20,
+      "policy": "reactive",
+      "requests_validated": 5266,
+      "reservation_events_validated": 24,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 20,
+      "policy": "periodic",
+      "requests_validated": 5266,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 20,
+      "policy": "sla_aware",
+      "requests_validated": 5266,
+      "reservation_events_validated": 64,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 21,
+      "policy": "static",
+      "requests_validated": 5439,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 21,
+      "policy": "reactive",
+      "requests_validated": 5439,
+      "reservation_events_validated": 23,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 21,
+      "policy": "periodic",
+      "requests_validated": 5439,
+      "reservation_events_validated": 26,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 21,
+      "policy": "sla_aware",
+      "requests_validated": 5439,
+      "reservation_events_validated": 74,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 22,
+      "policy": "static",
+      "requests_validated": 6354,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 22,
+      "policy": "reactive",
+      "requests_validated": 6354,
+      "reservation_events_validated": 22,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 22,
+      "policy": "periodic",
+      "requests_validated": 6354,
+      "reservation_events_validated": 24,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 22,
+      "policy": "sla_aware",
+      "requests_validated": 6354,
+      "reservation_events_validated": 51,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 23,
+      "policy": "static",
+      "requests_validated": 4825,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 23,
+      "policy": "reactive",
+      "requests_validated": 4825,
+      "reservation_events_validated": 22,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 23,
+      "policy": "periodic",
+      "requests_validated": 4825,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 23,
+      "policy": "sla_aware",
+      "requests_validated": 4825,
+      "reservation_events_validated": 73,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 24,
+      "policy": "static",
+      "requests_validated": 5674,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 24,
+      "policy": "reactive",
+      "requests_validated": 5674,
+      "reservation_events_validated": 37,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 24,
+      "policy": "periodic",
+      "requests_validated": 5674,
+      "reservation_events_validated": 22,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 24,
+      "policy": "sla_aware",
+      "requests_validated": 5674,
+      "reservation_events_validated": 66,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 25,
+      "policy": "static",
+      "requests_validated": 5817,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 25,
+      "policy": "reactive",
+      "requests_validated": 5817,
+      "reservation_events_validated": 30,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 25,
+      "policy": "periodic",
+      "requests_validated": 5817,
+      "reservation_events_validated": 24,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 25,
+      "policy": "sla_aware",
+      "requests_validated": 5817,
+      "reservation_events_validated": 55,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 26,
+      "policy": "static",
+      "requests_validated": 5471,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 26,
+      "policy": "reactive",
+      "requests_validated": 5471,
+      "reservation_events_validated": 22,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 26,
+      "policy": "periodic",
+      "requests_validated": 5471,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 26,
+      "policy": "sla_aware",
+      "requests_validated": 5471,
+      "reservation_events_validated": 77,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 27,
+      "policy": "static",
+      "requests_validated": 6343,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 27,
+      "policy": "reactive",
+      "requests_validated": 6343,
+      "reservation_events_validated": 27,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 27,
+      "policy": "periodic",
+      "requests_validated": 6343,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 27,
+      "policy": "sla_aware",
+      "requests_validated": 6343,
+      "reservation_events_validated": 52,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 28,
+      "policy": "static",
+      "requests_validated": 6752,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 28,
+      "policy": "reactive",
+      "requests_validated": 6752,
+      "reservation_events_validated": 28,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 28,
+      "policy": "periodic",
+      "requests_validated": 6752,
+      "reservation_events_validated": 22,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 28,
+      "policy": "sla_aware",
+      "requests_validated": 6752,
+      "reservation_events_validated": 56,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 29,
+      "policy": "static",
+      "requests_validated": 6051,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 29,
+      "policy": "reactive",
+      "requests_validated": 6051,
+      "reservation_events_validated": 23,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 29,
+      "policy": "periodic",
+      "requests_validated": 6051,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 29,
+      "policy": "sla_aware",
+      "requests_validated": 6051,
+      "reservation_events_validated": 90,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 30,
+      "policy": "static",
+      "requests_validated": 5605,
+      "reservation_events_validated": 20,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 30,
+      "policy": "reactive",
+      "requests_validated": 5605,
+      "reservation_events_validated": 30,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 30,
+      "policy": "periodic",
+      "requests_validated": 5605,
+      "reservation_events_validated": 26,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 30,
+      "policy": "sla_aware",
+      "requests_validated": 5605,
+      "reservation_events_validated": 78,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    }
+  ]
+}

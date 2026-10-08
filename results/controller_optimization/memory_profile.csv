@@ -1,0 +1,4 @@
+scale,legacy_peak_mb,legacy_retained_before_snapshot_mb,legacy_snapshot_extra_peak_mb,optimized_peak_mb,optimized_retained_before_snapshot_mb,optimized_snapshot_extra_peak_mb,scope
+SMALL,0.161744,0.070648,0.091096,0.176968,0.100096,0.076872,initial control snapshot including constructor-retained Python state; decimal MB; separate from timing
+MEDIUM,0.446128,0.134848,0.31128,0.48788,0.236456,0.251424,initial control snapshot including constructor-retained Python state; decimal MB; separate from timing
+LARGE,1.367208,0.263864,1.103344,1.535944,0.638504,0.89744,initial control snapshot including constructor-retained Python state; decimal MB; separate from timing

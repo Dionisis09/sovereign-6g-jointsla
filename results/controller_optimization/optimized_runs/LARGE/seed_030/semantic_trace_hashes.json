@@ -1,0 +1,11 @@
+{
+  "request_outcomes": "6bd9185a1099a594cb0aca1ffeafbad0bb9d50beb2f16fc455f1ac003ee5ffda",
+  "routing_decisions": "a43e83ddb6da3a2ddbcdc9e513fe06cd4db9bec508271271771c5f8a8a401510",
+  "slot_trajectories": "cb9521683a1abfa70ec1988cc3939955bbc5d1b2089a3abc8325d6be00b62990",
+  "node_trajectories": "38efe811584806725310f922b5738ed49956a88c46aa52548de88aeed87460af",
+  "actions": "927f8d2f80d2ad273cff397937e4366f19e6c5676986fd2b2626126f4071c3d2",
+  "reservation_events": "c27b71f45ac0914220f87f902ac952c5e452b93bb97c07165dcb110521905e5f",
+  "lifecycle_events": "467d7c2407ca1f669cea5fa2698c6222bbe294eabe3625c36fd5b5549bd39d97",
+  "deployment_audit": "76eea2d7bcf126b81f3544cbf7a04395b57a3e06e068d1abe9397e0313e747ad",
+  "routing_attempts": "7b3333d4c00765ed479cbdc18fdaad89600f80cf78ff564d5c345391c064f694"
+}

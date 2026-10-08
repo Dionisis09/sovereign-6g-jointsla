@@ -1,0 +1,13 @@
+scenario,metric,n,baseline_mean,scenario_mean,baseline_minus_scenario,difference_ci95_lower,difference_ci95_upper,positive_difference,analysis
+predictive,sla_breach_rate,30,0.571948208008347,0.5735864921222208,-0.001638284113873863,-0.006131767497140045,0.002746219304528646,lower scenario value,exploratory; not a main-policy test
+predictive,mean_request_latency_ms,30,299.2337196951947,306.5201224964412,-7.286402801246469,-17.14146245931515,3.634836749639644,lower scenario value,exploratory; not a main-policy test
+predictive,drop_rate,30,0.0,0.0,0.0,0.0,0.0,lower scenario value,exploratory; not a main-policy test
+predictive,Gold_Silver_breach_rate,30,0.5899595817008784,0.5912093345514398,-0.001249752850561479,-0.005197197027066895,0.002072667197147581,lower scenario value,exploratory; not a main-policy test
+predictive,replica_seconds,30,270.6433333333328,270.8499999999995,-0.20666666666664923,-1.0600833333333222,0.6666666666666858,lower scenario value,exploratory; not a main-policy test
+predictive,cold_starts,30,28.7,29.2,-0.5,-1.2666666666666666,0.26666666666666666,lower scenario value,exploratory; not a main-policy test
+admission,sla_breach_rate,30,0.571948208008347,0.5376872314724982,0.03426097653584872,0.026205591995310137,0.04290515509774958,lower scenario value,exploratory; not a main-policy test
+admission,mean_request_latency_ms,30,299.2337196951947,184.09155511647037,115.14216457872428,76.87700631014177,160.00955089971063,lower scenario value,exploratory; not a main-policy test
+admission,drop_rate,30,0.0,0.05133708847301952,-0.05133708847301952,-0.06045147551766278,-0.0427062333268855,lower scenario value,exploratory; not a main-policy test
+admission,Gold_Silver_breach_rate,30,0.5899595817008784,0.5719026423411251,0.01805693935975317,0.006943436533908786,0.029927620132444707,lower scenario value,exploratory; not a main-policy test
+admission,replica_seconds,30,270.6433333333328,270.1833333333327,0.4600000000000231,-0.7666666666666178,1.743333333333332,lower scenario value,exploratory; not a main-policy test
+admission,cold_starts,30,28.7,33.0,-4.3,-6.133333333333334,-2.533333333333333,lower scenario value,exploratory; not a main-policy test

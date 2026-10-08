@@ -1,0 +1,54 @@
+{
+  "H1": true,
+  "H2": true,
+  "H3": true,
+  "H4": false,
+  "H5": true,
+  "overhead_by_scale": [
+    {
+      "scale": "SMALL",
+      "controller_mean_ms": 2.5165897333333334,
+      "controller_p95_ms": 3.1150498333333334,
+      "routing_p95_ms": 0.050789833333333326,
+      "passed": true
+    },
+    {
+      "scale": "MEDIUM",
+      "controller_mean_ms": 6.932960133333332,
+      "controller_p95_ms": 8.603313666666667,
+      "routing_p95_ms": 0.04761649999999998,
+      "passed": true
+    },
+    {
+      "scale": "LARGE",
+      "controller_mean_ms": 26.8362212,
+      "controller_p95_ms": 33.495761,
+      "routing_p95_ms": 0.05786383333333332,
+      "passed": false
+    }
+  ],
+  "resources_by_scale": [
+    {
+      "scale": "SMALL",
+      "replica_relative_upper": -2.873387569104079,
+      "vram_pp_upper": -2.1752990150914657,
+      "normalized_actions_relative_upper": -6.795744498441736,
+      "passed": true
+    },
+    {
+      "scale": "MEDIUM",
+      "replica_relative_upper": -2.333805081550594,
+      "vram_pp_upper": -1.2566596436203636,
+      "normalized_actions_relative_upper": -1.1533111873304387,
+      "passed": true
+    },
+    {
+      "scale": "LARGE",
+      "replica_relative_upper": -0.6336087311764913,
+      "vram_pp_upper": -0.7416948523199767,
+      "normalized_actions_relative_upper": -0.14791296945438237,
+      "passed": true
+    }
+  ],
+  "scope": "conditional synthetic-model evidence; performance persistence, computational budget and resource fairness are distinct conclusions"
+}

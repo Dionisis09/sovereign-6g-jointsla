@@ -1,0 +1,8 @@
+{
+  "seeds": {
+    "best": 7,
+    "median": 8,
+    "worst": 5
+  },
+  "selection": "D7 N=10 sorted paired \u0394SLA then seed; lower median"
+}

@@ -1,0 +1,31 @@
+{
+  "B1": false,
+  "B2": true,
+  "B3": false,
+  "B4": true,
+  "B5": false,
+  "resource_screens": [
+    {
+      "scale": "SMALL",
+      "average_replicas_relative_upper": 4.120831333239702,
+      "actions_per_1000_requests_relative_upper": 20.546102981423324,
+      "vram_pp_upper": 1.899855938130342,
+      "passed": false
+    },
+    {
+      "scale": "MEDIUM",
+      "average_replicas_relative_upper": 2.3364791960289453,
+      "actions_per_1000_requests_relative_upper": 32.49104156677023,
+      "vram_pp_upper": 0.5364266228050859,
+      "passed": false
+    },
+    {
+      "scale": "LARGE",
+      "average_replicas_relative_upper": 1.4373088186851946,
+      "actions_per_1000_requests_relative_upper": 65.06922046598206,
+      "vram_pp_upper": 0.2811925450340293,
+      "passed": false
+    }
+  ],
+  "interpretation": "B1 gate controls stronger-baseline label; B2/B3 bootstrap operational screens are not proof of equivalence"
+}

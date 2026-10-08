@@ -1,0 +1,16 @@
+{
+  "warmup_full_runs_per_scale_implementation": 1,
+  "repetitions": 7,
+  "slots_per_replay": 100,
+  "seed": 1,
+  "invocations_per_scale_implementation": 700,
+  "order": "alternating legacy/optimized",
+  "timers": "perf_counter_ns; snapshot + policy/application",
+  "includes": "live snapshot observation, unchanged policy computation and actual action application",
+  "excludes": "constructor, workload generation, cProfile, trace capture, CSV/JSON output and plots",
+  "full_controller_scope": "one control invocation; request routing measured separately; no double counting",
+  "aggregation": "pooled 700 invocations per scale/implementation; mean, median and linear p95",
+  "cpu": "process_time_ns; Windows quantization; CPU phases not substituted for wall breakdown",
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26300-SP0"
+}

@@ -1,0 +1,65 @@
+{
+  "mean_request_latency_ms": {
+    "equivalence_claim": false,
+    "observed_mean_sign_crossing_intervals": [
+      [
+        1.5,
+        1.75
+      ]
+    ],
+    "supported_crossing_intervals": [
+      [
+        1.25,
+        1.75
+      ]
+    ],
+    "supported_crossover": true,
+    "threshold": "exploratory observed grid bracket; no interpolated threshold"
+  },
+  "p95_latency_ms": {
+    "equivalence_claim": false,
+    "observed_mean_sign_crossing_intervals": [
+      [
+        1.0,
+        1.25
+      ]
+    ],
+    "supported_crossing_intervals": [
+      [
+        1.0,
+        1.75
+      ]
+    ],
+    "supported_crossover": true,
+    "threshold": "exploratory observed grid bracket; no interpolated threshold"
+  },
+  "p99_latency_ms": {
+    "equivalence_claim": false,
+    "observed_mean_sign_crossing_intervals": [
+      [
+        0.5,
+        0.75
+      ]
+    ],
+    "supported_crossing_intervals": [
+      [
+        0.5,
+        1.25
+      ]
+    ],
+    "supported_crossover": true,
+    "threshold": "exploratory observed grid bracket; no interpolated threshold"
+  },
+  "sla_breach_rate": {
+    "equivalence_claim": false,
+    "observed_mean_sign_crossing_intervals": [
+      [
+        1.75,
+        2.0
+      ]
+    ],
+    "supported_crossing_intervals": [],
+    "supported_crossover": false,
+    "threshold": "exploratory observed grid bracket; no interpolated threshold"
+  }
+}

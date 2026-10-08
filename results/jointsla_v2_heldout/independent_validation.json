@@ -1,0 +1,18 @@
+{
+  "controller_quantiles": true,
+  "headroom_service_slots_verified": 240000,
+  "input_hashes": true,
+  "memory_integrals": true,
+  "observed_history_only": true,
+  "paired_tests_independently_verified": 40,
+  "preserved": {
+    "changed_files": [],
+    "protected_files": 20769
+  },
+  "request_components": true,
+  "requests_verified": 3046965,
+  "runs": 180,
+  "seed_gate_and_generation_timestamps_verified": true,
+  "subgroup_rows_verified": 1080,
+  "timestamp": "2026-10-07T16:15:31.757831+00:00"
+}

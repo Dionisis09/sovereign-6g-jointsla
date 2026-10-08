@@ -1,0 +1,95 @@
+{
+  "method": "continuous hinge least squares on six capacity means",
+  "slope_reduction_threshold": 0.25,
+  "seed_bootstrap_replicates": 1000,
+  "seed_bootstrap_rng": 6801,
+  "paired_seed_resampling": true,
+  "fitted": {
+    "knee_node": 7,
+    "detected": true,
+    "slope_reduction_fraction": 0.6137794909835054,
+    "candidate": 7,
+    "residual_sum_squares": 6.423031067253959,
+    "intercept": 115.32603702744963,
+    "slope_before": -11.693893754901172,
+    "slope_after": -4.516421598402738,
+    "fitted_values": [
+      56.856568252943774,
+      45.16267449804259,
+      33.46878074314142,
+      28.952359144738686,
+      24.435937546335953,
+      19.91951594793322
+    ],
+    "candidate_fits": [
+      {
+        "candidate": 6,
+        "residual_sum_squares": 20.962486852807984,
+        "intercept": 133.063506819356,
+        "slope_before": -15.17373720370426,
+        "slope_after": -5.850440265335157,
+        "fitted_values": [
+          57.194820800834705,
+          42.021083597130456,
+          36.1706433317953,
+          30.320203066460135,
+          24.469762801124972,
+          18.619322535789813
+        ]
+      },
+      {
+        "candidate": 7,
+        "residual_sum_squares": 6.423031067253959,
+        "intercept": 115.32603702744963,
+        "slope_before": -11.693893754901172,
+        "slope_after": -4.516421598402738,
+        "fitted_values": [
+          56.856568252943774,
+          45.16267449804259,
+          33.46878074314142,
+          28.952359144738686,
+          24.435937546335953,
+          19.91951594793322
+        ]
+      },
+      {
+        "candidate": 8,
+        "residual_sum_squares": 8.700319344667234,
+        "intercept": 104.7350529306033,
+        "slope_before": -9.793422035251188,
+        "slope_after": -2.7635853233114993,
+        "fitted_values": [
+          55.76794275434736,
+          45.974520719096176,
+          36.18109868384498,
+          26.387676648593796,
+          23.6240913252823,
+          20.860506001970794
+        ]
+      },
+      {
+        "candidate": 9,
+        "residual_sum_squares": 24.676252377450545,
+        "intercept": 96.71491190647946,
+        "slope_before": -8.453085697632265,
+        "slope_after": 0.44213539007848013,
+        "fitted_values": [
+          54.44948341831814,
+          45.99639772068587,
+          37.5433120230536,
+          29.09022632542134,
+          20.63714062778908,
+          21.079276017867564
+        ]
+      }
+    ]
+  },
+  "bootstrap_knee_counts": {
+    "6": 0,
+    "7": 685,
+    "8": 314,
+    "9": 0,
+    "none": 1
+  },
+  "interpretation": "empirical candidate over 5\u201310 nodes; not a physical inflection or significance claim"
+}

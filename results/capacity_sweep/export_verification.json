@@ -1,0 +1,15 @@
+{
+  "new_runs": 90,
+  "combined_capacity_runs": 180,
+  "requests_checked": 528408,
+  "slot_rows": 9000,
+  "node_rows": 81000,
+  "identical_paired_traffic": true,
+  "nested_topology_prefixes_verified": true,
+  "source_and_historical_hashes_verified": true,
+  "request_latency_and_breaches_reconstructed": true,
+  "capacity_ledger_verified": true,
+  "means_std_counts_verified": true,
+  "paired_marginal_gains_verified": true,
+  "hinge_fit_verified": true
+}

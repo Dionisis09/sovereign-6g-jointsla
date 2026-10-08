@@ -1,0 +1,13 @@
+{
+  "golden_runs": 9,
+  "full_runs": 90,
+  "requests_verified": 1225366,
+  "routing_decisions_verified": 1277566,
+  "all_exact": true,
+  "protected_files_unchanged": 4265,
+  "tolerance_used": false,
+  "timing_only_excluded": true,
+  "fresh_legacy_replays": 90,
+  "frozen_summary_parser_representations": 293,
+  "frozen_summary_parser_differences_exactly_reproduced": true
+}

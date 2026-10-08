@@ -1,0 +1,17 @@
+{
+  "successful_runs": 270,
+  "pilot_runs": 27,
+  "requests_verified": 3676098,
+  "request_quantiles_verified": 810,
+  "routing_decisions_replayed": 2556927,
+  "node_slots_verified": 315000,
+  "reservation_events_verified": 31978,
+  "comparisons_verified": 24,
+  "baseline_artifacts_byte_identical": true,
+  "small_reproduces_verified_baseline": true,
+  "hashes_paired": true,
+  "primary_metrics_finite": true,
+  "all_negative_seeds_retained": true,
+  "hypotheses_verified": true,
+  "figures_checked": 10
+}

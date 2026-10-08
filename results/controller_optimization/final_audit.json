@@ -1,0 +1,14 @@
+{
+  "golden_runs": 9,
+  "full_optimized_runs": 90,
+  "fresh_legacy_reference_runs": 90,
+  "requests_verified": 1225366,
+  "routing_decisions_verified": 1277566,
+  "exact_audit_families": 9,
+  "tolerance_used": false,
+  "summary_parser_differences_reproduced": 293,
+  "protected_files_unchanged": 4265,
+  "H4": "SUPPORTED",
+  "figures_verified": 5,
+  "benchmark_invocations_verified": 4200
+}

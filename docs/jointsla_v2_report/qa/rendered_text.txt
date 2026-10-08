@@ -1,0 +1,805 @@
+PAGE 1
+Οργανωμένη αναφορά πειραμάτων JointSLA v2  
+Hardware grounded validation with held out seeds  
+7 Οκτωβρίου 2026 
+Σύνοψη αποτελέσματος 
+Το JointSLA-v2 βελτιώνει σημαντικά τα Gold SLA breaches έναντι του v1, αλλά δεν ικανοποιεί το συνολικό κριτήριο 
+επιτυχίας. Διατηρεί σημαντικό aggregate SLA penalty στα 1x, χρησιμοποιεί σχεδόν τους πόρους του SLA-aware και 
+χάνει το πλεονέκτημα latency στα 2x. Οι H1, H2, H5 και H6 περνούν. Οι H3 και H4 αποτυγχάνουν. Η αλγοριθμική φάση 
+ολοκληρώνεται χωρίς v3 ή νέο tuning. 
+Table 1  Experiment overview 
+Πεδίο Πρωτόκολλο 
+Σενάριο 10 nodes, 40 services, 100 slots, 100 ms ανά slot 
+Development Seeds 101–105, loads 0.5x / 1x / 2x, μία διαμόρφωση, 45 simulations 
+Held out Seeds 31–60, loads 1x / 2x, 180 paired simulations 
+Επαλήθευση 244 tests, 3,046,965 held-out request outcomes, 40 paired tests 
+Figures 15 original figures with numbered captions 
+Freeze UTC 2026-10-07 15:59:44 
+Config SHA256 8a535a5ac09d0eba31f0a6aab4ef9e0bc47752071ca6a1a55244ddbf61ad488a 
+ 
+Η τεχνική αναφορά ακολουθεί στα αγγλικά. Τα ποσοστά των τεχνικών πινάκων δίνονται ως fractions, εκτός αν 
+επισημαίνονται με %. Τα latency quantiles υπολογίζονται ανά run και μετά συνοψίζονται ανά seed. Περιλαμβάνονται 
+τα θετικά και τα αρνητικά αποτελέσματα, το κόστος πόρων και οι περιορισμοί των συμπερασμάτων. 
+ 
+
+PAGE 2
+JointSLA v2 Experimental Report 
+2 
+Contents 
+1 Motivation .........................................................................................................................................................................4 
+2 Why v2 Was Introduced ....................................................................................................................................................4 
+3 Prior Failure Mechanism ....................................................................................................................................................4 
+4 Frozen Design.....................................................................................................................................................................4 
+5 Recovery Aware Headroom ...............................................................................................................................................4 
+6 Gold Protection ..................................................................................................................................................................4 
+7 Causality and Information Boundaries ..............................................................................................................................4 
+8 Development Seeds ...........................................................................................................................................................5 
+9 Freeze Procedure ...............................................................................................................................................................5 
+10 Held Out Seeds ................................................................................................................................................................5 
+11 Hardware Grounded Results at 1x Load ..........................................................................................................................6 
+12 High Pressure Results at 2x Load .....................................................................................................................................6 
+13 Aggregate SLA ..................................................................................................................................................................6 
+14 Gold Silver and Bronze Results ........................................................................................................................................8 
+15 Mean and Tail Latency .................................................................................................................................................. 10 
+16 Resource Cost ............................................................................................................................................................... 14 
+17 Warm Replica Behavior ................................................................................................................................................ 18 
+18 Burst Recovery .............................................................................................................................................................. 19 
+19 Controller Overhead ..................................................................................................................................................... 21 
+20 Statistical Tests ............................................................................................................................................................. 23 
+21 Performance and Resource Frontier............................................................................................................................. 23 
+22 V2 Hypotheses H1 to H6 ............................................................................................................................................... 27 
+23 Negative Results ........................................................................................................................................................... 27 
+24 Threats to Validity ......................................................................................................................................................... 28 
+25 Safe Paper Claims.......................................................................................................................................................... 29 
+26 Claims We Cannot Make ............................................................................................................................................... 29 
+27 Final Assessment for a B Level Paper ............................................................................................................................ 30 
+ 
+ 
+
+PAGE 3
+JointSLA v2 Experimental Report 
+3 
+Figure index 
+Figure 1  Aggregate SLA breaches at 1x load  7 
+Figure 2  Aggregate SLA breaches at 2x load  8 
+Figure 3  Gold SLA breaches at 1x load  10 
+Figure 4  Request p95 latency at 1x load  13 
+Figure 5  Request p95 latency at 2x load  13 
+Figure 6  Request p99 latency at 2x load  14 
+Figure 7  Average replica occupancy across loads  16 
+Figure 8  Average VRAM residency across loads  17 
+Figure 9  Accepted orchestration actions across loads  17 
+Figure 10  Ready replica capacity before bursts  20 
+Figure 11  SLA breaches during burst recovery  20 
+Figure 12  Controller decision overhead  22 
+Figure 13  Aggregate SLA and replica tradeoff  24 
+Figure 14  Gold SLA and replica tradeoff  25 
+Figure 15  Request p95 and VRAM tradeoff  26 
+ 
+
+PAGE 4
+JointSLA v2 Experimental Report 
+4 
+1 Motivation 
+Test whether cold recovery headroom and finite Gold retention can repair the previously observed hardware-
+grounded QoS/resource trade-off. This is the final algorithmic experiment; no v3. 
+2 Why v2 Was Introduced 
+Previous seeds 1–30 showed DIRECT v1 SLA 25.48% vs baseline 15.43%, Gold 35.97% vs 22.63%, and fewer ready 
+replicas before bursts. These historical results motivate design only; all tables below use unseen seeds 31–60. 
+3 Prior Failure Mechanism 
+The earlier exploratory factorial indicated VRAM and cold costs interacting with consolidation. It did not prove a 
+unique cause. Prior preburst readiness was 1.03 vs 1.66 and recovery breaches 36.94% vs 21.60%; scale-in counts 
+alone did not explain the reversal. 
+4 Frozen Design 
+Call v1 controller once; block selected scale-ins below causal warm requirement. Retain v1 dispatch/routing and other 
+decisions. Establish a finite Gold floor through Gold-only repair if nonretiring ready+pending count is below 
+requirement. Preserve cooldown, feasibility, maximum 3 replicas and budget 2. Repair precedes retained actions, at 
+most one/service. No independent Silver/Bronze repair. 
+Parameters: H=1, Gold multiplier 1.5, Silver=sqrt(1.5), Bronze 1; Gold floor 2, other floors 1; W=5 derived from class 
+cold readiness. 
+5 Recovery Aware Headroom 
+For backlog q requests, observed arrival rate λ requests per second, class readiness R seconds, causal estimated serial 
+cycle L seconds, deadline D seconds and slack h = max(D − L, 0), the bounded warm requirement is: 
+𝑟𝑒𝑞𝑢𝑖𝑟𝑒𝑑 =  𝑚𝑖𝑛(3, 𝑚𝑎𝑥(𝑓𝑙𝑜𝑜𝑟, ⌈𝑓𝑎𝑐𝑡𝑜𝑟 ×  𝑚𝑎𝑥(𝑞𝐿
+ℎ , (𝑞 +  𝜆𝑅)𝐿
+𝑅 +  ℎ )⌉)) 
+Empty history λ=0; impossible slack with demand or no finite feasible cycle requires 3. Cycle includes current nominal 
+or past completion CPU/GPU/network/resource delay, excluding service FIFO wait. It is a fluid retention estimate, not a 
+guarantee, forecast or admission decision. 
+6 Gold Protection 
+The Gold floor cannot be created by rejecting scale-ins from an initial one-ready placement, so a bounded Gold-only 
+repair is needed. Pending cold replicas count toward planned capacity, while ready capacity is logged separately. 
+Infeasible deficits remain visible; no unlimited resources or altered cold delay. 
+7 Causality and Information Boundaries 
+Recover completed-slot per-service observed counts by algebraically inverting unchanged EWMA telemetry. W 
+contains only prior completed slots. No controller reads arrivals tape, future work factors, expected rates or burst 
+masks. Physical source/worker/dispatch/decisions are inherited; burst identification is exclusively retrospective. Unit 
+tests compare observed history with exports, block future-tape access, verify deterministic routing and same budget. 
+
+PAGE 5
+JointSLA v2 Experimental Report 
+5 
+Independent validation record 
+Table 2  Causality and Information Boundaries 
+Record field Value 
+Timestamp 2026-10-07T16:15:31.757831+00:00 
+Runs 180 
+Requests verified 3046965 
+Subgroup rows verified 1080 
+Headroom service slots verified 240000 
+Paired tests independently verified 40 
+Input hashes true 
+Request components true 
+Memory integrals true 
+Controller quantiles true 
+Observed history only true 
+Seed gate and generation timestamps verified true 
+Preserved protected files 20769 
+Preserved changed files [] 
+ 
+8 Development Seeds 
+101–105 only, 0.5/1/2×, 45 simulations. Exactly ONE candidate. Acceptance checked accounting/capacity/Gold 
+guard/stability, wall ≤ 600s, RSS ≤ 4096MiB, drain ≤ 120s, v2 mean step<10ms. No SLA-driven selection, grid search or 
+development statistics promoted as paper evidence. See separate development outputs. 
+9 Freeze Procedure 
+Freeze UTC 2026-10-07T15:59:44.340749+00:00; config SHA256 
+8a535a5ac09d0eba31f0a6aab4ef9e0bc47752071ca6a1a55244ddbf61ad488a. Source hashes, exact parameters, git state and 
+protected historical manifest are archived. Configuration and source hashes are checked before held-out generation 
+and again after analysis. All generation-ledger timestamps follow freeze. No post-hoc policy/config changes. 
+Implementation commit: None; file hashes identify uncommitted code. 
+10 Held Out Seeds 
+31–60 paired across SLA-aware/v1/v2, 1× and 2×: 180 simulations; 3,046,965 exported outcomes independently 
+verified. Shared workload/traffic hashes within every seed/load; no lost, duplicate, unplaced or dropped requests. 
+Nodes 10, services 40, slots 100,Δ100ms. These are the frozen existing hardware-grounded scenario, not the original 
+exploratory 5-node/20-service setting. No optional 1.5×. 
+
+PAGE 6
+JointSLA v2 Experimental Report 
+6 
+11 Hardware Grounded Results at 1x Load 
+1x Load 
+Table 3  Hardware Grounded Results at 1x Load 
+Metric SLA-aware JointSLA-v1 JointSLA-v2 
+Aggregate SLA breach rate 0.14981 0.25752 0.22432 
+Gold breach rate 0.20542 0.35613 0.21998 
+Mean request latency ms 48.708 61.517 61.288 
+p95 latency ms 189.73 228.2 236.15 
+p99 latency ms 422.69 378.42 418.05 
+ 
+12 High Pressure Results at 2x Load 
+2x Load 
+Table 4  High Pressure Results at 2x Load 
+Metric SLA-aware JointSLA-v1 JointSLA-v2 
+Aggregate SLA breach rate 0.39807 0.39541 0.49968 
+Gold breach rate 0.39049 0.48775 0.42485 
+Mean request latency ms 166.6 115.06 278.87 
+p95 latency ms 764.06 448.32 1311.5 
+p99 latency ms 1391.6 745.43 2608.4 
+ 
+13 Aggregate SLA 
+Rates in tables are fractions; multiply by 100 for percent. Differences are v2−comparator (negative favors v2). 
+1x Load Compared With JointSLA v1 
+Table 5  Aggregate SLA 
+Metric Delta and 95% CI Wilcoxon p Holm p RBC Wins ties losses 
+Aggregate SLA breach rate -0.033191 
+[-0.043739, -0.022236] 4.4219e-06 1.3266e-05 0.86667 26 / 0 / 4 
+ 
+2x Load Compared With JointSLA v1 
+Table 6  Aggregate SLA 
+Metric Delta and 95% CI Wilcoxon p Holm p RBC Wins ties losses 
+Aggregate SLA breach rate 0.10427 
+[0.081062, 0.128] 3.7253e-09 1.4901e-08 -0.9957 1 / 0 / 29 
+ 
+
+PAGE 7
+JointSLA v2 Experimental Report 
+7 
+1x Load Compared With SLA aware 
+Table 7  Aggregate SLA 
+Metric Delta and 95% CI Wilcoxon p Holm p RBC Wins ties losses 
+Aggregate SLA breach rate 0.074517 
+[0.063516, 0.085813] 1.8626e-09 1.1176e-08 -1 0 / 0 / 30 
+ 
+2x Load Compared With SLA aware 
+Table 8  Aggregate SLA 
+Metric Delta and 95% CI Wilcoxon p Holm p RBC Wins ties losses 
+Aggregate SLA breach rate 0.10161 
+[0.085291, 0.11819] 1.8626e-09 1.1176e-08 -1 0 / 0 / 30 
+ 
+ 
+Figure 1  Aggregate SLA breaches at 1x load. Mean breach rate across 30 paired held-out seeds. Error bars show 95% bootstrap CIs of 
+seed means. 
+
+
+PAGE 8
+JointSLA v2 Experimental Report 
+8 
+ 
+Figure 2  Aggregate SLA breaches at 2x load. The high-pressure regime shows a higher aggregate breach rate for v2 than either 
+comparator. 
+14 Gold Silver and Bronze Results 
+1x Load 
+Table 9  Gold Silver and Bronze Results 
+Metric SLA-aware JointSLA-v1 JointSLA-v2 
+Gold breach rate 0.20542 0.35613 0.21998 
+Silver breach rate 0.10897 0.24502 0.27004 
+Bronze breach rate 0.13121 0.16377 0.18132 
+ 
+2x Load 
+Table 10  Gold Silver and Bronze Results 
+Metric SLA-aware JointSLA-v1 JointSLA-v2 
+Gold breach rate 0.39049 0.48775 0.42485 
+Silver breach rate 0.34608 0.39215 0.54084 
+Bronze breach rate 0.45473 0.29851 0.52918 
+ 
+
+
+PAGE 9
+JointSLA v2 Experimental Report 
+9 
+1x Load Compared With JointSLA v1 
+Table 11  Gold Silver and Bronze Results 
+Metric Delta and 95% CI Wilcoxon p Holm p RBC Wins ties losses 
+Gold breach rate -0.13615 
+[-0.15703, -0.116] 1.8626e-09 1.1176e-08 1 30 / 0 / 0 
+Silver breach rate 0.025017 
+[0.0096067, 0.040061] 0.0037444 0.014978 -0.5914 9 / 0 / 21 
+Bronze breach rate 0.017553 
+[0.002069, 0.033298] 0.038418 0.076837 -0.43226 8 / 0 / 22 
+ 
+2x Load Compared With JointSLA v1 
+Table 12  Gold Silver and Bronze Results 
+Metric Delta and 95% CI Wilcoxon p Holm p RBC Wins ties losses 
+Gold breach rate -0.062908 
+[-0.083545, -0.042116] 9.2201e-06 1.844e-05 0.84516 24 / 0 / 6 
+Silver breach rate 0.14869 
+[0.12631, 0.17108] 1.8626e-09 2.6077e-08 -1 0 / 0 / 30 
+Bronze breach rate 0.23068 
+[0.18831, 0.27208] 3.7253e-09 2.9802e-08 -0.9957 1 / 0 / 29 
+ 
+1x Load Compared With SLA aware 
+Table 13  Gold Silver and Bronze Results 
+Metric Delta and 95% CI Wilcoxon p Holm p RBC Wins ties losses 
+Gold breach rate 0.014561 
+[-0.0039148, 0.033122] 0.18397 0.18397 -0.28172 13 / 0 / 17 
+Silver breach rate 0.16107 
+[0.14555, 0.17779] 1.8626e-09 2.6077e-08 -1 0 / 0 / 30 
+Bronze breach rate 0.050117 
+[0.03459, 0.065855] 9.9838e-07 8.9854e-06 -0.90538 5 / 0 / 25 
+ 
+2x Load Compared With SLA aware 
+Table 14  Gold Silver and Bronze Results 
+Metric Delta and 95% CI Wilcoxon p Holm p RBC Wins ties losses 
+Gold breach rate 0.034361 
+[0.015189, 0.053821] 0.0020202 0.0040404 -0.62581 7 / 0 / 23 
+Silver breach rate 0.19476 
+[0.17262, 0.21677] 1.8626e-09 2.6077e-08 -1 0 / 0 / 30 
+Bronze breach rate 0.074456 
+[0.038836, 0.11172] 0.00095177 0.0028553 -0.66452 10 / 0 / 20 
+ 
+
+PAGE 10
+JointSLA v2 Experimental Report 
+10 
+Class results LIGHT/MEDIUM/HEAVY and their summaries are descriptive, not an additional confirmatory testing 
+family. Tier protection can redistribute queue/resource pressure, so aggregate improvement alone cannot establish 
+fairness. 
+ 
+Figure 3  Gold SLA breaches at 1x load. Gold protection lowers breaches relative to v1; a statistically unresolved baseline comparison 
+does not establish equivalence. 
+15 Mean and Tail Latency 
+1x Load 
+Table 15  Mean and Tail Latency 
+Metric SLA-aware JointSLA-v1 JointSLA-v2 
+Mean request latency ms 48.708 61.517 61.288 
+Median request latency ms 23.49 29.738 29.858 
+p95 latency ms 189.73 228.2 236.15 
+p99 latency ms 422.69 378.42 418.05 
+ 
+2x Load 
+Table 16  Mean and Tail Latency 
+Metric SLA-aware JointSLA-v1 JointSLA-v2 
+Mean request latency ms 166.6 115.06 278.87 
+Median request latency ms 46.442 48.074 74.353 
+p95 latency ms 764.06 448.32 1311.5 
+p99 latency ms 1391.6 745.43 2608.4 
+
+
+PAGE 11
+JointSLA v2 Experimental Report 
+11 
+ 
+1x Load Compared With JointSLA v1 
+Table 17  Mean and Tail Latency 
+Metric Delta and 95% CI Wilcoxon p Holm p RBC Wins ties losses 
+p95 latency ms 7.9455 
+[-9.1154, 27.818] 0.62635 0.62635 -0.10538 13 / 0 / 17 
+Mean request latency ms -0.22842 
+[-3.4315, 3.4623] 0.62635 0.62635 0.10538 16 / 0 / 14 
+p99 latency ms 39.631 
+[6.3895, 77.538] 0.02085 0.06255 -0.47957 8 / 0 / 22 
+ 
+2x Load Compared With JointSLA v1 
+Table 18  Mean and Tail Latency 
+Metric Delta and 95% CI Wilcoxon p Holm p RBC Wins ties losses 
+p95 latency ms 863.21 
+[561.29, 1227] 1.8626e-09 1.1176e-08 -1 0 / 0 / 30 
+Mean request latency ms 163.81 
+[112.66, 224.46] 1.8626e-09 2.6077e-08 -1 0 / 0 / 30 
+p99 latency ms 1862.9 
+[1270.2, 2528.8] 1.8626e-09 2.6077e-08 -1 0 / 0 / 30 
+ 
+1x Load Compared With SLA aware 
+Table 19  Mean and Tail Latency 
+Metric Delta and 95% CI Wilcoxon p Holm p RBC Wins ties losses 
+p95 latency ms 46.425 
+[29.507, 61.501] 3.4532e-05 0.00010359 -0.80215 2 / 0 / 28 
+Mean request latency ms 12.581 
+[9.7259, 15.429] 6.1467e-08 6.1467e-07 -0.96129 2 / 0 / 28 
+p99 latency ms -4.6414 
+[-45.379, 33.822] 0.96767 0.96767 0.010753 15 / 0 / 15 
+ 
+2x Load Compared With SLA aware 
+Table 20  Mean and Tail Latency 
+Metric Delta and 95% CI Wilcoxon p Holm p RBC Wins ties losses 
+p95 latency ms 547.46 
+[309.63, 822.45] 9.2201e-06 3.688e-05 -0.84516 4 / 0 / 26 
+Mean request latency ms 112.27 
+[72.671, 156.31] 2.6077e-08 2.8685e-07 -0.97419 2 / 0 / 28 
+p99 latency ms 1216.8 
+[705.57, 1787.7] 9.2201e-06 4.61e-05 -0.84516 6 / 0 / 24 
+
+PAGE 12
+JointSLA v2 Experimental Report 
+12 
+ 
+Quantiles are first computed per run over all arrivals after drain; then averaged across seeds. They are not pooled 
+request quantiles. 
+1x Ratios Compared With JointSLA v1 
+Table 21  Mean and Tail Latency 
+Metric Ratio 95% CI Method and resamples 
+Mean request latency ms 0.99629 [0.94262, 1.0574] paired bootstrap ratio of seed means; 10000 
+p95 latency ms 1.0348 [0.95911, 1.1197] paired bootstrap ratio of seed means; 10000 
+p99 latency ms 1.1047 [1.0186, 1.2122] paired bootstrap ratio of seed means; 10000 
+ 
+1x Ratios Compared With SLA aware 
+Table 22  Mean and Tail Latency 
+Metric Ratio 95% CI Method and resamples 
+Mean request latency ms 1.2583 [1.1892, 1.334] paired bootstrap ratio of seed means; 10000 
+p95 latency ms 1.2447 [1.1458, 1.349] paired bootstrap ratio of seed means; 10000 
+p99 latency ms 0.98902 [0.90144, 1.0879] paired bootstrap ratio of seed means; 10000 
+ 
+2x Ratios Compared With JointSLA v1 
+Table 23  Mean and Tail Latency 
+Metric Ratio 95% CI Method and resamples 
+Mean request latency ms 2.4236 [1.9897, 2.9233] paired bootstrap ratio of seed means; 10000 
+p95 latency ms 2.9254 [2.2792, 3.6535] paired bootstrap ratio of seed means; 10000 
+p99 latency ms 3.4991 [2.7068, 4.3707] paired bootstrap ratio of seed means; 10000 
+ 
+2x Ratios Compared With SLA aware 
+Table 24  Mean and Tail Latency 
+Metric Ratio 95% CI Method and resamples 
+Mean request latency ms 1.6738 [1.4615, 1.9013] paired bootstrap ratio of seed means; 10000 
+p95 latency ms 1.7165 [1.4278, 2.0361] paired bootstrap ratio of seed means; 10000 
+p99 latency ms 1.8744 [1.539, 2.2661] paired bootstrap ratio of seed means; 10000 
+ 
+
+PAGE 13
+JointSLA v2 Experimental Report 
+13 
+ 
+Figure 4  Request p95 latency at 1x load. Run-level request latency quantiles are averaged across seeds. These are not pooled request 
+quantiles. 
+ 
+Figure 5  Request p95 latency at 2x load. The v1 tail-latency advantage is lost with v2. Error bars show uncertainty across seed means. 
+
+
+PAGE 14
+JointSLA v2 Experimental Report 
+14 
+ 
+Figure 6  Request p99 latency at 2x load. The v2 p99 is substantially higher under pressure; the paired analysis is reported in the latency 
+section. 
+16 Resource Cost 
+1x Load 
+Table 25  Resource Cost 
+Metric SLA-aware JointSLA-v1 JointSLA-v2 
+Average replicas 68.724 44.025 65.453 
+Peak replicas 75.433 56.5 73.367 
+Average VRAM residency GiB 10.099 6.4341 9.5124 
+Peak pool VRAM GiB 11.528 8.7702 10.888 
+Average cpu utilization 0.034271 0.034404 0.034331 
+Average gpu utilization 0.26541 0.263 0.26385 
+Cold starts 99.4 37.567 61.767 
+Scale outs 99.4 37.567 61.767 
+Scale ins 68.533 36.3 33.867 
+Migrations 1.8333 2.6667 0.2 
+Total actions 169.77 76.533 95.833 
+ 
+
+
+PAGE 15
+JointSLA v2 Experimental Report 
+15 
+2x Load 
+Table 26  Resource Cost 
+Metric SLA-aware JointSLA-v1 JointSLA-v2 
+Average replicas 71.709 61.211 70.974 
+Peak replicas 76.2 71.767 75.367 
+Average VRAM residency GiB 10.623 9.1545 10.344 
+Peak pool VRAM GiB 11.655 11.064 11.228 
+Average cpu utilization 0.067845 0.06866 0.066807 
+Average gpu utilization 0.52224 0.51651 0.51127 
+Cold starts 60.833 60.233 49 
+Scale outs 60.833 60.233 49 
+Scale ins 26.567 36.333 14.567 
+Migrations 3.4667 13.967 0.96667 
+Total actions 90.867 110.53 64.533 
+ 
+1x Load Compared With JointSLA v1 
+Table 27  Resource Cost 
+Metric Delta and 95% CI Wilcoxon p Holm p RBC Wins ties losses 
+Average replicas 21.428 
+[20.76, 22.126] 1.8626e-09 2.6077e-08 -1 0 / 0 / 30 
+Average VRAM residency GiB 3.0783 
+[2.9397, 3.2213] 1.8626e-09 2.6077e-08 -1 0 / 0 / 30 
+Total actions 19.3 
+[13.6, 25.234] 5.7158e-06 2.8579e-05 -0.94839 2 / 0 / 28 
+ 
+2x Load Compared With JointSLA v1 
+Table 28  Resource Cost 
+Metric Delta and 95% CI Wilcoxon p Holm p RBC Wins ties losses 
+Average replicas 9.7633 
+[8.2133, 11.351] 1.8626e-09 2.6077e-08 -1 0 / 0 / 30 
+Average VRAM residency GiB 1.1894 
+[0.9333, 1.4356] 1.3039e-08 9.127e-08 -0.9828 2 / 0 / 28 
+Total actions -46 
+[-50.467, -41.367] 1.7192e-06 1.0315e-05 1 30 / 0 / 0 
+ 
+
+PAGE 16
+JointSLA v2 Experimental Report 
+16 
+1x Load Compared With SLA aware 
+Table 29  Resource Cost 
+Metric Delta and 95% CI Wilcoxon p Holm p RBC Wins ties losses 
+Average replicas -3.271 
+[-3.881, -2.6726] 1.7333e-06 1.3676e-05 1 30 / 0 / 0 
+Average VRAM residency GiB -0.58708 
+[-0.70194, -0.47108] 5.5879e-09 6.7055e-08 0.9914 29 / 0 / 1 
+Total actions -73.933 
+[-80.2, -67.5] 1.7203e-06 1.3676e-05 1 30 / 0 / 0 
+ 
+2x Load Compared With SLA aware 
+Table 30  Resource Cost 
+Metric Delta and 95% CI Wilcoxon p Holm p RBC Wins ties losses 
+Average replicas -0.73467 
+[-1.1504, -0.30466] 0.0026721 0.0053443 0.62796 24 / 0 / 6 
+Average VRAM residency GiB -0.27889 
+[-0.42333, -0.14243] 0.00038009 0.0015204 0.70753 24 / 0 / 6 
+Total actions -26.333 
+[-30.3, -22.5] 1.7094e-06 1.3676e-05 1 30 / 0 / 0 
+ 
+VRAM is time-integrated residency divided by 10s; replica occupancy is integrated over the same horizon, including 
+correct migration accounting. Peak VRAM includes simultaneous migration reservations. CPU/GPU utilization describes 
+the finite physical simulated resources; no claim of overbooking improvement. 
+ 
+Figure 7  Average replica occupancy across loads. Occupancy is integrated over the unchanged 10 second orchestration horizon. 
+
+
+PAGE 17
+JointSLA v2 Experimental Report 
+17 
+ 
+Figure 8  Average VRAM residency across loads. Time-integrated VRAM residency divided by the observation horizon, in GiB. 
+ 
+Figure 9  Accepted orchestration actions across loads. All policies retain the same maximum of two accepted actions per slot. 
+
+
+PAGE 18
+JointSLA v2 Experimental Report 
+18 
+17 Warm Replica Behavior 
+1x Load 
+Table 31  Warm Replica Behavior 
+Metric JointSLA-v2 
+Mean required warm replicas per service 1.5127 
+Mean actual ready replicas per service 1.5987 
+Prevented scale ins due to headroom 100.73 
+Prevented Gold scale ins 100.63 
+Headroom deficit frequency 0.11467 
+Service seconds below required warm 
+capacity 45.867 
+Scaleouts during cold exposure 2.6667 
+Proposed Gold repair scaleouts 47.8 
+Accepted Gold repair scaleouts 43.5 
+ 
+2x Load 
+Table 32  Warm Replica Behavior 
+Metric JointSLA-v2 
+Mean required warm replicas per service 1.965 
+Mean actual ready replicas per service 1.7421 
+Prevented scale ins due to headroom 12.8 
+Prevented Gold scale ins 12.767 
+Headroom deficit frequency 0.31759 
+Service seconds below required warm 
+capacity 127.04 
+Scaleouts during cold exposure 3.1 
+Proposed Gold repair scaleouts 32.533 
+Accepted Gold repair scaleouts 29.267 
+ 
+Metrics apply to v2 only. Prevented scale-ins count selected v1 proposals blocked by the guard, not all hypothetical 
+actions. Accepted repair and proposed repair are distinguished. Deficit frequency denominator 4000 service × control 
+slots/run; service seconds=deficit slots × 0.1. Class cold exposure remains 1/2/5 slots; it is never reduced by the policy. 
+
+PAGE 19
+JointSLA v2 Experimental Report 
+19 
+18 Burst Recovery 
+1x Load 
+Table 33  Burst Recovery 
+Metric SLA-aware JointSLA-v1 JointSLA-v2 
+Ready replicas per service before burst 1.6731 1.0236 1.5919 
+Queue growth 5.3472 7.9647 6.8628 
+Recovery window breach rate 0.21283 0.37122 0.3327 
+Recovery after burst slots conditional 0.65362 0.85611 0.92149 
+Recovery censoring fraction 0.0016667 0 0.00083333 
+Scaleout censoring fraction 0.65694 0.77028 0.72694 
+Scaleout count 0.545 0.26833 0.32583 
+Unavailable exposure service seconds 0.10744 0.056611 0.066111 
+ 
+2x Load 
+Table 34  Burst Recovery 
+Metric SLA-aware JointSLA-v1 JointSLA-v2 
+Ready replicas per service before burst 1.8058 1.4242 1.7894 
+Queue growth 19.678 20.649 22.925 
+Recovery window breach rate 0.58957 0.59438 0.69944 
+Recovery after burst slots conditional 3.1458 3.0709 3.8713 
+Recovery censoring fraction 0.079167 0.023056 0.12694 
+Scaleout censoring fraction 0.83056 0.71222 0.86722 
+Scaleout count 0.20917 0.335 0.14167 
+Unavailable exposure service seconds 0.044611 0.075667 0.03075 
+ 
+Ready-before-burst is the previous control snapshot. Recovery cohort includes arrivals during burst until queue returns 
+to max(preburst backlog, 1) or next burst/horizon. Each seed aggregates its recovery cohorts, then seed means are 
+compared. Conditional recovery/first-scaleout times exclude censored cases; censoring fractions are shown, not 
+imputed as zero. Exposure uses allocated−active at control snapshots (cold/pending/retiring unavailability proxy), not a 
+precise request-level cold penalty. Burst action/exposure windows extend until next burst or horizon. 
+
+PAGE 20
+JointSLA v2 Experimental Report 
+20 
+ 
+Figure 10  Ready replica capacity before bursts. Readiness is sampled at the control snapshot immediately before each retrospectively 
+identified burst. 
+ 
+Figure 11  SLA breaches during burst recovery. Each seed aggregates its recovery cohorts. Censored recovery cases and cohort 
+definitions are disclosed in the text. 
+
+
+PAGE 21
+JointSLA v2 Experimental Report 
+21 
+19 Controller Overhead 
+1x Load 
+Table 35  Controller Overhead 
+Metric SLA-aware JointSLA-v1 JointSLA-v2 
+Mean decision time ms 0.71087 4.3441 2.9202 
+Median decision time ms 0.55409 3.9301 2.6088 
+p95 decision time ms 1.6828 8.3804 5.6017 
+Mean instrumented total ms 0.73957 5.0014 3.6217 
+p95 instrumented total ms 1.7182 9.1328 6.4443 
+Simulation wall time seconds 0.73827 1.7588 1.7505 
+ 
+2x Load 
+Table 36  Controller Overhead 
+Metric SLA-aware JointSLA-v1 JointSLA-v2 
+Mean decision time ms 1.1022 4.4417 4.4086 
+Median decision time ms 0.8587 3.6063 4.1301 
+p95 decision time ms 2.8408 10.275 7.6424 
+Mean instrumented total ms 1.1351 5.2681 5.3359 
+p95 instrumented total ms 2.8712 11.198 8.7804 
+Simulation wall time seconds 1.4335 3.392 3.516 
+ 
+Decision time includes policy+action application. Instrumented total adds snapshot time. Routing cost is exported 
+separately; H5 is the preregistered per-run mean decision-step gate. Means/medians/p95 here average each run 
+statistic, not pooled timing samples. Timing is machine-dependent; exact semantic traces are deterministic. 
+
+PAGE 22
+JointSLA v2 Experimental Report 
+22 
+ 
+Figure 12  Controller decision overhead. Per-run mean and p95 wall times are averaged across seeds. The dashed line marks the 10 ms mean limit. 
+
+
+PAGE 23
+JointSLA v2 Experimental Report 
+23 
+20 Statistical Tests 
+30 independent paired seeds. 10000 paired bootstrap percentile resamples, 95% CI, seed 73001, keyed streams. 
+Wilcoxon two-sided with original rounding/tie/zero rules. Positive rank-biserial effect favors v2; wins/ties/losses use 
+12-decimal rounded differences. Primary Holm families each comparator: SLA, Gold, p95 × 2 loads = 6. Secondary each 
+comparator: mean, p99, Silver, Bronze, replicas, VRAM, actions × 2 loads = 14. No request-level pseudoreplication. 
+Independent DP/tie-adjusted Wilcoxon, bootstrap and Holm reconstructions verify all 40 tests. See paired_tests.csv 
+and summary_statistics.csv (mean, SD, CI). 
+21 Performance and Resource Frontier 
+1x Load 
+Table 37  Performance and Resource Frontier 
+Metric SLA-aware JointSLA-v1 JointSLA-v2 
+Aggregate SLA breach rate 0.14981 0.25752 0.22432 
+Gold breach rate 0.20542 0.35613 0.21998 
+p95 latency ms 189.73 228.2 236.15 
+Average replicas 68.724 44.025 65.453 
+Average VRAM residency GiB 10.099 6.4341 9.5124 
+Total actions 169.77 76.533 95.833 
+ 
+2x Load 
+Table 38  Performance and Resource Frontier 
+Metric SLA-aware JointSLA-v1 JointSLA-v2 
+Aggregate SLA breach rate 0.39807 0.39541 0.49968 
+Gold breach rate 0.39049 0.48775 0.42485 
+p95 latency ms 764.06 448.32 1311.5 
+Average replicas 71.709 61.211 70.974 
+Average VRAM residency GiB 10.623 9.1545 10.344 
+Total actions 90.867 110.53 64.533 
+ 
+Pareto figures show per-seed clouds, policy means and marginal 95% bootstrap CIs for both loads; no continuous 
+frontier fit or global optimality claim. Direct replica ratio(v2/baseline)=0.9524038181712355, VRAM 
+ratio=0.9418701242770082. QoS gap reduction=0.3081572879750092. 
+
+PAGE 24
+JointSLA v2 Experimental Report 
+24 
+ 
+Figure 13  Aggregate SLA and replica tradeoff. Per-seed points, policy means and marginal 95% bootstrap CIs. No continuous or globally optimal frontier is inferred. 
+ 
+
+
+PAGE 25
+JointSLA v2 Experimental Report 
+25 
+ 
+Figure 14  Gold SLA and replica tradeoff. Gold improvement relative to v1 is accompanied by a larger warm replica pool. 
+ 
+
+
+PAGE 26
+JointSLA v2 Experimental Report 
+26 
+ 
+Figure 15  Request p95 and VRAM tradeoff. The two pressure regimes reveal different performance and resource costs. 
+
+
+PAGE 27
+JointSLA v2 Experimental Report 
+27 
+22 V2 Hypotheses H1 to H6 
+Table 39  V2 Hypotheses H1 to H6 
+Hypothesis Outcome 
+V2-H1 Passed 
+V2-H2 Passed 
+V2-H3 Failed 
+V2-H4 Failed 
+V2-H5 Passed 
+V2-H6 Passed 
+ 
+Table 40  V2 Hypotheses H1 to H6 
+Record field Value 
+Hypotheses v2-h1 true 
+Hypotheses v2-h2 true 
+Hypotheses v2-h3 false 
+Hypotheses v2-h4 false 
+Hypotheses v2-h5 true 
+Hypotheses v2-h6 true 
+Overall success false 
+Partial success true 
+Failure criterion triggered true 
+Baseline sla gap reduction fraction 0.3081572879750092 
+Residual sla gap pp 7.451723871893454 
+Materially worse than baseline true 
+Approximately baseline resource cost true 
+Direct replica ratio 0.9524038181712355 
+Direct vram ratio 0.9418701242770082 
+Latency guardrail 95% paired ratio upper <=1.05 plus supported baseline benefit; diagnostic, not formal 
+powered noninferiority 
+Stop true 
+No v3 true 
+ 
+H3 requires ≥ 50% gap reduction and both resources ≤ 95% baseline. H4 requires ratio upper ≤ 1.05 for mean/p95/p99 
+relative to v1 plus supported advantage vs baseline; this is a declared diagnostic guardrail, not formal powered 
+noninferiority. 
+23 Negative Results 
+All worse-seed outcomes against both comparators are exported in negative_seed_cases.csv. Unsupported 
+comparisons remain unsupported even when sample means improve. Retention spends more resources, Gold repair 
+
+PAGE 28
+JointSLA v2 Experimental Report 
+28 
+may consume action opportunities otherwise used by other tiers, and infeasible headroom is disclosed. No failed 
+hypothesis is removed. Failure flags and partial-success flags can coexist under the preregistered criteria. 
+Approximately-baseline resource cost is flagged if either replica or VRAM ratio reaches 0.95; material resource saving 
+requires both below the declared bound. 
+1x Load Compared With JointSLA v1 
+Table 41  Negative Results 
+Metric Delta and 95% CI Wilcoxon p Holm p RBC Wins ties losses 
+Aggregate SLA breach rate -0.033191 
+[-0.043739, -0.022236] 4.4219e-06 1.3266e-05 0.86667 26 / 0 / 4 
+Gold breach rate -0.13615 
+[-0.15703, -0.116] 1.8626e-09 1.1176e-08 1 30 / 0 / 0 
+ 
+2x Load Compared With JointSLA v1 
+Table 42  Negative Results 
+Metric Delta and 95% CI Wilcoxon p Holm p RBC Wins ties losses 
+Aggregate SLA breach rate 0.10427 
+[0.081062, 0.128] 3.7253e-09 1.4901e-08 -0.9957 1 / 0 / 29 
+Gold breach rate -0.062908 
+[-0.083545, -0.042116] 9.2201e-06 1.844e-05 0.84516 24 / 0 / 6 
+ 
+1x Load Compared With SLA aware 
+Table 43  Negative Results 
+Metric Delta and 95% CI Wilcoxon p Holm p RBC Wins ties losses 
+Aggregate SLA breach rate 0.074517 
+[0.063516, 0.085813] 1.8626e-09 1.1176e-08 -1 0 / 0 / 30 
+Gold breach rate 0.014561 
+[-0.0039148, 0.033122] 0.18397 0.18397 -0.28172 13 / 0 / 17 
+ 
+2x Load Compared With SLA aware 
+Table 44  Negative Results 
+Metric Delta and 95% CI Wilcoxon p Holm p RBC Wins ties losses 
+Aggregate SLA breach rate 0.10161 
+[0.085291, 0.11819] 1.8626e-09 1.1176e-08 -1 0 / 0 / 30 
+Gold breach rate 0.034361 
+[0.015189, 0.053821] 0.0020202 0.0040404 -0.62581 7 / 0 / 23 
+ 
+24 Threats to Validity 
+One laptop GPU calibration, three measured vision model classes mapped to 40 synthetic services; not a real 
+distributed telco deployment. Fixed 10-node topology,100-slot horizon, synthetic traffic/work 
+
+PAGE 29
+JointSLA v2 Experimental Report 
+29 
+variance/network/migration costs, class-average hardware times. Global v1 nominal estimator remains inherited. Cold 
+readiness can exceed strict deadlines. Fluid headroom uses serial cycle estimates and retrospective latency telemetry, 
+not a queue stability theorem. Five engineering seeds and one candidate do not prove universality. Held-out seeds 
+control tuning leakage, not external validity. Multiple testing families are explicit; secondary/class/mechanism 
+interpretations remain limited. Controller clocks/RSS are host-dependent. 
+25 Safe Paper Claims 
+Only the following held-out supported lower-is-better comparisons may be claimed with their declared family/CI:  
+Table 45  Safe Paper Claims 
+Load multiplier Comparator Metric 
+1 JointSLA-v1 Aggregate SLA breach rate 
+1 JointSLA-v1 Gold breach rate 
+2 JointSLA-v1 Gold breach rate 
+2 JointSLA-v1 Total actions 
+1 SLA-aware Average replicas 
+1 SLA-aware Average VRAM residency GiB 
+1 SLA-aware Total actions 
+2 SLA-aware Average replicas 
+2 SLA-aware Average VRAM residency GiB 
+2 SLA-aware Total actions 
+ 
+The fixed causal extension and its measured resource trade-offs are reproducible; historical negative results remain 
+part of the contribution. No external literature percentages were used. 
+26 Claims We Cannot Make 
+No forecasting/oracle claim; no universally best scheduler, guaranteed deadlines, global Pareto optimum, real 5G/6G 
+deployment validation, universal Gold fairness or proven general noninferiority. No undisclosed dropped traffic. Do not 
+claim novelty from implementation alone; final literature/novelty review is a separate next stage. 
+
+PAGE 30
+JointSLA v2 Experimental Report 
+30 
+27 Final Assessment for a B Level Paper 
+The full declared success criterion is not met. This study can inform a B-level systems paper as a bounded 
+performance/resource contribution with hardware-grounded negative validation; venue suitability is conditional on 
+literature differentiation, contribution framing and review. A positive aggregate result cannot hide tier/resource/tail 
+failures. STOP algorithmic experiments now regardless of result. No v3, no retuning. Next stages: final 
+literature/novelty check, contribution framing, SOVEREIGN mapping, paper writing, venue selection. 
+Reproduce: 
+.venv\Scripts\python.exe -m pytest -q 
+.venv\Scripts\python.exe run_jointsla_v2.py --development --reuse-results 
+.venv\Scripts\python.exe run_jointsla_v2.py --freeze 
+.venv\Scripts\python.exe run_jointsla_v2.py --held-out --reuse-results 
+To regenerate the same frozen simulations use --development --force and --held-out --force sequentially; --force does 
+not bypass source/config/seed guards; --force replaces v2 run outputs and preserves the generation ledger. Fresh 
+checkout: complete development first, then freeze, then held-out. Development after existing freeze is replication 
+only; no redesign. 

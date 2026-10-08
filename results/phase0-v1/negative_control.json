@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "b1_catalyst_exact": true,
+  "primary_metric_exact": true,
+  "mean_completion_spread_s": 1.3000000000000007,
+  "mean_p99_spread_ms": 0.4844701062706491,
+  "exact_equality": false,
+  "runs": 30
+}

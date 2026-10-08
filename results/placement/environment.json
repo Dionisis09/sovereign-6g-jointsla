@@ -1,0 +1,12 @@
+{
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "packages": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "matplotlib": "3.11.2"
+  },
+  "latency_model": "network RTT + 12 ms * (1 + CPU utilization + .8 GPU utilization + .3 bandwidth utilization); base processing configurable",
+  "std": "sample standard deviation across trial seeds (ddof=1)",
+  "runtime": "one algorithm call per trial; excludes generation, metrics and plotting"
+}

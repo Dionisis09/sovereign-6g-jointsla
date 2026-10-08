@@ -1,0 +1,38 @@
+[
+  {
+    "nodes": 5,
+    "mean_sla_failure_pct": 57.1948208008347,
+    "mean_below_15pct": false,
+    "seeds_below_15pct": 0
+  },
+  {
+    "nodes": 6,
+    "mean_sla_failure_pct": 44.486169402260614,
+    "mean_below_15pct": false,
+    "seeds_below_15pct": 0
+  },
+  {
+    "nodes": 7,
+    "mean_sla_failure_pct": 34.87716717805403,
+    "mean_below_15pct": false,
+    "seeds_below_15pct": 0
+  },
+  {
+    "nodes": 8,
+    "mean_sla_failure_pct": 27.971851440629724,
+    "mean_below_15pct": false,
+    "seeds_below_15pct": 0
+  },
+  {
+    "nodes": 9,
+    "mean_sla_failure_pct": 23.186551293488844,
+    "mean_below_15pct": false,
+    "seeds_below_15pct": 1
+  },
+  {
+    "nodes": 10,
+    "mean_sla_failure_pct": 21.079276017867542,
+    "mean_below_15pct": false,
+    "seeds_below_15pct": 2
+  }
+]

@@ -1,0 +1,68 @@
+{
+  "per_run_checks": [
+    {
+      "accounting_complete": true,
+      "lifecycle_intervals_verified": 103,
+      "node_slots_verified": 1000,
+      "policy": "sla_aware",
+      "requests_verified": 10919,
+      "reservation_events_verified": 214,
+      "routing_choices_verified": 0,
+      "seed": 1
+    },
+    {
+      "accounting_complete": true,
+      "lifecycle_intervals_verified": 47,
+      "node_slots_verified": 1000,
+      "policy": "joint_sla",
+      "requests_verified": 10919,
+      "reservation_events_verified": 133,
+      "routing_choices_verified": 11540,
+      "seed": 1
+    },
+    {
+      "accounting_complete": true,
+      "lifecycle_intervals_verified": 100,
+      "node_slots_verified": 1000,
+      "policy": "sla_aware",
+      "requests_verified": 11916,
+      "reservation_events_verified": 213,
+      "routing_choices_verified": 0,
+      "seed": 2
+    },
+    {
+      "accounting_complete": true,
+      "lifecycle_intervals_verified": 39,
+      "node_slots_verified": 1000,
+      "policy": "joint_sla",
+      "requests_verified": 11916,
+      "reservation_events_verified": 117,
+      "routing_choices_verified": 12481,
+      "seed": 2
+    },
+    {
+      "accounting_complete": true,
+      "lifecycle_intervals_verified": 97,
+      "node_slots_verified": 1000,
+      "policy": "sla_aware",
+      "requests_verified": 11787,
+      "reservation_events_verified": 201,
+      "routing_choices_verified": 0,
+      "seed": 3
+    },
+    {
+      "accounting_complete": true,
+      "lifecycle_intervals_verified": 52,
+      "node_slots_verified": 1000,
+      "policy": "joint_sla",
+      "requests_verified": 11787,
+      "reservation_events_verified": 143,
+      "routing_choices_verified": 12546,
+      "seed": 3
+    }
+  ],
+  "requests_verified": 69244,
+  "routing_choices_verified": 36567,
+  "successful_runs": 6,
+  "wall_seconds": 10.810282799997367
+}

@@ -1,0 +1,21 @@
+load_multiplier,comparator,metric,ratio,ci95_lower,ci95_upper,method,resamples
+1.0,joint_sla_v1,mean_request_latency_ms,0.9962869428589369,0.942620346374871,1.0573573475060372,paired bootstrap ratio of seed means,10000
+1.0,joint_sla_v1,p95_latency_ms,1.034817427549431,0.9591057516900429,1.1197389136413864,paired bootstrap ratio of seed means,10000
+1.0,joint_sla_v1,p99_latency_ms,1.104729569844362,1.0186146760994157,1.2121581454853148,paired bootstrap ratio of seed means,10000
+1.0,joint_sla_v1,average_replicas,1.4867121960083585,1.4719386366627654,1.5024171093263254,paired bootstrap ratio of seed means,10000
+1.0,joint_sla_v1,average_vram_residency_gib,1.4784302483918923,1.457120379125811,1.5009127017775785,paired bootstrap ratio of seed means,10000
+1.0,sla_aware,mean_request_latency_ms,1.2582935482250326,1.1892231012725236,1.3339743243109166,paired bootstrap ratio of seed means,10000
+1.0,sla_aware,p95_latency_ms,1.24469322277269,1.1458256274424423,1.348964458631673,paired bootstrap ratio of seed means,10000
+1.0,sla_aware,p99_latency_ms,0.989019324721798,0.9014359073774136,1.0878654609215899,paired bootstrap ratio of seed means,10000
+1.0,sla_aware,average_replicas,0.9524038181712358,0.9435126971220614,0.9607060445025805,paired bootstrap ratio of seed means,10000
+1.0,sla_aware,average_vram_residency_gib,0.9418701242770086,0.9313971231508663,0.9526537426006259,paired bootstrap ratio of seed means,10000
+2.0,joint_sla_v1,mean_request_latency_ms,2.4236093197311503,1.9897208441767993,2.9233464054269893,paired bootstrap ratio of seed means,10000
+2.0,joint_sla_v1,p95_latency_ms,2.9254441241762135,2.2791798005770487,3.6535144587654598,paired bootstrap ratio of seed means,10000
+2.0,joint_sla_v1,p99_latency_ms,3.4991372708736725,2.706796748306449,4.370661914551124,paired bootstrap ratio of seed means,10000
+2.0,joint_sla_v1,average_replicas,1.1595029215881678,1.1313161638286897,1.1881977173197211,paired bootstrap ratio of seed means,10000
+2.0,joint_sla_v1,average_vram_residency_gib,1.1299239978799167,1.0990552789375623,1.162280858719564,paired bootstrap ratio of seed means,10000
+2.0,sla_aware,mean_request_latency_ms,1.673846836722427,1.461483058874323,1.9013284658058458,paired bootstrap ratio of seed means,10000
+2.0,sla_aware,p95_latency_ms,1.716520076395603,1.4278499848817798,2.0360718212455025,paired bootstrap ratio of seed means,10000
+2.0,sla_aware,p99_latency_ms,1.8743721543809913,1.5389518955020374,2.266077147652143,paired bootstrap ratio of seed means,10000
+2.0,sla_aware,average_replicas,0.9897548889725604,0.9838628728754393,0.9957427353055459,paired bootstrap ratio of seed means,10000
+2.0,sla_aware,average_vram_residency_gib,0.9737458750546848,0.960599969877865,0.9862596669982009,paired bootstrap ratio of seed means,10000

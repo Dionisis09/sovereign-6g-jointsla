@@ -1,0 +1,26 @@
+{
+  "files": {
+    "catalyst\\__init__.py": "23abb776c96ffa3ef5b80d8eace8d47b79b2af3e93514afda853551b6b77f58b",
+    "catalyst\\contracts.py": "938f8b51e711156934d8767e2c83858e4eaf775255a745fb65f944c3202ec3d6",
+    "catalyst\\engine.py": "b6e9650bf21515ae46fbf3a2a8611c621ecfdcb7b89236a596f746732a02bef4",
+    "catalyst\\experiment.py": "4edc173aa73be8ecc97b55981971c6e3af13a3ea7e1f4d69af796b56422d4120",
+    "catalyst\\policies.py": "3c49f1dbd239fb1cf8e44108e02a1a6fc460305d17e9ff6494b6267f01b0772c",
+    "catalyst\\reused.py": "8db55dd5639ccb7b4450a9156d72e8144f205e34ebc9034f6230e6c4eb6b64c9",
+    "catalyst\\scenario.py": "a87c6aab148f84c058f54d93a84755b7bb1f691bab823ba05d7dcea2df974fe7",
+    "configs\\phase0.json": "9c8606f2bbe3587f3b55ceaea276a6695740fd9a8565ee6b3d978584741eb103",
+    "docs\\protocol.md": "a15d7a9756b8f31d203d2aafda8a8f775586fa486d5c1bd7056e1bc4c717da8f"
+  },
+  "python": "3.12.14",
+  "dependencies": {
+    "simpy": "4.1.2",
+    "pydantic": "2.13.5",
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "matplotlib": "3.11.2",
+    "pytest": "9.1.1"
+  },
+  "branch": "codex/catalyst-phase0",
+  "protocol": "docs/protocol.md",
+  "stress_tuned_after_results": false,
+  "s0_fixture_correction": "Initial 40-rps S0 queued during rollout; preserved in results/phase0. S0 now 10 rps; stress parameters unchanged."
+}

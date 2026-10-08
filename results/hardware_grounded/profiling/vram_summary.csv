@@ -1,0 +1,4 @@
+model,model_residency_bytes,allocated_after_model_load_bytes,reserved_after_model_load_bytes,inference_peak_allocated_bytes,inference_peak_reserved_bytes,baseline_allocated_bytes
+mobilenet,22110720,30630400,35651584,38457856,60817408,0
+resnet50,103917056,112436736,123731968,162678272,226492416,8519680
+vit_b16,346926080,356494336,402653184,364963840,406847488,8519680

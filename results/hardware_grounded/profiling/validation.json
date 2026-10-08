@@ -1,0 +1,27 @@
+{
+  "actual_counts": {
+    "mobilenet": {
+      "cold_repetitions": 20,
+      "cpu_measured": 30,
+      "gpu_measured": 300,
+      "gpu_warmups": 50
+    },
+    "resnet50": {
+      "cold_repetitions": 20,
+      "cpu_measured": 30,
+      "gpu_measured": 300,
+      "gpu_warmups": 50
+    },
+    "vit_b16": {
+      "cold_repetitions": 20,
+      "cpu_measured": 30,
+      "gpu_measured": 300,
+      "gpu_warmups": 50
+    }
+  },
+  "frozen_files": {
+    "changed_files": [],
+    "protected_files": 8907
+  },
+  "raw_rows": 5010
+}

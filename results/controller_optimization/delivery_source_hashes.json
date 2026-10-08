@@ -1,0 +1,12 @@
+{
+  "controller_optimization/audit.py": "7531022f2264f5233747d04b96f0ed6869ca184861af24e83aa4cb678bbae7bb",
+  "controller_optimization/benchmark.py": "7af4cf2a2e88d1331e3e23f6d2c839011022f177978959e93801c26c171696d4",
+  "controller_optimization/optimized.py": "e752f2e94a119a75618e20e427f84233c08e5e7bcc17be53e33124bfd43d5527",
+  "controller_optimization/presentation.py": "29f5e08c65bfdaad6e4c5f30e1ea6694300c6a78e0f4e3a9656c84c79801d888",
+  "controller_optimization/reference.py": "dfdb698bd4ae83e2f97fbbfef6a37d94fe5c475482a8d328f3a8597f254534dd",
+  "controller_optimization/validation.py": "e803364cdeaa7a07fb85491736d92f77aa7a646793dce6f8702cc2bed4b71deb",
+  "controller_optimization/__init__.py": "29f0f2c689baf8f2c1e18f4f8360a5bb4bbea0ec4b83b73151428773605a92a1",
+  "run_controller_optimization.py": "6c5f06cbddf0ad6d20dbe61ef60225185ba0c84824ac39287298efb47e6649a3",
+  "tools/verify_controller_optimization.py": "ef8fff961cadae08469108a84d240e81821556f1d102e8016fca9f062447dde5",
+  "tests/test_controller_optimization.py": "1478689489d20404ac3401a47ca5988c1024acd50961d459f83cec1844c28705"
+}

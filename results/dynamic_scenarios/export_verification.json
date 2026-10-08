@@ -1,0 +1,19 @@
+{
+  "runs": 150,
+  "paired_seeds": 30,
+  "request_outcomes_checked": 880680,
+  "admission_decisions_checked": 880680,
+  "drops_checked": 9141,
+  "slot_rows": 15000,
+  "node_rows": 84000,
+  "paired_traffic_verified": true,
+  "request_components_and_tier_denominators_verified": true,
+  "summary_mean_std_count_verified": true,
+  "admission_threshold_verified": true,
+  "causal_forecasts_verified": true,
+  "prewarm_lead_verified": true,
+  "physical_capacity_and_reservations_verified": true,
+  "source_hashes_verified": true,
+  "historical_baseline_seeds_reproduced": 30,
+  "cold_start_costs_verified": true
+}

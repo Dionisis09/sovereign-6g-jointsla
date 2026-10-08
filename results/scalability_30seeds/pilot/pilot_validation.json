@@ -1,0 +1,16 @@
+{
+  "successful": true,
+  "runs": 27,
+  "requests_checked": 364404,
+  "maximum_runtime_seconds": 5.7515499999935855,
+  "maximum_rss_mib": 153.25390625,
+  "maximum_drain_seconds": 5.01064739650017,
+  "source_hashes": {
+    "scalability/__init__.py": "c0961596674efce9cb6cdf24ca5cab21ff85c031d68e7818eb47cca4e7752292",
+    "scalability/configuration.py": "b47a84c5e922ab52de31744b2edb083030a63cf1e5c557f78b86697f08966d6b",
+    "scalability/measurement.py": "f103df4a0594a5e2ef674e7d1fa22232e653a8ce66b35784a0156fababf5341f",
+    "scalability/experiment.py": "b62f53babdfea99fc45e7f342eaef97f90d64357a2f0d33ba5af84521e11d916",
+    "scalability/README.md": "ac893293d578e8a9e8213a0d2a0fd573da2c32b483b7a560c80def6d8e02e228",
+    "run_scalability_experiments.py": "9619de51e35334076e8c21a1d7a3edd4594000b81cc707b534c5e314e497a606"
+  }
+}

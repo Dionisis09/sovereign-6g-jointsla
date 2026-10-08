@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "verified_runs": 120,
+  "verified_application_outcomes": 2400,
+  "paired_seeds": 30,
+  "independent_capacity_and_metric_reconstruction": true,
+  "independent_mean_and_sample_std_reconstruction": true,
+  "source_sha256": {
+    "placement_experiment\\algorithms.py": "009953a047c0cd07b855e2da9813f679a32022503985ae7bd9f80c9fad2995c3",
+    "placement_experiment\\data_generation.py": "f94e55dcdcf5365bf249d60675dcf714f9d518a8a0692c14558d0b82dc467b88",
+    "placement_experiment\\metrics.py": "a6604fa9a586f31cdd592e62bd0c9375f8fcadd72632ccf2e1b6081aa47bb18d",
+    "placement_experiment\\plotting.py": "8b3105b5541c5de615e9c0504947576e09c163c0b6f1c48effe21e6de3dade16",
+    "placement_experiment\\runner.py": "316554728d1e1a1f40482bacdccf0d3d9e1f9501c21ea9a170e14c58d2a2c79b",
+    "placement_experiment\\__init__.py": "0f97a1d138e182eef3b7bb38b981ef820474e4b1d9e7cb4fc8cec61c3e5dc590",
+    "placement_experiment\\config.json": "970c3e100e98309d912d8ca17b04146bd268051b17642ca0ca5811c15bf9c5ef",
+    "requirements.txt": "bd34b3a86e27fb21c473e0261855e34febcd7dbd94d69f8fc11e1edf3e3edd17"
+  }
+}

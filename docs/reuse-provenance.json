@@ -1,0 +1,28 @@
+[
+  {
+    "source": "C:\\Users\\dioni\\Documents\\Codex\\2026-10-06\\kan\\outputs\\aimco6g_phase1\\aimco6g\\runner.py",
+    "sha256": "135184d050d9101526a40662e9c49dbeb8272d38c2661940af0bb13c289b11e8",
+    "functions": [
+      "jsonable",
+      "digest"
+    ],
+    "adaptations": []
+  },
+  {
+    "source": "C:\\Users\\dioni\\Documents\\Codex\\2026-10-06\\kan\\outputs\\vista6g_phase0\\vista6g\\evaluation.py",
+    "sha256": "38c750a5d70d05c390e299cde774492b99f32b0455da2fc8046d16e78f7b68b0",
+    "functions": [
+      "quantile"
+    ],
+    "adaptations": []
+  },
+  {
+    "source": "C:\\Users\\dioni\\Documents\\Codex\\2026-10-06\\kan\\outputs\\vista6g_phase0\\vista6g\\experiments.py",
+    "sha256": "c6c6a3f8ce8a4128ae424f0affd4c2531347a1a31d19c54adcd3098f3de4097c",
+    "functions": [
+      "write_json",
+      "write_gzip"
+    ],
+    "adaptations": []
+  }
+]

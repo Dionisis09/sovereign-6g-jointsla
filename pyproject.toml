@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "catalyst-phase0"
+version = "0.1.0"
+description = "Minimal paired experiment for runtime cross-layer contract enforcement"
+requires-python = ">=3.12"
+dependencies = ["simpy==4.1.2", "pydantic==2.13.5", "numpy==2.3.5", "pandas==3.0.1", "matplotlib==3.11.2"]
+
+[project.optional-dependencies]
+test = ["pytest==9.1.1"]
+
+[tool.setuptools.packages.find]
+include = ["catalyst*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "--basetemp=.pytest-tmp"
+

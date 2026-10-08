@@ -1,0 +1,15 @@
+{
+  "successful": true,
+  "runs": 270,
+  "new_runs": 180,
+  "reused_runs": 90,
+  "requests_verified": 3676098,
+  "routing_batches_independently_reconstructed": 2220001,
+  "summary_rows_checked": 1116,
+  "accounting_components_capacity_lifecycle": true,
+  "causal_arrival_and_feasible_routing": true,
+  "new_joint_scientific_exports_exactly_frozen": true,
+  "statistics_independently_reconstructed": true,
+  "figures_300dpi_and_vectors": 12,
+  "protected_files_unchanged": 5593
+}

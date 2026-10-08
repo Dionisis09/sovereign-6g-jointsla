@@ -1,0 +1,14 @@
+{
+  "new_runs": 180,
+  "reused_runs": 90,
+  "full_wall_seconds": 1193.6913026999973,
+  "requests_verified": 2450732,
+  "source_hashes": {
+    "strong_baseline/__init__.py": "1174e1e183b742fbb4f98cb9dc2dfd210b6e788a2128eb0e486f7c1dce10cc1a",
+    "strong_baseline/optimization.py": "6fe9aa87084513150724e8d56ae6131f56047b6cead98546ea564ae5e00c4b81",
+    "strong_baseline/simulator.py": "73cdaab7d5e52a2edac9f89d5bccb67a5aaf775f59873a338b4ba2e9ba75e66e",
+    "strong_baseline/protocol.py": "6585ab4448afb0d28e1ddeebf7fe0120c60310e533a453e1fd23154b12951f68",
+    "strong_baseline/experiment.py": "12d0bd23fb9dd8d8c9c8eecb2c0e5d02fcfb1bdff90c309d41cb15c659e67e56",
+    "run_strong_baseline.py": "64dc8e2483262f110b5e6c876bfab45470106a6be25f675fb1f516972e76f429"
+  }
+}

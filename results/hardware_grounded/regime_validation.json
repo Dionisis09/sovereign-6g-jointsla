@@ -1,0 +1,17 @@
+{
+  "catastrophic_overload": false,
+  "decision": "Dimensionally valid DIRECT timing/memory mapping; complete request drain, no unit/overflow errors; no profile/traffic/SLA/controller changes after pilot.",
+  "initial_vram_fraction": 0.023469522253659034,
+  "maximum_drain_seconds": 0.12203560722028683,
+  "maximum_waiting_requests": 323,
+  "mean_expected_cpu_pressure": 0.034875625733040996,
+  "mean_expected_gpu_pressure": 0.27680615526200225,
+  "pilot_requests": 69244,
+  "prior_artifacts": {
+    "changed_files": [],
+    "protected_files": 8907
+  },
+  "profile_sha256": "683a12933079dd3d93d7ef0e9532103f15234b5115e55ffaf732726f17e29cb5",
+  "ready_for_full_run": true,
+  "tests_passed": 189
+}

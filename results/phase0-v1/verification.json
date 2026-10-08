@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "checked_runs": 500,
+  "checked_samples": 30000,
+  "checked_request_outcomes": 1195930,
+  "source_and_protocol_hashes_unchanged": true,
+  "previous_sources_unchanged": true,
+  "request_conservation": true,
+  "independently_reconstructed_primary_metric": true,
+  "false_blocks": 50,
+  "audited_contract_blocks": 97,
+  "incomplete_rollouts": [
+    {
+      "case": "S1-L1-seed7",
+      "policy": "A2"
+    },
+    {
+      "case": "S3-L2-seed7",
+      "policy": "A2"
+    }
+  ]
+}

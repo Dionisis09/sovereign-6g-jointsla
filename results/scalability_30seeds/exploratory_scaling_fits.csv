@@ -1,0 +1,6 @@
+policy,fit,slope,intercept,scope
+sla_aware,log policy mean ms ~ log services,1.8855047709844566,-6.91770699070305,"descriptive three-scale fit; nodes and services are collinear, not asymptotic proof"
+joint_sla,log policy mean ms ~ log services,1.182445674678422,-3.7136861125255596,"descriptive three-scale fit; nodes and services are collinear, not asymptotic proof"
+joint_sla,seed-bucket mean routing ms ~ candidates,0.014725545869145882,0.011927179958246837,descriptive fit of correlated seed/bucket observations; no significance/complexity claim
+sla_shortest_queue,log policy mean ms ~ log services,1.9056402018133465,-6.94361558557375,"descriptive three-scale fit; nodes and services are collinear, not asymptotic proof"
+sla_shortest_queue,seed-bucket mean routing ms ~ candidates,0.014899319415452549,0.010957895502565575,descriptive fit of correlated seed/bucket observations; no significance/complexity claim

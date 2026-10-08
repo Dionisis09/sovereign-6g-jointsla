@@ -1,0 +1,16 @@
+{
+  "combined_runs": 270,
+  "new_runs": 150,
+  "reused_runs": 120,
+  "seeds": [
+    1,
+    30
+  ],
+  "request_outcomes_checked": 882275,
+  "request_quantiles_checked": 450,
+  "routing_decisions_replayed": 922172,
+  "statistical_comparisons_checked": 20,
+  "baseline_artifacts_unchanged": true,
+  "hypotheses_independently_checked": true,
+  "figures_checked": 8
+}

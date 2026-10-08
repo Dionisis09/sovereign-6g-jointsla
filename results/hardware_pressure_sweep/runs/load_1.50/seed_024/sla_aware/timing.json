@@ -1,0 +1,710 @@
+{
+  "wall_clock_seconds": 0.8132776000129525,
+  "simulation_cpu_seconds": 0.8125,
+  "routing_cpu_ms": 0.0,
+  "eligible_replica_seconds": 647.4,
+  "eligible_slot_samples": [
+    40,
+    42,
+    42,
+    44,
+    46,
+    48,
+    50,
+    51,
+    53,
+    55,
+    58,
+    59,
+    61,
+    62,
+    65,
+    66,
+    68,
+    67,
+    68,
+    67,
+    66,
+    65,
+    66,
+    67,
+    67,
+    66,
+    67,
+    68,
+    68,
+    68,
+    68,
+    69,
+    69,
+    68,
+    68,
+    67,
+    67,
+    68,
+    68,
+    66,
+    66,
+    67,
+    66,
+    66,
+    66,
+    66,
+    67,
+    66,
+    65,
+    65,
+    65,
+    64,
+    65,
+    64,
+    64,
+    66,
+    66,
+    68,
+    68,
+    69,
+    69,
+    69,
+    69,
+    69,
+    69,
+    67,
+    67,
+    68,
+    68,
+    69,
+    69,
+    67,
+    67,
+    67,
+    67,
+    66,
+    66,
+    66,
+    67,
+    65,
+    66,
+    67,
+    68,
+    68,
+    68,
+    68,
+    68,
+    68,
+    68,
+    68,
+    68,
+    68,
+    68,
+    66,
+    66,
+    68,
+    66,
+    66,
+    67,
+    66
+  ],
+  "control_cpu_times": [
+    {
+      "slot": 0,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 1,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 2,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 3,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 4,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 5,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 15.625,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 6,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 7,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 8,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 9,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 10,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 11,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 12,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 13,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 14,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 15,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 16,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 17,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 18,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 19,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 20,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 21,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 22,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 23,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 24,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 25,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 26,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 27,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 28,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 29,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 30,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 31,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 32,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 33,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 34,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 35,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 36,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 37,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 38,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 39,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 40,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 41,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 42,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 43,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 44,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 45,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 46,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 47,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 48,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 15.625,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 49,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 50,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 51,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 52,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 53,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 54,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 55,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 56,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 57,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 58,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 59,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 60,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 61,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 62,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 63,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 64,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 65,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 66,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 15.625,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 67,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 68,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 69,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 70,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 71,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 72,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 73,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 74,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 75,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 76,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 77,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 78,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 79,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 80,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 81,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 82,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 83,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 84,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 85,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 86,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 87,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 88,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 89,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 90,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 91,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 92,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 93,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 94,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 95,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 96,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 97,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 98,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    },
+    {
+      "slot": 99,
+      "snapshot_cpu_ms": 0.0,
+      "policy_cpu_ms": 0.0,
+      "apply_cpu_ms": 0.0
+    }
+  ]
+}

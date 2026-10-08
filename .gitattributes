@@ -1,0 +1,2 @@
+# Retained artifacts fit normal Git; gzip files remain binary.
+*.gz -filter -diff -merge -text

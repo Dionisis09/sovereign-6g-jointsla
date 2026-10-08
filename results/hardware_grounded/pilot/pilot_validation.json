@@ -1,0 +1,14 @@
+{
+  "common_hashes": true,
+  "finite_metrics": true,
+  "max_drain_seconds": 0.12203560722028683,
+  "max_rss_mib": 127.796875,
+  "max_runtime_seconds": 1.320499999987078,
+  "maximum_waiting_requests": 323,
+  "profile_sha256": "683a12933079dd3d93d7ef0e9532103f15234b5115e55ffaf732726f17e29cb5",
+  "regime": "Direct hardware times; no pressure rescaling or post-pilot tuning. Unlimited queues fully drained.",
+  "requests_verified": 69244,
+  "runs": 6,
+  "successful": true,
+  "unit_and_component_checks": true
+}

@@ -1,0 +1,11 @@
+{
+  "capacity_available": true,
+  "scenarios_available": true,
+  "source_files": {
+    "C:\\Users\\dioni\\Documents\\ChatGPT\\6g\\results\\capacity_sweep\\combined_runs.csv": "79621f6e449258cdcc3d66d4ef9cf592cad0794e370ab3a29c3ff3bd0236935d",
+    "C:\\Users\\dioni\\Documents\\ChatGPT\\6g\\results\\capacity_sweep\\protocol.json": "f8459c2d244f042ed118effe08d2d81f001c0c7915e07b90bed014c2e2a39a5d",
+    "C:\\Users\\dioni\\Documents\\ChatGPT\\6g\\results\\dynamic_scenarios\\runs.csv": "7f8a77b5f487b9e30c6738fd10259036bb9e9ef278fa8d24cb145ce33b558175",
+    "C:\\Users\\dioni\\Documents\\ChatGPT\\6g\\results\\dynamic_scenarios\\protocol.json": "a1990cec987d65711335ce0ac169b07245027a861de6db94f8f5f5cf05885105"
+  },
+  "seed_scope": "Supplemental seeds 0\u201329; main seeds 1\u201330; 29 shared seeds, not independent replication. No supplemental simulations rerun."
+}

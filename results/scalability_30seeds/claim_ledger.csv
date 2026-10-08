@@ -1,0 +1,13 @@
+scale,metric,relative_improvement_percent,p_value_holm,sentence
+SMALL,sla_breach_rate,10.481022979078434,2.477318048477173e-07,"At SMALL, JointSLA reduced sla failure by 10.48% relative to SLA-aware across 30 paired synthetic workloads (Holm p=2.48e-07)."
+SMALL,mean_request_latency_ms,29.29840431591534,8.516013622283936e-06,"At SMALL, JointSLA reduced mean request latency by 29.30% relative to SLA-aware across 30 paired synthetic workloads (Holm p=8.52e-06)."
+SMALL,p95_latency_ms,33.29701512345276,2.7671456336975098e-05,"At SMALL, JointSLA reduced p95 latency by 33.30% relative to SLA-aware across 30 paired synthetic workloads (Holm p=2.77e-05)."
+SMALL,p99_latency_ms,25.67744956366069,0.0003449581563472,"At SMALL, JointSLA reduced p99 latency by 25.68% relative to SLA-aware across 30 paired synthetic workloads (Holm p=0.000345)."
+MEDIUM,sla_breach_rate,8.062560818126945,8.381903171539308e-08,"At MEDIUM, JointSLA reduced sla failure by 8.06% relative to SLA-aware across 30 paired synthetic workloads (Holm p=8.38e-08)."
+MEDIUM,mean_request_latency_ms,25.24105908533729,1.3811513781547546e-05,"At MEDIUM, JointSLA reduced mean request latency by 25.24% relative to SLA-aware across 30 paired synthetic workloads (Holm p=1.38e-05)."
+MEDIUM,p95_latency_ms,27.251372982833505,3.1828880310058594e-05,"At MEDIUM, JointSLA reduced p95 latency by 27.25% relative to SLA-aware across 30 paired synthetic workloads (Holm p=3.18e-05)."
+MEDIUM,p99_latency_ms,31.07543223996285,4.159659147262573e-05,"At MEDIUM, JointSLA reduced p99 latency by 31.08% relative to SLA-aware across 30 paired synthetic workloads (Holm p=4.16e-05)."
+LARGE,sla_breach_rate,7.787304746161483,2.2351741790771484e-08,"At LARGE, JointSLA reduced sla failure by 7.79% relative to SLA-aware across 30 paired synthetic workloads (Holm p=2.24e-08)."
+LARGE,mean_request_latency_ms,27.56872749085237,2.2351741790771484e-08,"At LARGE, JointSLA reduced mean request latency by 27.57% relative to SLA-aware across 30 paired synthetic workloads (Holm p=2.24e-08)."
+LARGE,p95_latency_ms,29.795148956948506,2.2351741790771484e-08,"At LARGE, JointSLA reduced p95 latency by 29.80% relative to SLA-aware across 30 paired synthetic workloads (Holm p=2.24e-08)."
+LARGE,p99_latency_ms,30.02415483818815,2.086162567138672e-07,"At LARGE, JointSLA reduced p99 latency by 30.02% relative to SLA-aware across 30 paired synthetic workloads (Holm p=2.09e-07)."

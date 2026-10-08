@@ -1,0 +1,15 @@
+{
+  "endpoint_policy_runs_verified": 60,
+  "independent_controller_quantiles": true,
+  "independent_input_hashes": true,
+  "independent_memory_integrals": true,
+  "independent_subgroup_metrics": true,
+  "preserved": {
+    "changed_files": [],
+    "profile_sha256": "683a12933079dd3d93d7ef0e9532103f15234b5115e55ffaf732726f17e29cb5",
+    "protected_files": 11019
+  },
+  "requests_verified": 6143014,
+  "runs": 420,
+  "subgroup_rows_verified": 2520
+}

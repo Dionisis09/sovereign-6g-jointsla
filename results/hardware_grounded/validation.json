@@ -1,0 +1,20 @@
+{
+  "bootstrap_resamples": 10000,
+  "legacy_manifest_entries_verified": 8910,
+  "prior_artifacts": {
+    "changed_files": [],
+    "protected_files": 8907
+  },
+  "profile_validation": {
+    "models_verified": 3,
+    "raw_hashes_and_checkpoint_hashes": true,
+    "raw_rows_verified": 5010,
+    "summary_units_and_quantiles": true
+  },
+  "requests_verified": 701264,
+  "resource_and_controller_exports_verified": true,
+  "runs": 60,
+  "statistical_primary_metrics_verified": 4,
+  "subgroup_calculations_verified": 900,
+  "successful": true
+}

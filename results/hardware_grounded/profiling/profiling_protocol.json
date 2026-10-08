@@ -1,0 +1,28 @@
+{
+  "accuracy": "Latency/memory profiling concerns model architecture execution, not task accuracy.",
+  "batch_size": 1,
+  "cold": "New Python model, cached local state load, CPU-to-GPU transfer, first synchronized forward. CUDA process/driver already initialized; OS disk cache not evicted. Delete model/output references, GC and empty CUDA allocator cache between repetitions.",
+  "cold_repetitions": 20,
+  "cold_warmups": 30,
+  "cpu_post": "Logits CUDA-to-CPU transfer, explicit synchronization, softmax, top-5 and argmax; transfer included.",
+  "cpu_pre": "In-memory uint8 256x256 RGB; bilinear antialiased resize, float32 normalization, contiguous NCHW; no disk I/O.",
+  "cpu_repetitions": 30,
+  "cpu_threads": 1,
+  "cpu_warmups": 10,
+  "cudnn_benchmark": false,
+  "dtype": "float32",
+  "gpu_forward": "Resident CUDA input; CUDA events around forward only, synchronized before and after.",
+  "gpu_repetitions": 300,
+  "gpu_warmups": 50,
+  "input_seed": 8123,
+  "input_shape": [
+    3,
+    224,
+    224
+  ],
+  "memory": "Residency allocated delta for model parameters/buffers. Inference peaks include model/input/output/workspace; allocated and reserved are distinct, not summed.",
+  "tf32": false,
+  "torch_seed": 7107,
+  "upload": "Input CPU-to-CUDA transfer measured separately with host timer and explicit synchronization.",
+  "weights": "locally initialized"
+}

@@ -1,0 +1,57 @@
+{
+  "configuration_sha256": "ca364041a3e4a7e79c76c4a4f5492c2fa9b46226fc7a2fb2781b012cce6bf3d2",
+  "regimes": {
+    "D0": {
+      "real_cold": false,
+      "real_execution": false,
+      "real_vram": false
+    },
+    "D1": {
+      "real_cold": false,
+      "real_execution": true,
+      "real_vram": false
+    },
+    "D2": {
+      "real_cold": false,
+      "real_execution": false,
+      "real_vram": true
+    },
+    "D3": {
+      "real_cold": true,
+      "real_execution": false,
+      "real_vram": false
+    },
+    "D4": {
+      "real_cold": false,
+      "real_execution": true,
+      "real_vram": true
+    },
+    "D5": {
+      "real_cold": true,
+      "real_execution": true,
+      "real_vram": false
+    },
+    "D6": {
+      "real_cold": true,
+      "real_execution": false,
+      "real_vram": true
+    },
+    "D7": {
+      "real_cold": true,
+      "real_execution": true,
+      "real_vram": true
+    }
+  },
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ]
+}

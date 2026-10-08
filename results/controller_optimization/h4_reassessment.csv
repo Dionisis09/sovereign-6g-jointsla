@@ -1,0 +1,4 @@
+scale,full_30seed_controller_mean_ms,full_30seed_mean_controller_p95_ms,full_30seed_mean_routing_p95_ms,benchmark_controller_mean_ms,limit_controller_mean_ms,limit_controller_p95_ms,limit_routing_p95_ms,reached_under_10ms,supported
+SMALL,0.9786885666666666,1.3497058333333334,0.029373333333333324,1.2335930000000002,10.0,100.0,1.0,True,True
+MEDIUM,2.1839073,3.0550984999999997,0.029536000000000003,2.692409571428571,10.0,100.0,1.0,True,True
+LARGE,5.720342799999999,8.2829385,0.0305845,7.5045724285714295,10.0,100.0,1.0,True,True

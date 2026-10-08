@@ -1,0 +1,19 @@
+{
+  "config_hash": "de8ed5437982ba5174604a9a57ebe72e6c97c87b6fc3bc97daf8505e5b50e001",
+  "source_hashes": {
+    "catalyst\\reused.py": "f1dca02d4fe2ede8a4a5770d5e0c5fa6a2e34e60a4fa7fb70b6508064067cd26",
+    "dynamic_placement\\__init__.py": "797c388ea06ceaa4438d615844b2c21ff75900f851041060810603ee2ea02325",
+    "dynamic_placement\\config.py": "19de65812d6aa0cf2731ea705678c4ceb42a46c5f819dbdddac4f0b3c0434b9a",
+    "dynamic_placement\\metrics.py": "618513dfca287a77d69e4804d373056eadf3ca2c2ccf6e5a5b12531bd101535e",
+    "dynamic_placement\\plotting.py": "454d5f4ff995faed3ff850e054ffc115a531bc4d351b12ffd5d8b7d7f1d39268",
+    "dynamic_placement\\policies.py": "d08d95724a39e6a0c25edeb6013cafd0c0f043db8157bcb88b45e0389e83517b",
+    "dynamic_placement\\runner.py": "04cdca3a083e17b3905003a2214a2fd2c3d5b15aac575074f87f3a5f26649320",
+    "dynamic_placement\\simulator.py": "36f83db4790f1af70de4289f232db3f33cd13cdb5a215377e72194dfd66ea826",
+    "dynamic_placement\\workload.py": "20b2b614c2a0cb0dd50b449c2a2a67e64d2b3511975dde891c3866233667e279",
+    "placement_experiment\\algorithms.py": "d8be79626afe970bd6c5c66faa7d00246b921f5e5e023fb7bbbfb946ab8512ab",
+    "placement_experiment\\data_generation.py": "3bd09881567d577589afd579ca93899ea6d7387ca0b734862ba3f5503da1c9c5"
+  },
+  "decisions_use": "previous-slot arrivals, queues, completions and utilization only",
+  "initial_placement": "same greedy placement on declared mean demands",
+  "trials": "consecutive fixed seeds; no scenario resampling or weight tuning"
+}

@@ -1,0 +1,50 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+.pytest-tmp/
+
+# Python / local build artifacts
+*.py[cod]
+build/
+dist/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Local runtime caches and live experiment outputs
+.cache/
+**/.cache/
+
+# Credentials and machine-specific configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Editor / operating-system files
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
+.DS_Store
+~$*
+
+# Generated bulk research traces / downloadable model weights stay local.
+*.pt
+*.zip
+results/**/*.gz
+!results/**/slot_trajectories.csv.gz
+!results/**/node_trajectories.csv.gz
+!results/jointsla_v2_heldout/inputs/**/*.json.gz
+results/**/request_outcomes.csv
+results/**/routing_attempts.csv
+results/**/routing_decisions.csv
+results/**/node_trajectories.csv
+results/**/reservation_events.csv
+results/**/lifecycle_events.csv
+results/**/deployment_audit.csv
+results/**/actions.csv
+

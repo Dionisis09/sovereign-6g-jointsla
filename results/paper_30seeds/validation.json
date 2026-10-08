@@ -1,0 +1,26 @@
+{
+  "successful_runs": 120,
+  "seed_range": [
+    1,
+    30
+  ],
+  "runs_per_policy": {
+    "periodic": 30,
+    "reactive": 30,
+    "sla_aware": 30,
+    "static": 30
+  },
+  "request_outcomes_checked": 705820,
+  "request_quantiles_checked": 360,
+  "pairing_and_input_hashes_verified": true,
+  "completion_and_tier_accounting_verified": true,
+  "latency_components_and_capacity_verified": true,
+  "all_summary_ci_and_statistics_verified": true,
+  "signed_rank_p_values_independently_reconstructed": true,
+  "holm_and_effect_sizes_verified": true,
+  "supplementary_confidence_intervals_verified": true,
+  "all_seed_differences_retained": true,
+  "report_claims_verified": true,
+  "engine_source_unchanged": true,
+  "figures_300dpi_and_vectors_verified": true
+}

@@ -1,0 +1,19 @@
+{
+  "source_hashes": {
+    "joint_routing/analysis.py": "488e728ccbbdcf194c27f0b7d0f3c7e0b6579f7978a3fe48da20a7ad6662f362",
+    "joint_routing/presentation.py": "cd031922a0cf9055d9eb0879b061d0da6599aadbc9abcd676c841b8c28c2a324",
+    "joint_routing/validation.py": "57e1f452dbfd5400f60483e2681d9272bdbe0cec7865fccc8e559c543e1a4715"
+  },
+  "statistical_primitives": "unchanged paper_evaluation.statistics",
+  "bootstrap_resamples": 10000,
+  "paired_design": true,
+  "positive_difference": "baseline minus JointSLA",
+  "settings": {
+    "virtual_batch_limit": 20,
+    "p99_noninferiority_percent": 5.0,
+    "replica_increase_percent": 5.0,
+    "vram_increase_pp": 2.0,
+    "controller_mean_limit_ms": 10.0,
+    "routing_p95_limit_ms": 1.0
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "all_12_pdfs_rendered_and_visually_reviewed": true,
+  "all_12_pngs_visually_reviewed": true,
+  "existing_tests_passed": 171,
+  "figures": 12,
+  "formats": [
+    "PNG 300dpi",
+    "SVG",
+    "PDF"
+  ],
+  "new_tests_passed": 18,
+  "official_torch_wheel_sha256": "fbde8f6a9ec8c76979a0d14df21c10b9e5cab6f0d106a73ca73e2179bc597cae",
+  "packages": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "pillow": "12.3.0",
+    "pytest": "9.1.1",
+    "scipy": "1.17.1",
+    "simpy": "4.1.2",
+    "torch": "2.10.0+cu128",
+    "torchvision": "0.25.0+cu128"
+  },
+  "pdf_headers_valid": true,
+  "prior_artifacts": {
+    "changed_files": [],
+    "protected_files": 8907
+  },
+  "profile_and_configuration_frozen": true,
+  "report_sections": 28,
+  "required_files_present": true,
+  "svg_xml_valid": true,
+  "tests_passed": 189
+}

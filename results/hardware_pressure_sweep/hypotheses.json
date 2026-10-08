@@ -1,0 +1,95 @@
+{
+  "PS1_low_load_SLA_aware_supported": true,
+  "PS4_descriptive_supported": true,
+  "PS4_lower_resource_regime_counts": {
+    "average_replicas": 7,
+    "average_vram_residency_gib": 7,
+    "total_actions": 5
+  },
+  "PS5_equal_tapes_and_profiles": true,
+  "delta_sla_trend_slope_per_load_unit": -0.09271748292826726,
+  "equivalence_claim": false,
+  "metric_specific_crossovers": {
+    "mean_request_latency_ms": {
+      "equivalence_claim": false,
+      "observed_mean_sign_crossing_intervals": [
+        [
+          1.5,
+          1.75
+        ]
+      ],
+      "supported_crossing_intervals": [
+        [
+          1.25,
+          1.75
+        ]
+      ],
+      "supported_crossover": true,
+      "threshold": "exploratory observed grid bracket; no interpolated threshold"
+    },
+    "p95_latency_ms": {
+      "equivalence_claim": false,
+      "observed_mean_sign_crossing_intervals": [
+        [
+          1.0,
+          1.25
+        ]
+      ],
+      "supported_crossing_intervals": [
+        [
+          1.0,
+          1.75
+        ]
+      ],
+      "supported_crossover": true,
+      "threshold": "exploratory observed grid bracket; no interpolated threshold"
+    },
+    "p99_latency_ms": {
+      "equivalence_claim": false,
+      "observed_mean_sign_crossing_intervals": [
+        [
+          0.5,
+          0.75
+        ]
+      ],
+      "supported_crossing_intervals": [
+        [
+          0.5,
+          1.25
+        ]
+      ],
+      "supported_crossover": true,
+      "threshold": "exploratory observed grid bracket; no interpolated threshold"
+    },
+    "sla_breach_rate": {
+      "equivalence_claim": false,
+      "observed_mean_sign_crossing_intervals": [
+        [
+          1.75,
+          2.0
+        ]
+      ],
+      "supported_crossing_intervals": [],
+      "supported_crossover": false,
+      "threshold": "exploratory observed grid bracket; no interpolated threshold"
+    }
+  },
+  "observed_mean_sign_crossing_intervals": [
+    [
+      1.75,
+      2.0
+    ]
+  ],
+  "representative_seeds": {
+    "best": 28,
+    "median": 25,
+    "worst": 21
+  },
+  "supported_crossing_intervals": [],
+  "supported_crossover": false,
+  "threshold": "exploratory observed grid bracket; no interpolated threshold",
+  "trend_ci95": [
+    -0.10485418327964574,
+    -0.08094115884770545
+  ]
+}

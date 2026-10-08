@@ -1,0 +1,19 @@
+{
+  "changed_files": [],
+  "formats": [
+    "PNG 300dpi",
+    "SVG",
+    "PDF"
+  ],
+  "new_figure_groups": 23,
+  "old_hardware_profiles_unchanged": true,
+  "pilot_simulations": 12,
+  "primary_requests_verified": 7990246,
+  "primary_simulations": 580,
+  "protected_files": 11019,
+  "reproduction_simulations": 6,
+  "requested_figure_groups": 21,
+  "tests_passed": 215,
+  "total_requests_verified": 8230942,
+  "total_simulations": 598
+}

@@ -1,0 +1,1356 @@
+{
+  "new_successful_runs": 150,
+  "combined_runs": 270,
+  "per_run_checks": [
+    {
+      "seed": 1,
+      "policy": "sla_rr",
+      "requests_validated": 6227,
+      "reservation_events_validated": 53,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 1,
+      "policy": "sla_shortest_queue",
+      "requests_validated": 6227,
+      "reservation_events_validated": 65,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 1,
+      "policy": "joint_sla",
+      "requests_validated": 6227,
+      "reservation_events_validated": 46,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 1,
+      "policy": "joint_no_queue",
+      "requests_validated": 6227,
+      "reservation_events_validated": 49,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 1,
+      "policy": "joint_no_slack",
+      "requests_validated": 6227,
+      "reservation_events_validated": 42,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 2,
+      "policy": "sla_rr",
+      "requests_validated": 5410,
+      "reservation_events_validated": 96,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 2,
+      "policy": "sla_shortest_queue",
+      "requests_validated": 5410,
+      "reservation_events_validated": 105,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 2,
+      "policy": "joint_sla",
+      "requests_validated": 5410,
+      "reservation_events_validated": 81,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 2,
+      "policy": "joint_no_queue",
+      "requests_validated": 5410,
+      "reservation_events_validated": 81,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 2,
+      "policy": "joint_no_slack",
+      "requests_validated": 5410,
+      "reservation_events_validated": 90,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 3,
+      "policy": "sla_rr",
+      "requests_validated": 5356,
+      "reservation_events_validated": 55,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 3,
+      "policy": "sla_shortest_queue",
+      "requests_validated": 5356,
+      "reservation_events_validated": 58,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 3,
+      "policy": "joint_sla",
+      "requests_validated": 5356,
+      "reservation_events_validated": 54,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 3,
+      "policy": "joint_no_queue",
+      "requests_validated": 5356,
+      "reservation_events_validated": 37,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 3,
+      "policy": "joint_no_slack",
+      "requests_validated": 5356,
+      "reservation_events_validated": 55,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 4,
+      "policy": "sla_rr",
+      "requests_validated": 6369,
+      "reservation_events_validated": 81,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 4,
+      "policy": "sla_shortest_queue",
+      "requests_validated": 6369,
+      "reservation_events_validated": 107,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 4,
+      "policy": "joint_sla",
+      "requests_validated": 6369,
+      "reservation_events_validated": 101,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 4,
+      "policy": "joint_no_queue",
+      "requests_validated": 6369,
+      "reservation_events_validated": 93,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 4,
+      "policy": "joint_no_slack",
+      "requests_validated": 6369,
+      "reservation_events_validated": 105,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 5,
+      "policy": "sla_rr",
+      "requests_validated": 5322,
+      "reservation_events_validated": 88,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 5,
+      "policy": "sla_shortest_queue",
+      "requests_validated": 5322,
+      "reservation_events_validated": 104,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 5,
+      "policy": "joint_sla",
+      "requests_validated": 5322,
+      "reservation_events_validated": 89,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 5,
+      "policy": "joint_no_queue",
+      "requests_validated": 5322,
+      "reservation_events_validated": 48,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 5,
+      "policy": "joint_no_slack",
+      "requests_validated": 5322,
+      "reservation_events_validated": 83,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 6,
+      "policy": "sla_rr",
+      "requests_validated": 6620,
+      "reservation_events_validated": 33,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 6,
+      "policy": "sla_shortest_queue",
+      "requests_validated": 6620,
+      "reservation_events_validated": 28,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 6,
+      "policy": "joint_sla",
+      "requests_validated": 6620,
+      "reservation_events_validated": 29,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 6,
+      "policy": "joint_no_queue",
+      "requests_validated": 6620,
+      "reservation_events_validated": 34,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 6,
+      "policy": "joint_no_slack",
+      "requests_validated": 6620,
+      "reservation_events_validated": 35,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 7,
+      "policy": "sla_rr",
+      "requests_validated": 6350,
+      "reservation_events_validated": 49,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 7,
+      "policy": "sla_shortest_queue",
+      "requests_validated": 6350,
+      "reservation_events_validated": 47,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 7,
+      "policy": "joint_sla",
+      "requests_validated": 6350,
+      "reservation_events_validated": 44,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 7,
+      "policy": "joint_no_queue",
+      "requests_validated": 6350,
+      "reservation_events_validated": 35,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 7,
+      "policy": "joint_no_slack",
+      "requests_validated": 6350,
+      "reservation_events_validated": 39,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 8,
+      "policy": "sla_rr",
+      "requests_validated": 5914,
+      "reservation_events_validated": 57,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 8,
+      "policy": "sla_shortest_queue",
+      "requests_validated": 5914,
+      "reservation_events_validated": 76,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 8,
+      "policy": "joint_sla",
+      "requests_validated": 5914,
+      "reservation_events_validated": 45,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 8,
+      "policy": "joint_no_queue",
+      "requests_validated": 5914,
+      "reservation_events_validated": 41,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 8,
+      "policy": "joint_no_slack",
+      "requests_validated": 5914,
+      "reservation_events_validated": 53,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 9,
+      "policy": "sla_rr",
+      "requests_validated": 6142,
+      "reservation_events_validated": 67,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 9,
+      "policy": "sla_shortest_queue",
+      "requests_validated": 6142,
+      "reservation_events_validated": 59,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 9,
+      "policy": "joint_sla",
+      "requests_validated": 6142,
+      "reservation_events_validated": 61,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 9,
+      "policy": "joint_no_queue",
+      "requests_validated": 6142,
+      "reservation_events_validated": 43,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 9,
+      "policy": "joint_no_slack",
+      "requests_validated": 6142,
+      "reservation_events_validated": 59,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 10,
+      "policy": "sla_rr",
+      "requests_validated": 5192,
+      "reservation_events_validated": 103,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 10,
+      "policy": "sla_shortest_queue",
+      "requests_validated": 5192,
+      "reservation_events_validated": 95,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 10,
+      "policy": "joint_sla",
+      "requests_validated": 5192,
+      "reservation_events_validated": 102,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 10,
+      "policy": "joint_no_queue",
+      "requests_validated": 5192,
+      "reservation_events_validated": 72,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 10,
+      "policy": "joint_no_slack",
+      "requests_validated": 5192,
+      "reservation_events_validated": 99,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 11,
+      "policy": "sla_rr",
+      "requests_validated": 5886,
+      "reservation_events_validated": 57,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 11,
+      "policy": "sla_shortest_queue",
+      "requests_validated": 5886,
+      "reservation_events_validated": 65,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 11,
+      "policy": "joint_sla",
+      "requests_validated": 5886,
+      "reservation_events_validated": 52,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 11,
+      "policy": "joint_no_queue",
+      "requests_validated": 5886,
+      "reservation_events_validated": 42,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 11,
+      "policy": "joint_no_slack",
+      "requests_validated": 5886,
+      "reservation_events_validated": 53,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 12,
+      "policy": "sla_rr",
+      "requests_validated": 6182,
+      "reservation_events_validated": 40,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 12,
+      "policy": "sla_shortest_queue",
+      "requests_validated": 6182,
+      "reservation_events_validated": 38,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 12,
+      "policy": "joint_sla",
+      "requests_validated": 6182,
+      "reservation_events_validated": 33,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 12,
+      "policy": "joint_no_queue",
+      "requests_validated": 6182,
+      "reservation_events_validated": 35,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 12,
+      "policy": "joint_no_slack",
+      "requests_validated": 6182,
+      "reservation_events_validated": 43,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 13,
+      "policy": "sla_rr",
+      "requests_validated": 6368,
+      "reservation_events_validated": 31,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 13,
+      "policy": "sla_shortest_queue",
+      "requests_validated": 6368,
+      "reservation_events_validated": 32,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 13,
+      "policy": "joint_sla",
+      "requests_validated": 6368,
+      "reservation_events_validated": 31,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 13,
+      "policy": "joint_no_queue",
+      "requests_validated": 6368,
+      "reservation_events_validated": 28,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 13,
+      "policy": "joint_no_slack",
+      "requests_validated": 6368,
+      "reservation_events_validated": 33,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 14,
+      "policy": "sla_rr",
+      "requests_validated": 5349,
+      "reservation_events_validated": 88,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 14,
+      "policy": "sla_shortest_queue",
+      "requests_validated": 5349,
+      "reservation_events_validated": 102,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 14,
+      "policy": "joint_sla",
+      "requests_validated": 5349,
+      "reservation_events_validated": 99,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 14,
+      "policy": "joint_no_queue",
+      "requests_validated": 5349,
+      "reservation_events_validated": 67,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 14,
+      "policy": "joint_no_slack",
+      "requests_validated": 5349,
+      "reservation_events_validated": 84,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 15,
+      "policy": "sla_rr",
+      "requests_validated": 6318,
+      "reservation_events_validated": 58,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 15,
+      "policy": "sla_shortest_queue",
+      "requests_validated": 6318,
+      "reservation_events_validated": 69,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 15,
+      "policy": "joint_sla",
+      "requests_validated": 6318,
+      "reservation_events_validated": 77,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 15,
+      "policy": "joint_no_queue",
+      "requests_validated": 6318,
+      "reservation_events_validated": 46,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 15,
+      "policy": "joint_no_slack",
+      "requests_validated": 6318,
+      "reservation_events_validated": 65,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 16,
+      "policy": "sla_rr",
+      "requests_validated": 6441,
+      "reservation_events_validated": 83,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 16,
+      "policy": "sla_shortest_queue",
+      "requests_validated": 6441,
+      "reservation_events_validated": 89,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 16,
+      "policy": "joint_sla",
+      "requests_validated": 6441,
+      "reservation_events_validated": 81,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 16,
+      "policy": "joint_no_queue",
+      "requests_validated": 6441,
+      "reservation_events_validated": 54,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 16,
+      "policy": "joint_no_slack",
+      "requests_validated": 6441,
+      "reservation_events_validated": 68,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 17,
+      "policy": "sla_rr",
+      "requests_validated": 5864,
+      "reservation_events_validated": 50,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 17,
+      "policy": "sla_shortest_queue",
+      "requests_validated": 5864,
+      "reservation_events_validated": 52,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 17,
+      "policy": "joint_sla",
+      "requests_validated": 5864,
+      "reservation_events_validated": 44,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 17,
+      "policy": "joint_no_queue",
+      "requests_validated": 5864,
+      "reservation_events_validated": 37,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 17,
+      "policy": "joint_no_slack",
+      "requests_validated": 5864,
+      "reservation_events_validated": 53,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 18,
+      "policy": "sla_rr",
+      "requests_validated": 5998,
+      "reservation_events_validated": 65,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 18,
+      "policy": "sla_shortest_queue",
+      "requests_validated": 5998,
+      "reservation_events_validated": 61,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 18,
+      "policy": "joint_sla",
+      "requests_validated": 5998,
+      "reservation_events_validated": 70,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 18,
+      "policy": "joint_no_queue",
+      "requests_validated": 5998,
+      "reservation_events_validated": 63,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 18,
+      "policy": "joint_no_slack",
+      "requests_validated": 5998,
+      "reservation_events_validated": 75,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 19,
+      "policy": "sla_rr",
+      "requests_validated": 5550,
+      "reservation_events_validated": 108,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 19,
+      "policy": "sla_shortest_queue",
+      "requests_validated": 5550,
+      "reservation_events_validated": 128,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 19,
+      "policy": "joint_sla",
+      "requests_validated": 5550,
+      "reservation_events_validated": 85,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 19,
+      "policy": "joint_no_queue",
+      "requests_validated": 5550,
+      "reservation_events_validated": 77,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 19,
+      "policy": "joint_no_slack",
+      "requests_validated": 5550,
+      "reservation_events_validated": 109,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 20,
+      "policy": "sla_rr",
+      "requests_validated": 5266,
+      "reservation_events_validated": 52,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 20,
+      "policy": "sla_shortest_queue",
+      "requests_validated": 5266,
+      "reservation_events_validated": 63,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 20,
+      "policy": "joint_sla",
+      "requests_validated": 5266,
+      "reservation_events_validated": 68,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 20,
+      "policy": "joint_no_queue",
+      "requests_validated": 5266,
+      "reservation_events_validated": 50,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 20,
+      "policy": "joint_no_slack",
+      "requests_validated": 5266,
+      "reservation_events_validated": 65,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 21,
+      "policy": "sla_rr",
+      "requests_validated": 5439,
+      "reservation_events_validated": 87,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 21,
+      "policy": "sla_shortest_queue",
+      "requests_validated": 5439,
+      "reservation_events_validated": 65,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 21,
+      "policy": "joint_sla",
+      "requests_validated": 5439,
+      "reservation_events_validated": 61,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 21,
+      "policy": "joint_no_queue",
+      "requests_validated": 5439,
+      "reservation_events_validated": 49,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 21,
+      "policy": "joint_no_slack",
+      "requests_validated": 5439,
+      "reservation_events_validated": 55,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 22,
+      "policy": "sla_rr",
+      "requests_validated": 6354,
+      "reservation_events_validated": 53,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 22,
+      "policy": "sla_shortest_queue",
+      "requests_validated": 6354,
+      "reservation_events_validated": 44,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 22,
+      "policy": "joint_sla",
+      "requests_validated": 6354,
+      "reservation_events_validated": 42,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 22,
+      "policy": "joint_no_queue",
+      "requests_validated": 6354,
+      "reservation_events_validated": 37,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 22,
+      "policy": "joint_no_slack",
+      "requests_validated": 6354,
+      "reservation_events_validated": 41,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 23,
+      "policy": "sla_rr",
+      "requests_validated": 4825,
+      "reservation_events_validated": 65,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 23,
+      "policy": "sla_shortest_queue",
+      "requests_validated": 4825,
+      "reservation_events_validated": 80,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 23,
+      "policy": "joint_sla",
+      "requests_validated": 4825,
+      "reservation_events_validated": 65,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 23,
+      "policy": "joint_no_queue",
+      "requests_validated": 4825,
+      "reservation_events_validated": 44,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 23,
+      "policy": "joint_no_slack",
+      "requests_validated": 4825,
+      "reservation_events_validated": 60,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 24,
+      "policy": "sla_rr",
+      "requests_validated": 5674,
+      "reservation_events_validated": 77,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 24,
+      "policy": "sla_shortest_queue",
+      "requests_validated": 5674,
+      "reservation_events_validated": 55,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 24,
+      "policy": "joint_sla",
+      "requests_validated": 5674,
+      "reservation_events_validated": 74,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 24,
+      "policy": "joint_no_queue",
+      "requests_validated": 5674,
+      "reservation_events_validated": 46,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 24,
+      "policy": "joint_no_slack",
+      "requests_validated": 5674,
+      "reservation_events_validated": 64,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 25,
+      "policy": "sla_rr",
+      "requests_validated": 5817,
+      "reservation_events_validated": 66,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 25,
+      "policy": "sla_shortest_queue",
+      "requests_validated": 5817,
+      "reservation_events_validated": 48,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 25,
+      "policy": "joint_sla",
+      "requests_validated": 5817,
+      "reservation_events_validated": 55,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 25,
+      "policy": "joint_no_queue",
+      "requests_validated": 5817,
+      "reservation_events_validated": 36,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 25,
+      "policy": "joint_no_slack",
+      "requests_validated": 5817,
+      "reservation_events_validated": 62,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 26,
+      "policy": "sla_rr",
+      "requests_validated": 5471,
+      "reservation_events_validated": 86,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 26,
+      "policy": "sla_shortest_queue",
+      "requests_validated": 5471,
+      "reservation_events_validated": 77,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 26,
+      "policy": "joint_sla",
+      "requests_validated": 5471,
+      "reservation_events_validated": 75,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 26,
+      "policy": "joint_no_queue",
+      "requests_validated": 5471,
+      "reservation_events_validated": 52,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 26,
+      "policy": "joint_no_slack",
+      "requests_validated": 5471,
+      "reservation_events_validated": 69,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 27,
+      "policy": "sla_rr",
+      "requests_validated": 6343,
+      "reservation_events_validated": 47,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 27,
+      "policy": "sla_shortest_queue",
+      "requests_validated": 6343,
+      "reservation_events_validated": 53,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 27,
+      "policy": "joint_sla",
+      "requests_validated": 6343,
+      "reservation_events_validated": 44,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 27,
+      "policy": "joint_no_queue",
+      "requests_validated": 6343,
+      "reservation_events_validated": 37,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 27,
+      "policy": "joint_no_slack",
+      "requests_validated": 6343,
+      "reservation_events_validated": 51,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 28,
+      "policy": "sla_rr",
+      "requests_validated": 6752,
+      "reservation_events_validated": 38,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 28,
+      "policy": "sla_shortest_queue",
+      "requests_validated": 6752,
+      "reservation_events_validated": 58,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 28,
+      "policy": "joint_sla",
+      "requests_validated": 6752,
+      "reservation_events_validated": 50,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 28,
+      "policy": "joint_no_queue",
+      "requests_validated": 6752,
+      "reservation_events_validated": 32,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 28,
+      "policy": "joint_no_slack",
+      "requests_validated": 6752,
+      "reservation_events_validated": 48,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 29,
+      "policy": "sla_rr",
+      "requests_validated": 6051,
+      "reservation_events_validated": 93,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 29,
+      "policy": "sla_shortest_queue",
+      "requests_validated": 6051,
+      "reservation_events_validated": 84,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 29,
+      "policy": "joint_sla",
+      "requests_validated": 6051,
+      "reservation_events_validated": 90,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 29,
+      "policy": "joint_no_queue",
+      "requests_validated": 6051,
+      "reservation_events_validated": 88,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 29,
+      "policy": "joint_no_slack",
+      "requests_validated": 6051,
+      "reservation_events_validated": 98,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 30,
+      "policy": "sla_rr",
+      "requests_validated": 5605,
+      "reservation_events_validated": 70,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 30,
+      "policy": "sla_shortest_queue",
+      "requests_validated": 5605,
+      "reservation_events_validated": 83,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 30,
+      "policy": "joint_sla",
+      "requests_validated": 5605,
+      "reservation_events_validated": 72,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 30,
+      "policy": "joint_no_queue",
+      "requests_validated": 5605,
+      "reservation_events_validated": 45,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    },
+    {
+      "seed": 30,
+      "policy": "joint_no_slack",
+      "requests_validated": 5605,
+      "reservation_events_validated": 71,
+      "node_slots_validated": 500,
+      "latency_component_check": true,
+      "capacity_check": true
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "approximately_baseline_resource_cost": true,
+  "baseline_sla_gap_reduction_fraction": 0.3081572879750092,
+  "direct_replica_ratio": 0.9524038181712355,
+  "direct_vram_ratio": 0.9418701242770082,
+  "failure_criterion_triggered": true,
+  "hypotheses": {
+    "V2-H1": true,
+    "V2-H2": true,
+    "V2-H3": false,
+    "V2-H4": false,
+    "V2-H5": true,
+    "V2-H6": true
+  },
+  "latency_guardrail": "95% paired ratio upper <=1.05 plus supported baseline benefit; diagnostic, not formal powered noninferiority",
+  "materially_worse_than_baseline": true,
+  "no_v3": true,
+  "overall_success": false,
+  "partial_success": true,
+  "residual_sla_gap_pp": 7.451723871893454,
+  "stop": true
+}

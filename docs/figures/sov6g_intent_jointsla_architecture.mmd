@@ -1,0 +1,36 @@
+flowchart TB
+    subgraph context["SOVEREIGN ARCHITECTURAL CONTEXT — conceptual integration"]
+        user["Business / B2B User"]
+        intent["Business / Service Intent"]
+        imf["Intent Management Function<br/>TMF921 conceptual interface<br/>Not implemented in this work"]
+        requirements["Structured SLA + resource requirements<br/>Upstream translation is conceptual"]
+        dso["Digital Service Orchestrator<br/>Candidate integration point<br/>Full DSO is not implemented"]
+        user --> intent --> imf --> requirements --> dso
+    end
+    subgraph research["IMPLEMENTED IN THIS WORK — research simulator and decision functions"]
+        joint["JointSLA Decision Function<br/>Existing requirements + causal telemetry"]
+        placement["Replica Placement<br/>Scale-out targets / migration"]
+        scaling["Scaling<br/>Scale-out / scale-in"]
+        routing["Queue-aware Request Routing<br/>Eligible replica selection"]
+        pool["Edge / Cloud Continuum Resource Model<br/>CPU | GPU | VRAM | Network<br/>Simulated resource domain"]
+        pipeline["AI Service Pipeline<br/>CPU pre → GPU inference → CPU post<br/>Hardware-derived class costs"]
+        monitoring["Monitoring / SLA Assurance Observations<br/>Implemented telemetry and outcome metrics<br/>Full assurance service is conceptual"]
+        joint --> placement
+        joint --> scaling
+        joint --> routing
+        placement --> pool
+        scaling --> pool
+        routing --> pool
+        pool --> pipeline --> monitoring
+        monitoring -->|"Current / past telemetry — implemented loop"| joint
+    end
+    dso -.->|"Proposed adapter — not implemented"| joint
+    monitoring -.->|"Assurance feedback to DSO — conceptual binding"| dso
+    note["Architectural positioning only<br/>No TMF921 compliance or production SOVEREIGN integration claimed<br/>Initial placement preserved in frozen held-out evaluation"]
+    requirements -.-> note
+    classDef conceptual fill:#F2F2F2,stroke:#666666,color:#111111,stroke-dasharray:5 3;
+    classDef implemented fill:#E7EEF4,stroke:#243746,color:#111111;
+    classDef explanatory fill:#FFFFFF,stroke:#888888,color:#111111;
+    class user,intent,imf,requirements,dso conceptual;
+    class joint,placement,scaling,routing,pool,pipeline,monitoring implemented;
+    class note explanatory;

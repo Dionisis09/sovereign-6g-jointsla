@@ -1,0 +1,40 @@
+{
+  "target_pct": 15.0,
+  "evaluations": [
+    {
+      "scenario": "baseline",
+      "mean_offered_failure_pct": 57.19482080083469,
+      "mean_admitted_breach_pct": 57.19482080083469,
+      "target_met": false,
+      "seeds_below_target": 0
+    },
+    {
+      "scenario": "predictive",
+      "mean_offered_failure_pct": 57.35864921222209,
+      "mean_admitted_breach_pct": 57.35864921222209,
+      "target_met": false,
+      "seeds_below_target": 0
+    },
+    {
+      "scenario": "capacity_6",
+      "mean_offered_failure_pct": 44.486169402260614,
+      "mean_admitted_breach_pct": 44.486169402260614,
+      "target_met": false,
+      "seeds_below_target": 0
+    },
+    {
+      "scenario": "capacity_7",
+      "mean_offered_failure_pct": 34.87716717805403,
+      "mean_admitted_breach_pct": 34.87716717805403,
+      "target_met": false,
+      "seeds_below_target": 0
+    },
+    {
+      "scenario": "admission",
+      "mean_offered_failure_pct": 53.76872314724982,
+      "mean_admitted_breach_pct": 51.29584472546699,
+      "target_met": false,
+      "seeds_below_target": 0
+    }
+  ]
+}
