@@ -1,0 +1,178 @@
+{
+  "finalized_date": "2026-10-09",
+  "scope": "completed Kubernetes comparison v2 publication package; unchanged experimental data",
+  "files": {
+    "authoring/build_documents.py": {
+      "sha256": "5a993a2ce148961df742efddae54ce45c0030700dedb4f8af5c9c9e2f316b3f1",
+      "size": 38051
+    },
+    "authoring/build_slides.mjs": {
+      "sha256": "7cc06a37e6e77faf731819b0f9aeceb050e77dc299229ddbcac5ae2aa0480d61",
+      "size": 15296
+    },
+    "authoring/document_layout.py": {
+      "sha256": "649c8d7ec48ebbf27365cba662ab373e6f6aa6b9cca06b33c7758e980dd0e218",
+      "size": 4113
+    },
+    "canonical_results.json": {
+      "sha256": "44ab1db0ba9b43d719a1cf4f7fb75694b97e0af15faa98b3d23233a6ae9af021",
+      "size": 19882
+    },
+    "evidence/FINAL_NUMERIC_CHECK.txt": {
+      "sha256": "4dfc916344ef0b8f4d40ba43dbb896170985bd9f76d98391b7ca6b9c2d0f4ebd",
+      "size": 643
+    },
+    "evidence/FINAL_PRESERVATION_RECEIPT.json": {
+      "sha256": "c770bed3baeedeaeb3a5199db9c8f0c66a66120290d0f562e20e27c876b51b73",
+      "size": 236
+    },
+    "evidence/HISTORICAL_RESULTS_SEAL.json": {
+      "sha256": "ad30888f5e11cee607240da1aeb90f8fb93e34d084fcc5219125d3016870cb0c",
+      "size": 6014097
+    },
+    "evidence/Kubernetes_v2_complete_evidence.zip": {
+      "sha256": "81462a18af99638c6f7ca68b8688632a71c72ef032eba1017fd5ccf9f5cbc580",
+      "size": 47108114
+    },
+    "evidence/TEST_VALIDATION.txt": {
+      "sha256": "4b9bf1292fc617c871fa81406d3e180cc24a12f03348bcbdf777c87f85112457",
+      "size": 200
+    },
+    "evidence/V2_SOURCE_SEAL.json": {
+      "sha256": "5581e8e88dd47405df55b34c79b3fc4faa74907d3e6dd618f0adc4baa4a9f8e8",
+      "size": 296338
+    },
+    "figures/01_sla_failures.pdf": {
+      "sha256": "0d42ae3374cb02033f5eb0bbde68947a005a34619ec7a9a92387c5f2566139b7",
+      "size": 19172
+    },
+    "figures/01_sla_failures.png": {
+      "sha256": "656b9f6c99a3f8bfcffea9f20ae3e2920f8e04dc7b42c74f04313bca084fde0c",
+      "size": 48223
+    },
+    "figures/02_p95_latency.pdf": {
+      "sha256": "dcf964eb64d42764d2d98d6af7fd5dfb5d063d309399efd171f76604e540ab55",
+      "size": 17456
+    },
+    "figures/02_p95_latency.png": {
+      "sha256": "58094c0aaad89d7f03184eb77b8e2c92de5451cea4aedfde3bfc146d654ded02",
+      "size": 52029
+    },
+    "figures/03_http503.pdf": {
+      "sha256": "cd2892684c06879e2bc52de9c35168cb66d74bc9ef82a221ca362697a3cae6bc",
+      "size": 18934
+    },
+    "figures/03_http503.png": {
+      "sha256": "4ae8103fd904f2c5438c16124b0390047b89e4fed47d038717f656f8ae67f414",
+      "size": 43026
+    },
+    "figures/04_replica_cost.pdf": {
+      "sha256": "541ddcaf91b86a6383a2be56ac2fca2f8656fba6058e580d8fab854651e301a1",
+      "size": 16831
+    },
+    "figures/04_replica_cost.png": {
+      "sha256": "68f75a97deb0bcf9e5344d6058c6caeb9447f1ad2848583a878bf56ed8029935",
+      "size": 45303
+    },
+    "figures/05_tier_failures.pdf": {
+      "sha256": "1f840a2f9913c5170d28c200e6fe0d907d7a4f1e7fbd0ea9a9bc860f9b4ecabe",
+      "size": 20281
+    },
+    "figures/05_tier_failures.png": {
+      "sha256": "879e7f5191a1a213cd4dd4da75610e6063e59a52382a90b91e1203364e60bccf",
+      "size": 51081
+    },
+    "figures/06_paired_and_ablations.pdf": {
+      "sha256": "e0eb3653e7b14b2c4d5cba2e04a9f517e8ccc2891ddd3f594327f7ecc8369a44",
+      "size": 18578
+    },
+    "figures/06_paired_and_ablations.png": {
+      "sha256": "ab45e58ab53841d52023511bf170e30cf26afa70333c74a1d757a4e96c018361",
+      "size": 51817
+    },
+    "figures/07_performance_cost.pdf": {
+      "sha256": "71c693687d61f94d143591647d91cd9c35b82ccb0da77dc1bdf9b87f28cbe351",
+      "size": 23734
+    },
+    "figures/07_performance_cost.png": {
+      "sha256": "9cd2f9e5ad4aeb8a92565968495fa7ba3afc93eebbc3683769552ebc6610473f",
+      "size": 95501
+    },
+    "FINAL_CONSISTENCY_CHECK.md": {
+      "sha256": "077d034f9c76099edf13d2825ac2e8aca615190a8fd940eebaceb18209ecad73",
+      "size": 5329
+    },
+    "JointSLA_Conference_Paper_Draft.docx": {
+      "sha256": "f05cba69396188322eba730a55b5ba341ef75799b241126880e1ef501ab592b1",
+      "size": 266211
+    },
+    "JointSLA_Conference_Paper_Draft.md": {
+      "sha256": "35d98a296177bc276c18a7a079ca85c7a0c0568dc21ff39d81ded080a9db1d2c",
+      "size": 19387
+    },
+    "JointSLA_Conference_Presentation.pptx": {
+      "sha256": "e11e95e16795935b4d56be309d79ff8263ecbebc8abf0754537a185fb34f3643",
+      "size": 79638
+    },
+    "JointSLA_Final_Technical_Report.docx": {
+      "sha256": "344ad5c4f24d91574f3046d3c2a4ab5ed90c62975e3c7f1c4cf4b4d0f5098f83",
+      "size": 389299
+    },
+    "JointSLA_Final_Technical_Report.md": {
+      "sha256": "3cfd58c776b110a69515d99bf276db4b6e745eb2845053508ff97ed7317bad01",
+      "size": 25342
+    },
+    "publication_content.json": {
+      "sha256": "0d942fdf8c7f23b9172131be2cdbed1b4d32ef42481a8d81b6d07981e495cf35",
+      "size": 63812
+    },
+    "README.md": {
+      "sha256": "1f70b2023a6995384863f8a6164f964e06664cc0057894c42b8311c3e7db214e",
+      "size": 7526
+    },
+    "reproduce_publication_analysis.py": {
+      "sha256": "25338cf6967022033d749cc6f8b3496e27d92f9b719ff5452c29a3c6c5a24c95",
+      "size": 8532
+    },
+    "requirements-analysis.txt": {
+      "sha256": "052c20e6996aa3cdba2f8d9e4261553c9fd85056cef003cb020b065aa6731d76",
+      "size": 126
+    },
+    "tables/ablation_results.csv": {
+      "sha256": "85d26a76de7773a3b882dd0559ef7f8cbf40306e89e85f98b129b1c1c983e793",
+      "size": 741
+    },
+    "tables/all_180_runs.csv": {
+      "sha256": "aaf6672c3c9ba1d91454c0f4ad5a65bd3ba6d890a89d0bf6ce2afedf97187c2c",
+      "size": 85334
+    },
+    "tables/failure_attribution.csv": {
+      "sha256": "cbcde5310b6a68192680ce45239398eae2a8350379f3a433981555128e894e1a",
+      "size": 1709
+    },
+    "tables/paired_sla_comparisons.csv": {
+      "sha256": "8ea24aa1c8e0fb9bb7d6f353fafd2a2f167a08f06227c5bf8432d0fc7df6e427",
+      "size": 773
+    },
+    "tables/per_tier_failures.csv": {
+      "sha256": "a85c5f886b225f57d96de701f863b906640e4e49fafa13ca36db0728e14ef0aa",
+      "size": 1654
+    },
+    "tables/policy_summary.csv": {
+      "sha256": "83aa7e9ed0107c77788ce949eaa102bfd9666351e077e32b812d0d1dd9e0de5e",
+      "size": 3943
+    },
+    "tables/resource_tradeoff.csv": {
+      "sha256": "5f17bd258aaba2f67db3a48200816579bae1afbe743d4062fffa8598cb2eae8e",
+      "size": 862
+    },
+    "validate_publication.py": {
+      "sha256": "d0c9bd6fb645cfc42e42983ac81bad5fccbdf23dbbc3caa306f7ae6140d90e55",
+      "size": 6764
+    },
+    "verify_preservation.py": {
+      "sha256": "ec680ef2b4d727c22a345c8252ea39655c5f28b09d556be6ccc2091ea19cdd8c",
+      "size": 1969
+    }
+  }
+}

@@ -12,7 +12,7 @@ from dashboard.metrics import METRICS, spec, policy_label, paired_table, wide_me
 from dashboard.data_validation import validate
 from dashboard.styles import apply
 
-PAGES=['Overview','System & JointSLA','Synthetic Results','Scalability','Controller Optimization',
+PAGES=['Overview','Kubernetes Comparison v2','System & JointSLA','Synthetic Results','Scalability','Controller Optimization',
  'Strong Baseline','Hardware Profiling','Hardware-Grounded Reversal','Pressure Sweep','Tier Behavior',
  'Model Class Behavior','Mechanism Analysis','Burst Recovery','JointSLA-v2','v2 Held-out Results',
  'Performance–Resource Trade-off','SOVEREIGN / Intent','Experiment Timeline','Research Story','Data / Reproducibility','Live Experiments']
@@ -28,7 +28,8 @@ with st.sidebar:
     st.caption('SOVEREIGN-6G · frozen research evidence')
     presentation=st.toggle('Presentation Mode',key='presentation')
     learn=st.toggle('Learning Mode',key='learning')
-    page=st.radio('PROJECT',PAGES,key='page')
+    initial=PAGES.index('Kubernetes Comparison v2') if st.query_params.get('view')=='kubernetes-v2' else 0
+    page=st.radio('PROJECT',PAGES,index=initial,key='page')
     st.divider()
     st.caption('Frozen evidence stays read-only. Live replays have separate outputs.')
 apply(presentation)
@@ -169,10 +170,15 @@ def generic(dataset,conclusion=None):
 if page=='Live Experiments':
     from dashboard.live_page import render
     render(presentation)
+elif page=='Kubernetes Comparison v2':
+    from dashboard.publication import render
+    render(presentation)
 elif page=='Overview':
     st.title('When Coupled Edge-AI Orchestration Helps — and When It Hurts')
     st.write('Hardware-grounded characterization of performance, resource, and recovery trade-offs')
     st.info(QUESTION)
+    from dashboard.publication import overview
+    overview()
     cols=st.columns(4)
     messages=[('Synthetic regime','JointSLA improves SLA + latency'),('Hardware-grounded 1×','JointSLA-v1 loses aggregate SLA'),
               ('High pressure 2×','JointSLA-v1 strongly improves tail latency'),('Held-out v2','Gold improves; overall trade-off remains')]
@@ -439,6 +445,7 @@ elif page=='Research Story':
 
 elif page=='Data / Reproducibility':
     st.title('Data lineage & reproducibility')
+    st.info('The final Kubernetes comparison and publication downloads are available under Kubernetes Comparison v2. Its 230,400 outcomes remain separate from the simulator results below.')
     validation=dl.load_json('Held-out','validation.json')
     cols=st.columns(2)
     cols[0].metric('Held-out exported outcomes verified',f'{validation.get("exported_request_outcomes_verified",0):,}' if validation else ui.UNAVAILABLE)

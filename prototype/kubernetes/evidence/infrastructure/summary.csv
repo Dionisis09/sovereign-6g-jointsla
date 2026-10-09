@@ -1,0 +1,4 @@
+phase,seed,offered,completed,sla_failure_percent,rejected_percent,transport_error_percent,mean_completed_latency_ms,p95_completed_latency_ms
+baseline,11,60,60,0.0,0.0,0.0,124.15460833323475,188.23031000101764
+burst,23,1280,852,47.265625,33.4375,0.0,204.56968791081272,307.1219200001906
+failure,31,80,80,0.0,0.0,0.0,29.927712500011694,41.468655000244304

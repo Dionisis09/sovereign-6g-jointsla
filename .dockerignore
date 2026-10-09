@@ -1,0 +1,16 @@
+.git
+.venv
+.cache
+**/.cache
+**/__pycache__
+.pytest_cache
+.pytest-tmp
+results
+output
+docs
+tests
+dashboard/screenshots
+.env
+.env.*
+**/*.pem
+**/*.key

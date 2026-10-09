@@ -1,5 +1,14 @@
 # CATALYST: runtime cross-layer contracts, Phase 0
 
+The separate [real-inference infrastructure prototype](prototype/README.md)
+adds Docker, real PyTorch serving, Prometheus/Grafana and a scoped Kubernetes
+adapter. Frozen simulator/paper results remain unchanged.
+
+Final local prototype deliverables: [unified JointSLA report](JOINTSLA_FINAL_REPORT.md)
+and [live infrastructure dashboard](http://127.0.0.1:3001/d/jointsla-runtime).
+The dated audit verified 306 tests / 1,420 outcomes; the dashboard extension
+passes 310 tests. The report keeps the 38.83% and 47.27% burst runs separate.
+
 The statistical paper evaluation is documented in
 [paper_evaluation/README.md](paper_evaluation/README.md). Run
 `python run_paper_experiments.py --seeds 1:30 --reuse-results` to reproduce the
@@ -88,3 +97,16 @@ No request rejection, autonomous agents, deployment infrastructure, RL, digital
 twin, extra baselines, or broad policy language is implemented. Quality scores
 and service profiles are stipulated. This experiment can reject the mechanism's
 Phase 0 hypothesis; it cannot establish real-world performance or novelty.
+
+
+## Real Kubernetes comparative validation
+
+The unchanged JointSLA runtime is being evaluated against static, CPU-reactive
+and native HPA policies plus two registered scaling/routing controls. The isolated
+lab preserves historical experiments and the primary dashboard. See the
+[benchmark instructions](prototype/benchmark/README.md),
+[frozen evaluation protocol](prototype/kubernetes/RESEARCH_EVALUATION_PROTOCOL.md),
+and [contribution scope](prototype/kubernetes/COMPARATIVE_NOVELTY_SCOPE.md).
+The main experiment has 30 paired seeds, 180 trials and 230,400 offered requests.
+Progress is recorded in `prototype/.cache/kubernetes_comparison_v2/progress.json`;
+only completion plus independently reconstructed analysis supports final findings.

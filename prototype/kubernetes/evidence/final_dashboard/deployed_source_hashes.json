@@ -1,0 +1,8 @@
+{
+  "prototype/gateway.py": "c1577e875e35136297e8cd0ced12a5b00be3ca2398bc4930daf8a1eaf33c5b53",
+  "prototype/kubernetes/observability.py": "e4204bb0c8f3cb3aed1e6a35737bcd6ae70edb1f23bd80cdbb29a59d201cb5ac",
+  "prototype/controller.py": "82699b391d860c16024892c0264de1461393486997cf5f49bbed461290333960",
+  "prototype/telemetry.py": "402d4c3f45ced19e589c9f4e400b6f943197413fbb8321ff9a403ef383d6d50c",
+  "joint_routing/router.py": "6b6508a6f9eec9eca391829fb665858135d66ce84f2b335a2be5c9beae7af61d",
+  "joint_sla_v2/policy.py": "4f324929dfca0bc057ff3b8f59265a5932c976f57b21a26d9a23d34c44cabd3a"
+}

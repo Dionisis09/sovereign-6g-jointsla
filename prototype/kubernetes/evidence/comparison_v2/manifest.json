@@ -1,0 +1,1224 @@
+{
+  "deployment_snapshot": {
+    "apiVersion": "v1",
+    "items": [
+      {
+        "apiVersion": "apps/v1",
+        "kind": "Deployment",
+        "metadata": {
+          "annotations": {
+            "deployment.kubernetes.io/revision": "2",
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{\"deployment.kubernetes.io/revision\":\"1\"},\"name\":\"inference\",\"namespace\":\"jointsla-prototype\"},\"spec\":{\"progressDeadlineSeconds\":600,\"replicas\":2,\"revisionHistoryLimit\":10,\"selector\":{\"matchLabels\":{\"app\":\"jointsla-inference\"}},\"strategy\":{\"rollingUpdate\":{\"maxSurge\":1,\"maxUnavailable\":0},\"type\":\"RollingUpdate\"},\"template\":{\"metadata\":{\"annotations\":{\"prometheus.io/port\":\"8080\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app\":\"jointsla-inference\"}},\"spec\":{\"automountServiceAccountToken\":false,\"containers\":[{\"env\":[{\"name\":\"PRETRAINED\",\"value\":\"true\"},{\"name\":\"DEVICE\",\"value\":\"cpu\"},{\"name\":\"POD_NAME\",\"valueFrom\":{\"fieldRef\":{\"fieldPath\":\"metadata.name\"}}},{\"name\":\"POD_UID\",\"valueFrom\":{\"fieldRef\":{\"fieldPath\":\"metadata.uid\"}}}],\"image\":\"jointsla-benchmark-inference:d847073cd9511ea6\",\"imagePullPolicy\":\"Never\",\"lifecycle\":{\"preStop\":{\"exec\":{\"command\":[\"python\",\"-c\",\"import time; time.sleep(2)\"]}}},\"livenessProbe\":{\"failureThreshold\":3,\"httpGet\":{\"path\":\"/live\",\"port\":8080,\"scheme\":\"HTTP\"},\"periodSeconds\":10,\"successThreshold\":1,\"timeoutSeconds\":2},\"name\":\"inference\",\"ports\":[{\"containerPort\":8080,\"protocol\":\"TCP\"}],\"readinessProbe\":{\"failureThreshold\":1,\"httpGet\":{\"path\":\"/ready\",\"port\":8080,\"scheme\":\"HTTP\"},\"periodSeconds\":2,\"successThreshold\":1,\"timeoutSeconds\":1},\"resources\":{\"limits\":{\"cpu\":\"1\",\"memory\":\"2Gi\"},\"requests\":{\"cpu\":\"500m\",\"memory\":\"1Gi\"}},\"securityContext\":{\"allowPrivilegeEscalation\":false,\"capabilities\":{\"drop\":[\"ALL\"]},\"readOnlyRootFilesystem\":true},\"startupProbe\":{\"failureThreshold\":150,\"httpGet\":{\"path\":\"/live\",\"port\":8080,\"scheme\":\"HTTP\"},\"periodSeconds\":2,\"successThreshold\":1,\"timeoutSeconds\":1},\"terminationMessagePath\":\"/dev/termination-log\",\"terminationMessagePolicy\":\"File\",\"volumeMounts\":[{\"mountPath\":\"/tmp\",\"name\":\"tmp\"}]}],\"dnsPolicy\":\"ClusterFirst\",\"restartPolicy\":\"Always\",\"schedulerName\":\"default-scheduler\",\"securityContext\":{\"runAsGroup\":1000,\"runAsNonRoot\":true,\"runAsUser\":1000,\"seccompProfile\":{\"type\":\"RuntimeDefault\"}},\"terminationGracePeriodSeconds\":75,\"volumes\":[{\"emptyDir\":{\"sizeLimit\":\"128Mi\"},\"name\":\"tmp\"}]}}}}\n"
+          },
+          "creationTimestamp": "2026-10-08T17:09:31Z",
+          "generation": 13,
+          "name": "inference",
+          "namespace": "jointsla-prototype",
+          "resourceVersion": "4227",
+          "uid": "04ec5480-7a84-4aac-bb26-72dff8bbcf1d"
+        },
+        "spec": {
+          "progressDeadlineSeconds": 600,
+          "replicas": 2,
+          "revisionHistoryLimit": 10,
+          "selector": {
+            "matchLabels": {
+              "app": "jointsla-inference"
+            }
+          },
+          "strategy": {
+            "rollingUpdate": {
+              "maxSurge": 1,
+              "maxUnavailable": 0
+            },
+            "type": "RollingUpdate"
+          },
+          "template": {
+            "metadata": {
+              "annotations": {
+                "prometheus.io/port": "8080",
+                "prometheus.io/scrape": "true"
+              },
+              "labels": {
+                "app": "jointsla-inference"
+              }
+            },
+            "spec": {
+              "automountServiceAccountToken": false,
+              "containers": [
+                {
+                  "env": [
+                    {
+                      "name": "PRETRAINED",
+                      "value": "true"
+                    },
+                    {
+                      "name": "DEVICE",
+                      "value": "cpu"
+                    },
+                    {
+                      "name": "POD_NAME",
+                      "valueFrom": {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.name"
+                        }
+                      }
+                    },
+                    {
+                      "name": "POD_UID",
+                      "valueFrom": {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.uid"
+                        }
+                      }
+                    }
+                  ],
+                  "image": "jointsla-benchmark-inference:d847073cd9511ea6",
+                  "imagePullPolicy": "Never",
+                  "lifecycle": {
+                    "preStop": {
+                      "exec": {
+                        "command": [
+                          "python",
+                          "-c",
+                          "import time; time.sleep(2)"
+                        ]
+                      }
+                    }
+                  },
+                  "livenessProbe": {
+                    "failureThreshold": 3,
+                    "httpGet": {
+                      "path": "/live",
+                      "port": 8080,
+                      "scheme": "HTTP"
+                    },
+                    "periodSeconds": 10,
+                    "successThreshold": 1,
+                    "timeoutSeconds": 2
+                  },
+                  "name": "inference",
+                  "ports": [
+                    {
+                      "containerPort": 8080,
+                      "protocol": "TCP"
+                    }
+                  ],
+                  "readinessProbe": {
+                    "failureThreshold": 1,
+                    "httpGet": {
+                      "path": "/ready",
+                      "port": 8080,
+                      "scheme": "HTTP"
+                    },
+                    "periodSeconds": 2,
+                    "successThreshold": 1,
+                    "timeoutSeconds": 1
+                  },
+                  "resources": {
+                    "limits": {
+                      "cpu": "1",
+                      "memory": "2Gi"
+                    },
+                    "requests": {
+                      "cpu": "500m",
+                      "memory": "1Gi"
+                    }
+                  },
+                  "securityContext": {
+                    "allowPrivilegeEscalation": false,
+                    "capabilities": {
+                      "drop": [
+                        "ALL"
+                      ]
+                    },
+                    "readOnlyRootFilesystem": true
+                  },
+                  "startupProbe": {
+                    "failureThreshold": 150,
+                    "httpGet": {
+                      "path": "/live",
+                      "port": 8080,
+                      "scheme": "HTTP"
+                    },
+                    "periodSeconds": 2,
+                    "successThreshold": 1,
+                    "timeoutSeconds": 1
+                  },
+                  "terminationMessagePath": "/dev/termination-log",
+                  "terminationMessagePolicy": "File",
+                  "volumeMounts": [
+                    {
+                      "mountPath": "/tmp",
+                      "name": "tmp"
+                    }
+                  ]
+                }
+              ],
+              "dnsPolicy": "ClusterFirst",
+              "restartPolicy": "Always",
+              "schedulerName": "default-scheduler",
+              "securityContext": {
+                "runAsGroup": 1000,
+                "runAsNonRoot": true,
+                "runAsUser": 1000,
+                "seccompProfile": {
+                  "type": "RuntimeDefault"
+                }
+              },
+              "terminationGracePeriodSeconds": 75,
+              "volumes": [
+                {
+                  "emptyDir": {
+                    "sizeLimit": "128Mi"
+                  },
+                  "name": "tmp"
+                }
+              ]
+            }
+          }
+        },
+        "status": {
+          "availableReplicas": 2,
+          "conditions": [
+            {
+              "lastTransitionTime": "2026-10-08T17:09:31Z",
+              "lastUpdateTime": "2026-10-08T17:19:25Z",
+              "message": "ReplicaSet \"inference-6fbf8c9759\" has successfully progressed.",
+              "reason": "NewReplicaSetAvailable",
+              "status": "True",
+              "type": "Progressing"
+            },
+            {
+              "lastTransitionTime": "2026-10-08T17:36:37Z",
+              "lastUpdateTime": "2026-10-08T17:36:37Z",
+              "message": "Deployment has minimum availability.",
+              "reason": "MinimumReplicasAvailable",
+              "status": "True",
+              "type": "Available"
+            }
+          ],
+          "observedGeneration": 13,
+          "readyReplicas": 2,
+          "replicas": 2,
+          "terminatingReplicas": 0,
+          "updatedReplicas": 2
+        }
+      },
+      {
+        "apiVersion": "apps/v1",
+        "kind": "Deployment",
+        "metadata": {
+          "annotations": {
+            "deployment.kubernetes.io/revision": "22",
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{\"deployment.kubernetes.io/revision\":\"1\"},\"name\":\"gateway\",\"namespace\":\"jointsla-prototype\"},\"spec\":{\"progressDeadlineSeconds\":600,\"replicas\":1,\"revisionHistoryLimit\":10,\"selector\":{\"matchLabels\":{\"app\":\"jointsla-gateway\"}},\"strategy\":{\"type\":\"Recreate\"},\"template\":{\"metadata\":{\"annotations\":{\"prometheus.io/port\":\"8090\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app\":\"jointsla-gateway\"}},\"spec\":{\"containers\":[{\"env\":[{\"name\":\"BACKEND\",\"value\":\"kubernetes\"},{\"name\":\"POD_NAME\",\"valueFrom\":{\"fieldRef\":{\"fieldPath\":\"metadata.name\"}}},{\"name\":\"POD_UID\",\"valueFrom\":{\"fieldRef\":{\"fieldPath\":\"metadata.uid\"}}},{\"name\":\"BENCHMARK_POLICY\",\"value\":\"joint\"}],\"image\":\"jointsla-benchmark-gateway:9ef216cafcf3281b\",\"imagePullPolicy\":\"Never\",\"lifecycle\":{\"preStop\":{\"exec\":{\"command\":[\"python\",\"-c\",\"import time; time.sleep(2)\"]}}},\"livenessProbe\":{\"failureThreshold\":3,\"httpGet\":{\"path\":\"/live\",\"port\":8090,\"scheme\":\"HTTP\"},\"periodSeconds\":10,\"successThreshold\":1,\"timeoutSeconds\":2},\"name\":\"gateway\",\"ports\":[{\"containerPort\":8090,\"protocol\":\"TCP\"}],\"readinessProbe\":{\"failureThreshold\":1,\"httpGet\":{\"path\":\"/ready\",\"port\":8090,\"scheme\":\"HTTP\"},\"periodSeconds\":2,\"successThreshold\":1,\"timeoutSeconds\":1},\"resources\":{\"limits\":{\"cpu\":\"1\",\"memory\":\"512Mi\"},\"requests\":{\"cpu\":\"100m\",\"memory\":\"256Mi\"}},\"securityContext\":{\"allowPrivilegeEscalation\":false,\"capabilities\":{\"drop\":[\"ALL\"]},\"readOnlyRootFilesystem\":true},\"startupProbe\":{\"failureThreshold\":150,\"httpGet\":{\"path\":\"/live\",\"port\":8090,\"scheme\":\"HTTP\"},\"periodSeconds\":2,\"successThreshold\":1,\"timeoutSeconds\":1},\"terminationMessagePath\":\"/dev/termination-log\",\"terminationMessagePolicy\":\"File\",\"volumeMounts\":[{\"mountPath\":\"/tmp\",\"name\":\"tmp\"}]}],\"dnsPolicy\":\"ClusterFirst\",\"restartPolicy\":\"Always\",\"schedulerName\":\"default-scheduler\",\"securityContext\":{\"runAsGroup\":1000,\"runAsNonRoot\":true,\"runAsUser\":1000,\"seccompProfile\":{\"type\":\"RuntimeDefault\"}},\"serviceAccount\":\"jointsla-controller\",\"serviceAccountName\":\"jointsla-controller\",\"terminationGracePeriodSeconds\":75,\"volumes\":[{\"emptyDir\":{\"sizeLimit\":\"128Mi\"},\"name\":\"tmp\"}]}}}}\n"
+          },
+          "creationTimestamp": "2026-10-08T17:09:31Z",
+          "generation": 52,
+          "name": "gateway",
+          "namespace": "jointsla-prototype",
+          "resourceVersion": "5793",
+          "uid": "daaca176-f238-4784-9a13-f8865b095e0d"
+        },
+        "spec": {
+          "progressDeadlineSeconds": 600,
+          "replicas": 1,
+          "revisionHistoryLimit": 10,
+          "selector": {
+            "matchLabels": {
+              "app": "jointsla-gateway"
+            }
+          },
+          "strategy": {
+            "type": "Recreate"
+          },
+          "template": {
+            "metadata": {
+              "annotations": {
+                "prometheus.io/port": "8090",
+                "prometheus.io/scrape": "true"
+              },
+              "labels": {
+                "app": "jointsla-gateway"
+              }
+            },
+            "spec": {
+              "containers": [
+                {
+                  "env": [
+                    {
+                      "name": "BACKEND",
+                      "value": "kubernetes"
+                    },
+                    {
+                      "name": "POD_NAME",
+                      "valueFrom": {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.name"
+                        }
+                      }
+                    },
+                    {
+                      "name": "POD_UID",
+                      "valueFrom": {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.uid"
+                        }
+                      }
+                    },
+                    {
+                      "name": "BENCHMARK_POLICY",
+                      "value": "reactive_joint"
+                    }
+                  ],
+                  "image": "jointsla-benchmark-gateway:9ef216cafcf3281b",
+                  "imagePullPolicy": "Never",
+                  "lifecycle": {
+                    "preStop": {
+                      "exec": {
+                        "command": [
+                          "python",
+                          "-c",
+                          "import time; time.sleep(2)"
+                        ]
+                      }
+                    }
+                  },
+                  "livenessProbe": {
+                    "failureThreshold": 3,
+                    "httpGet": {
+                      "path": "/live",
+                      "port": 8090,
+                      "scheme": "HTTP"
+                    },
+                    "periodSeconds": 10,
+                    "successThreshold": 1,
+                    "timeoutSeconds": 2
+                  },
+                  "name": "gateway",
+                  "ports": [
+                    {
+                      "containerPort": 8090,
+                      "protocol": "TCP"
+                    }
+                  ],
+                  "readinessProbe": {
+                    "failureThreshold": 1,
+                    "httpGet": {
+                      "path": "/ready",
+                      "port": 8090,
+                      "scheme": "HTTP"
+                    },
+                    "periodSeconds": 2,
+                    "successThreshold": 1,
+                    "timeoutSeconds": 1
+                  },
+                  "resources": {
+                    "limits": {
+                      "cpu": "1",
+                      "memory": "512Mi"
+                    },
+                    "requests": {
+                      "cpu": "100m",
+                      "memory": "256Mi"
+                    }
+                  },
+                  "securityContext": {
+                    "allowPrivilegeEscalation": false,
+                    "capabilities": {
+                      "drop": [
+                        "ALL"
+                      ]
+                    },
+                    "readOnlyRootFilesystem": true
+                  },
+                  "startupProbe": {
+                    "failureThreshold": 150,
+                    "httpGet": {
+                      "path": "/live",
+                      "port": 8090,
+                      "scheme": "HTTP"
+                    },
+                    "periodSeconds": 2,
+                    "successThreshold": 1,
+                    "timeoutSeconds": 1
+                  },
+                  "terminationMessagePath": "/dev/termination-log",
+                  "terminationMessagePolicy": "File",
+                  "volumeMounts": [
+                    {
+                      "mountPath": "/tmp",
+                      "name": "tmp"
+                    }
+                  ]
+                }
+              ],
+              "dnsPolicy": "ClusterFirst",
+              "restartPolicy": "Always",
+              "schedulerName": "default-scheduler",
+              "securityContext": {
+                "runAsGroup": 1000,
+                "runAsNonRoot": true,
+                "runAsUser": 1000,
+                "seccompProfile": {
+                  "type": "RuntimeDefault"
+                }
+              },
+              "serviceAccount": "jointsla-controller",
+              "serviceAccountName": "jointsla-controller",
+              "terminationGracePeriodSeconds": 75,
+              "volumes": [
+                {
+                  "emptyDir": {
+                    "sizeLimit": "128Mi"
+                  },
+                  "name": "tmp"
+                }
+              ]
+            }
+          }
+        },
+        "status": {
+          "availableReplicas": 1,
+          "conditions": [
+            {
+              "lastTransitionTime": "2026-10-08T17:09:31Z",
+              "lastUpdateTime": "2026-10-08T17:26:16Z",
+              "message": "ReplicaSet \"gateway-59f9f848f8\" has successfully progressed.",
+              "reason": "NewReplicaSetAvailable",
+              "status": "True",
+              "type": "Progressing"
+            },
+            {
+              "lastTransitionTime": "2026-10-08T17:50:03Z",
+              "lastUpdateTime": "2026-10-08T17:50:03Z",
+              "message": "Deployment has minimum availability.",
+              "reason": "MinimumReplicasAvailable",
+              "status": "True",
+              "type": "Available"
+            }
+          ],
+          "observedGeneration": 52,
+          "readyReplicas": 1,
+          "replicas": 1,
+          "terminatingReplicas": 0,
+          "updatedReplicas": 1
+        }
+      }
+    ],
+    "kind": "List",
+    "metadata": {
+      "resourceVersion": ""
+    }
+  },
+  "controller_snapshot": {
+    "apiVersion": "v1",
+    "items": [
+      {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "metadata": {
+          "annotations": {
+            "kubernetes.io/config.hash": "26547f18e967000aa11fe90c1611ad2d",
+            "kubernetes.io/config.mirror": "26547f18e967000aa11fe90c1611ad2d",
+            "kubernetes.io/config.seen": "2026-10-08T17:08:04.114195757Z",
+            "kubernetes.io/config.source": "file"
+          },
+          "creationTimestamp": "2026-10-08T17:08:04Z",
+          "generation": 1,
+          "labels": {
+            "component": "kube-controller-manager",
+            "tier": "control-plane"
+          },
+          "name": "kube-controller-manager-jointsla-validation-control-plane",
+          "namespace": "kube-system",
+          "ownerReferences": [
+            {
+              "apiVersion": "v1",
+              "controller": true,
+              "kind": "Node",
+              "name": "jointsla-validation-control-plane",
+              "uid": "4aab65d8-f9e2-48bd-8130-9458061c3643"
+            }
+          ],
+          "resourceVersion": "423",
+          "uid": "1217e47a-e3f1-4ac4-a325-0265f6b80122"
+        },
+        "spec": {
+          "containers": [
+            {
+              "command": [
+                "kube-controller-manager",
+                "--allocate-node-cidrs=true",
+                "--authentication-kubeconfig=/etc/kubernetes/controller-manager.conf",
+                "--authorization-kubeconfig=/etc/kubernetes/controller-manager.conf",
+                "--bind-address=127.0.0.1",
+                "--client-ca-file=/etc/kubernetes/pki/ca.crt",
+                "--cluster-cidr=10.244.0.0/16",
+                "--cluster-name=jointsla-validation",
+                "--cluster-signing-cert-file=/etc/kubernetes/pki/ca.crt",
+                "--cluster-signing-key-file=/etc/kubernetes/pki/ca.key",
+                "--controllers=*,bootstrapsigner,tokencleaner",
+                "--kubeconfig=/etc/kubernetes/controller-manager.conf",
+                "--leader-elect=true",
+                "--requestheader-client-ca-file=/etc/kubernetes/pki/front-proxy-ca.crt",
+                "--root-ca-file=/etc/kubernetes/pki/ca.crt",
+                "--service-account-private-key-file=/etc/kubernetes/pki/sa.key",
+                "--service-cluster-ip-range=10.96.0.0/16",
+                "--use-service-account-credentials=true",
+                "--enable-hostpath-provisioner=true"
+              ],
+              "image": "registry.k8s.io/kube-controller-manager:v1.36.4",
+              "imagePullPolicy": "IfNotPresent",
+              "livenessProbe": {
+                "failureThreshold": 8,
+                "httpGet": {
+                  "host": "127.0.0.1",
+                  "path": "/healthz",
+                  "port": "probe-port",
+                  "scheme": "HTTPS"
+                },
+                "initialDelaySeconds": 10,
+                "periodSeconds": 10,
+                "successThreshold": 1,
+                "timeoutSeconds": 15
+              },
+              "name": "kube-controller-manager",
+              "ports": [
+                {
+                  "containerPort": 10257,
+                  "hostPort": 10257,
+                  "name": "probe-port",
+                  "protocol": "TCP"
+                }
+              ],
+              "resources": {
+                "requests": {
+                  "cpu": "200m"
+                }
+              },
+              "startupProbe": {
+                "failureThreshold": 24,
+                "httpGet": {
+                  "host": "127.0.0.1",
+                  "path": "/healthz",
+                  "port": "probe-port",
+                  "scheme": "HTTPS"
+                },
+                "initialDelaySeconds": 10,
+                "periodSeconds": 10,
+                "successThreshold": 1,
+                "timeoutSeconds": 15
+              },
+              "terminationMessagePath": "/dev/termination-log",
+              "terminationMessagePolicy": "File",
+              "volumeMounts": [
+                {
+                  "mountPath": "/etc/ssl/certs",
+                  "name": "ca-certs",
+                  "readOnly": true
+                },
+                {
+                  "mountPath": "/etc/ca-certificates",
+                  "name": "etc-ca-certificates",
+                  "readOnly": true
+                },
+                {
+                  "mountPath": "/etc/kubernetes/pki",
+                  "name": "k8s-certs",
+                  "readOnly": true
+                },
+                {
+                  "mountPath": "/etc/kubernetes/controller-manager.conf",
+                  "name": "kubeconfig",
+                  "readOnly": true
+                },
+                {
+                  "mountPath": "/usr/local/share/ca-certificates",
+                  "name": "usr-local-share-ca-certificates",
+                  "readOnly": true
+                },
+                {
+                  "mountPath": "/usr/share/ca-certificates",
+                  "name": "usr-share-ca-certificates",
+                  "readOnly": true
+                }
+              ]
+            }
+          ],
+          "dnsPolicy": "ClusterFirst",
+          "enableServiceLinks": true,
+          "hostNetwork": true,
+          "nodeName": "jointsla-validation-control-plane",
+          "preemptionPolicy": "PreemptLowerPriority",
+          "priority": 2000001000,
+          "priorityClassName": "system-node-critical",
+          "restartPolicy": "Always",
+          "schedulerName": "default-scheduler",
+          "securityContext": {
+            "seccompProfile": {
+              "type": "RuntimeDefault"
+            }
+          },
+          "terminationGracePeriodSeconds": 30,
+          "tolerations": [
+            {
+              "effect": "NoExecute",
+              "operator": "Exists"
+            }
+          ],
+          "volumes": [
+            {
+              "hostPath": {
+                "path": "/etc/ssl/certs",
+                "type": "DirectoryOrCreate"
+              },
+              "name": "ca-certs"
+            },
+            {
+              "hostPath": {
+                "path": "/etc/ca-certificates",
+                "type": "DirectoryOrCreate"
+              },
+              "name": "etc-ca-certificates"
+            },
+            {
+              "hostPath": {
+                "path": "/etc/kubernetes/pki",
+                "type": "DirectoryOrCreate"
+              },
+              "name": "k8s-certs"
+            },
+            {
+              "hostPath": {
+                "path": "/etc/kubernetes/controller-manager.conf",
+                "type": "FileOrCreate"
+              },
+              "name": "kubeconfig"
+            },
+            {
+              "hostPath": {
+                "path": "/usr/local/share/ca-certificates",
+                "type": "DirectoryOrCreate"
+              },
+              "name": "usr-local-share-ca-certificates"
+            },
+            {
+              "hostPath": {
+                "path": "/usr/share/ca-certificates",
+                "type": "DirectoryOrCreate"
+              },
+              "name": "usr-share-ca-certificates"
+            }
+          ]
+        },
+        "status": {
+          "allocatedResources": {
+            "cpu": "200m"
+          },
+          "conditions": [
+            {
+              "lastProbeTime": null,
+              "lastTransitionTime": "2026-10-08T17:08:04Z",
+              "status": "True",
+              "type": "PodReadyToStartContainers"
+            },
+            {
+              "lastProbeTime": null,
+              "lastTransitionTime": "2026-10-08T17:08:04Z",
+              "status": "True",
+              "type": "Initialized"
+            },
+            {
+              "lastProbeTime": null,
+              "lastTransitionTime": "2026-10-08T17:08:21Z",
+              "status": "True",
+              "type": "Ready"
+            },
+            {
+              "lastProbeTime": null,
+              "lastTransitionTime": "2026-10-08T17:08:21Z",
+              "status": "True",
+              "type": "ContainersReady"
+            },
+            {
+              "lastProbeTime": null,
+              "lastTransitionTime": "2026-10-08T17:08:04Z",
+              "status": "True",
+              "type": "PodScheduled"
+            }
+          ],
+          "containerStatuses": [
+            {
+              "allocatedResources": {
+                "cpu": "200m"
+              },
+              "containerID": "containerd://d1ef7c0c1ec55f6c38f8b3f572c36ceeba01f31ce1077b731bd0688466ca7b08",
+              "image": "registry.k8s.io/kube-controller-manager-amd64:v1.36.4",
+              "imageID": "docker.io/library/import-2026-08-26@sha256:5d1180ec5fa02cc8ffe2244491197efc92b5afe8637dbd2267cdb3a2102cde9c",
+              "lastState": {},
+              "name": "kube-controller-manager",
+              "ready": true,
+              "resources": {
+                "requests": {
+                  "cpu": "200m"
+                }
+              },
+              "restartCount": 0,
+              "started": true,
+              "state": {
+                "running": {
+                  "startedAt": "2026-10-08T17:08:00Z"
+                }
+              },
+              "user": {
+                "linux": {
+                  "gid": 0,
+                  "supplementalGroups": [
+                    0
+                  ],
+                  "uid": 0
+                }
+              }
+            }
+          ],
+          "hostIP": "172.20.0.3",
+          "hostIPs": [
+            {
+              "ip": "172.20.0.3"
+            }
+          ],
+          "phase": "Running",
+          "podIP": "172.20.0.3",
+          "podIPs": [
+            {
+              "ip": "172.20.0.3"
+            }
+          ],
+          "qosClass": "Burstable",
+          "resources": {
+            "requests": {
+              "cpu": "200m"
+            }
+          },
+          "startTime": "2026-10-08T17:08:04Z"
+        }
+      }
+    ],
+    "kind": "List",
+    "metadata": {
+      "resourceVersion": ""
+    }
+  },
+  "frozen_utc": "2026-10-08T17:53:24.971327+00:00",
+  "protocol_version": "kubernetes-comparison-v2",
+  "blocks": 30,
+  "policies": [
+    "static",
+    "reactive",
+    "hpa",
+    "joint",
+    "joint_sq",
+    "reactive_joint"
+  ],
+  "schedule": [
+    {
+      "block": 0,
+      "seed": 1001,
+      "order": [
+        "reactive",
+        "static",
+        "reactive_joint",
+        "hpa",
+        "joint",
+        "joint_sq"
+      ]
+    },
+    {
+      "block": 1,
+      "seed": 1002,
+      "order": [
+        "hpa",
+        "joint",
+        "joint_sq",
+        "reactive",
+        "static",
+        "reactive_joint"
+      ]
+    },
+    {
+      "block": 2,
+      "seed": 1003,
+      "order": [
+        "joint",
+        "joint_sq",
+        "reactive",
+        "static",
+        "reactive_joint",
+        "hpa"
+      ]
+    },
+    {
+      "block": 3,
+      "seed": 1004,
+      "order": [
+        "joint_sq",
+        "reactive",
+        "static",
+        "reactive_joint",
+        "hpa",
+        "joint"
+      ]
+    },
+    {
+      "block": 4,
+      "seed": 1005,
+      "order": [
+        "reactive_joint",
+        "hpa",
+        "joint",
+        "joint_sq",
+        "reactive",
+        "static"
+      ]
+    },
+    {
+      "block": 5,
+      "seed": 1006,
+      "order": [
+        "static",
+        "reactive_joint",
+        "hpa",
+        "joint",
+        "joint_sq",
+        "reactive"
+      ]
+    },
+    {
+      "block": 6,
+      "seed": 1007,
+      "order": [
+        "joint_sq",
+        "static",
+        "joint",
+        "hpa",
+        "reactive",
+        "reactive_joint"
+      ]
+    },
+    {
+      "block": 7,
+      "seed": 1008,
+      "order": [
+        "hpa",
+        "reactive",
+        "reactive_joint",
+        "joint_sq",
+        "static",
+        "joint"
+      ]
+    },
+    {
+      "block": 8,
+      "seed": 1009,
+      "order": [
+        "static",
+        "joint",
+        "hpa",
+        "reactive",
+        "reactive_joint",
+        "joint_sq"
+      ]
+    },
+    {
+      "block": 9,
+      "seed": 1010,
+      "order": [
+        "joint",
+        "hpa",
+        "reactive",
+        "reactive_joint",
+        "joint_sq",
+        "static"
+      ]
+    },
+    {
+      "block": 10,
+      "seed": 1011,
+      "order": [
+        "reactive",
+        "reactive_joint",
+        "joint_sq",
+        "static",
+        "joint",
+        "hpa"
+      ]
+    },
+    {
+      "block": 11,
+      "seed": 1012,
+      "order": [
+        "reactive_joint",
+        "joint_sq",
+        "static",
+        "joint",
+        "hpa",
+        "reactive"
+      ]
+    },
+    {
+      "block": 12,
+      "seed": 1013,
+      "order": [
+        "reactive_joint",
+        "joint_sq",
+        "hpa",
+        "static",
+        "joint",
+        "reactive"
+      ]
+    },
+    {
+      "block": 13,
+      "seed": 1014,
+      "order": [
+        "hpa",
+        "static",
+        "joint",
+        "reactive",
+        "reactive_joint",
+        "joint_sq"
+      ]
+    },
+    {
+      "block": 14,
+      "seed": 1015,
+      "order": [
+        "joint_sq",
+        "hpa",
+        "static",
+        "joint",
+        "reactive",
+        "reactive_joint"
+      ]
+    },
+    {
+      "block": 15,
+      "seed": 1016,
+      "order": [
+        "joint",
+        "reactive",
+        "reactive_joint",
+        "joint_sq",
+        "hpa",
+        "static"
+      ]
+    },
+    {
+      "block": 16,
+      "seed": 1017,
+      "order": [
+        "reactive",
+        "reactive_joint",
+        "joint_sq",
+        "hpa",
+        "static",
+        "joint"
+      ]
+    },
+    {
+      "block": 17,
+      "seed": 1018,
+      "order": [
+        "static",
+        "joint",
+        "reactive",
+        "reactive_joint",
+        "joint_sq",
+        "hpa"
+      ]
+    },
+    {
+      "block": 18,
+      "seed": 1019,
+      "order": [
+        "hpa",
+        "reactive",
+        "reactive_joint",
+        "joint_sq",
+        "static",
+        "joint"
+      ]
+    },
+    {
+      "block": 19,
+      "seed": 1020,
+      "order": [
+        "joint",
+        "hpa",
+        "reactive",
+        "reactive_joint",
+        "joint_sq",
+        "static"
+      ]
+    },
+    {
+      "block": 20,
+      "seed": 1021,
+      "order": [
+        "reactive",
+        "reactive_joint",
+        "joint_sq",
+        "static",
+        "joint",
+        "hpa"
+      ]
+    },
+    {
+      "block": 21,
+      "seed": 1022,
+      "order": [
+        "joint_sq",
+        "static",
+        "joint",
+        "hpa",
+        "reactive",
+        "reactive_joint"
+      ]
+    },
+    {
+      "block": 22,
+      "seed": 1023,
+      "order": [
+        "static",
+        "joint",
+        "hpa",
+        "reactive",
+        "reactive_joint",
+        "joint_sq"
+      ]
+    },
+    {
+      "block": 23,
+      "seed": 1024,
+      "order": [
+        "reactive_joint",
+        "joint_sq",
+        "static",
+        "joint",
+        "hpa",
+        "reactive"
+      ]
+    },
+    {
+      "block": 24,
+      "seed": 1025,
+      "order": [
+        "joint_sq",
+        "hpa",
+        "static",
+        "reactive",
+        "joint",
+        "reactive_joint"
+      ]
+    },
+    {
+      "block": 25,
+      "seed": 1026,
+      "order": [
+        "static",
+        "reactive",
+        "joint",
+        "reactive_joint",
+        "joint_sq",
+        "hpa"
+      ]
+    },
+    {
+      "block": 26,
+      "seed": 1027,
+      "order": [
+        "reactive",
+        "joint",
+        "reactive_joint",
+        "joint_sq",
+        "hpa",
+        "static"
+      ]
+    },
+    {
+      "block": 27,
+      "seed": 1028,
+      "order": [
+        "joint",
+        "reactive_joint",
+        "joint_sq",
+        "hpa",
+        "static",
+        "reactive"
+      ]
+    },
+    {
+      "block": 28,
+      "seed": 1029,
+      "order": [
+        "reactive_joint",
+        "joint_sq",
+        "hpa",
+        "static",
+        "reactive",
+        "joint"
+      ]
+    },
+    {
+      "block": 29,
+      "seed": 1030,
+      "order": [
+        "hpa",
+        "static",
+        "reactive",
+        "joint",
+        "reactive_joint",
+        "joint_sq"
+      ]
+    }
+  ],
+  "count": 1280,
+  "rate_rps": 120,
+  "concurrency": 32,
+  "deadlines_ms": [
+    200,
+    400,
+    800
+  ],
+  "settle_seconds": 35,
+  "followup_seconds": 20,
+  "direct_precondition_per_backend": 8,
+  "primary_comparison": [
+    "joint",
+    "reactive"
+  ],
+  "secondary_confirmatory": [
+    "static",
+    "hpa"
+  ],
+  "mechanism_arms": [
+    "joint_sq",
+    "reactive_joint"
+  ],
+  "bootstrap_resamples": 10000,
+  "bootstrap_seed": 39108,
+  "hpa_spec": {
+    "apiVersion": "autoscaling/v2",
+    "kind": "HorizontalPodAutoscaler",
+    "metadata": {
+      "name": "benchmark-hpa",
+      "namespace": "jointsla-prototype"
+    },
+    "spec": {
+      "scaleTargetRef": {
+        "apiVersion": "apps/v1",
+        "kind": "Deployment",
+        "name": "inference"
+      },
+      "minReplicas": 2,
+      "maxReplicas": 4,
+      "metrics": [
+        {
+          "type": "Resource",
+          "resource": {
+            "name": "cpu",
+            "target": {
+              "type": "Utilization",
+              "averageUtilization": 80
+            }
+          }
+        }
+      ]
+    }
+  },
+  "hpa_controller_defaults": "kind v1.36.4 defaults; no behavior override",
+  "source_hashes": {
+    "prototype/benchmark/__init__.py": "41895649c08bfde3737649df61ef32555237b5d5b444e3ea6131c77c06cd4626",
+    "prototype/benchmark/analyze.py": "36a5da1834628a196cc7dc566cfe08d73f7d64c774668d1a600948853836dd5d",
+    "prototype/benchmark/experiment.py": "bbb2f1fea7c0f4a17a682544b3e95fb77f51dbf943aaefbaf290706ebe431718",
+    "prototype/benchmark/gateway_runtime.py": "f9c4a26595a84ab49491682d1bf53e26e1c061a744b8cb27288206624466c0d1",
+    "prototype/benchmark/inference.py": "a59ec51e90d29a7c4b4f2cac276a2a6e38ae5595214282236e65454fb50f9d1b",
+    "prototype/benchmark/load.py": "67e24819a4ca33e89c9dd767c32643f69157fbe0e8c87fbae4735a7e74ead47f",
+    "prototype/benchmark/pipeline.py": "49b13f2bb107ed63264267c2f87a322f332840327851be99f6479668b26efd02",
+    "prototype/benchmark/policies.py": "868460233f1eec4c253aabdf12675a29a0a7f581a89141e36047acd22e710d38",
+    "prototype/benchmark/setup.py": "5bb38a296eee44b345ab2bba0632151d8f01c1cc40aa69ed61da3166af81aeeb",
+    "prototype/benchmark/Dockerfile": "3e47470070db7e2435fb533553b7fe03c5c46e37b45c7f519bd304b6ba761d32",
+    "prototype/gateway.py": "c1577e875e35136297e8cd0ced12a5b00be3ca2398bc4930daf8a1eaf33c5b53",
+    "prototype/inference.py": "cc90166206b9783574d2484d464615724f3547e261f83f57047fca52ee9ee0cd",
+    "prototype/http.py": "7b86c2d729b88126acc752c42bcf1ae320798ac465bd56122a78232eeaad1c3b",
+    "prototype/controller.py": "82699b391d860c16024892c0264de1461393486997cf5f49bbed461290333960",
+    "joint_sla_v2/policy.py": "4f324929dfca0bc057ff3b8f59265a5932c976f57b21a26d9a23d34c44cabd3a",
+    "joint_routing/router.py": "6b6508a6f9eec9eca391829fb665858135d66ce84f2b335a2be5c9beae7af61d",
+    "prototype/kubernetes/RESEARCH_EVALUATION_PROTOCOL.md": "6cfb6546ac69fdf5423794e8e237bad2777325fa530602b9d01c50342584ee58",
+    "prototype/benchmark/gateway_provenance.json": "0c3d0a095a316d214279e3ca8c7afd01a97c4d1c5de3c1ae59920f0c574de552",
+    "prototype/benchmark/requirements-analysis.txt": "052c20e6996aa3cdba2f8d9e4261553c9fd85056cef003cb020b065aa6731d76",
+    "tests/test_kubernetes_comparison.py": "d6742565ff0cd984d66a2291b2d3a2dbae3cfb7448d429c7ff4b5e5efb6d4fbb"
+  },
+  "image_lock": {
+    "lab": "kind-jointsla-validation",
+    "images": {
+      "gateway": {
+        "tag": "jointsla-benchmark-gateway:9ef216cafcf3281b",
+        "id": "sha256:9ef216cafcf3281bae2afef1a1ae5731725372b86694069ff7dbab2b05c5dcf6"
+      },
+      "inference": {
+        "tag": "jointsla-benchmark-inference:d847073cd9511ea6",
+        "id": "sha256:d847073cd9511ea65c9ca85a167bbd644f1fe5871b64bcc473a1c49c62cac320"
+      }
+    },
+    "base_images": {
+      "gateway": "jointsla-gateway:0af1eb49a7ba9cb8",
+      "inference": "jointsla-inference:5adaee9c863fa1eb"
+    },
+    "metrics_server": {
+      "version": "v0.9.0",
+      "image": "registry.k8s.io/metrics-server/metrics-server@sha256:d9862115e7c7881280d3d75ca26bda8ffc0fc213315979575bf23ce9826205c0",
+      "vendor_url": "https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.9.0/components.yaml",
+      "vendor_manifest_sha256": "1cec29a5267809306a2c6ec74a3e449abbb705b4a8beed0c8a1963910f72c79b",
+      "kind_kubelet_insecure_tls": true
+    }
+  },
+  "workload_sha256": {
+    "1001": "6f72a8fde2686d5da18840b2d88de83c3ca405d130176c53d30c67caad7e7234",
+    "1002": "d730602a60eda00d3f4375717280dabb510e8acf01c84c62f4bbfe184a2461f0",
+    "1003": "808ad8e04e63dbbc62dc11288aebc072ddbcb50a161bba1f688a79a0b86d3b16",
+    "1004": "f1dd1ea9db2adebf92bf8cf575f54e7eea8b2ff609ad3c309dd089e5e603b3c7",
+    "1005": "becc6ba8f91767357c88db0ade809f80f99ec952b5aabd7b4af27012b4ed3940",
+    "1006": "d4b8cc3a35ae5eedc10f97eb3e67d1657b010ac7e4eb0c2d5318b2b39db424f9",
+    "1007": "f49bc97485a67225f0bdf0838655e3c8e855b59470b3d829d592f3f7e90c4c07",
+    "1008": "2f1ab488095fcc8c83a4ab2bc760b125cfa58b944a3f70e4f8bb97e2ea4c7adf",
+    "1009": "04ff9f110cb4f61514043bc4960ef446e3e403808180059d661578e915bb6d3e",
+    "1010": "3f1109a8fa83ba34d314ffec7ce29be9f737ddb58d5e5b40cd630c07004e17e1",
+    "1011": "de14407aafc7662c18b0168ec1323df2d1475177027be4529990a3a9141fa294",
+    "1012": "94345a23a21ecd9d47ba91885edcb60f9f7a97558a2ff323a28cda639fb5c0e0",
+    "1013": "e40c1fe405d15216be6417a08f7520df65412c77bb0281fbaec8c352c7b82ef5",
+    "1014": "04bd013c887a898f9f115ba6b5c858ca8a7253283dcc2bbbbff9d8bfff58ea24",
+    "1015": "c1bf107f46151f32886ed5af6ce138874bafeea43084d42bce7196ebd1ed2715",
+    "1016": "b356bbca5af957e63cce4ffe1c69ac0f4222a12b5a9a4a419a1f8af87e5a3338",
+    "1017": "04d346629e7c03789a136c897f869801267882250c467e877d73dddebb97b5ae",
+    "1018": "bbea60ba20db0c93badb8f91795a7104a25a2e17a91ca817f6f211f73bd1432a",
+    "1019": "2528ad365c0d8e43a3ffd45fc62407b7232eba83f54b84b2c4b813c897664752",
+    "1020": "7bd0f3878693fadb94c91e1bd96e03bf1140f7412b051472cda67b8f09512ef3",
+    "1021": "db7a960f8b849018cd7c189d032a28a4565b39eb2ab8bd3c5b0523bc12356061",
+    "1022": "549e89d05c32982a792065bf01462081ff47744c19763158c2a9cb84db82f2da",
+    "1023": "027b2525f91bdb3c14b33b142f9a3ca2dae2aa7f72e8db0ff0d687484f944ec0",
+    "1024": "347802e41f9c7a5daf793214ac27155289386b303aec5e02716e5ac2a8059686",
+    "1025": "7f23ab03cc824c729d480f653cdaab22c36fcc2375032089c3cae512cc86b18c",
+    "1026": "cf5fce811105436488812748ef0681986eeb60c8e9926bf51f25995241d0728c",
+    "1027": "99cb6550984fa428b1368ba37ae5e9af7535d3c7b91b6a9b10e8a511ff077d0b",
+    "1028": "0155e01cb806dc8bb14d7774f8fb552f9772eb4116aca5a15404226387c1187e",
+    "1029": "634150727289f560eee45cb0ba330debe38347cd3cc40eb36c8a9ceed21d3734",
+    "1030": "e680892a3b6eef25deae2ec70e8c9caf65accd28b5a8c59a696012d0d2088ecf"
+  },
+  "pilot_acceptance_sha256": "8d2e33b5c9d477bd81531e6f3293a1df0fb5beeef58a3344da3a2e25a6313cf8"
+}

@@ -1,0 +1,10 @@
+# CPU inference transitive dependencies; torch wheels installed separately.
+filelock==3.32.3
+fsspec==2026.7.0
+Jinja2==3.1.6
+MarkupSafe==3.0.3
+mpmath==1.3.0
+networkx==3.6.1
+pillow==12.3.0
+setuptools==78.1.0
+sympy==1.14.0

@@ -1,0 +1,54 @@
+{
+  "fresh_cluster": "jointsla-validation",
+  "created_from_absent_cluster": true,
+  "ready_replicas": 2,
+  "controller_bootstrap_log": "{\"event\": \"reconciliation\", \"unix_s\": 1791475380.1492589, \"backend\": \"KubernetesAdapter\", \"outcome\": \"applied\", \"desired_replicas\": 2, \"ready_replicas\": 1, \"queue\": 0, \"reason\": \"Observed queue/rate and JointSLA-v2 warm-headroom rule\", \"observed_rate_rps\": 0.0}\n",
+  "pod_uids_before": {
+    "gateway-59d468dbcc-lr5tx": "9338b768-d984-4bee-96d8-7b23df224ab1",
+    "grafana-7d5d696b54-2kmj5": "6cb59941-7a59-4429-aaa5-574340de5e2f",
+    "inference-58c5d4ffb6-7zfpf": "e20ade41-e55f-4299-ba4e-2414b4cc47be",
+    "inference-58c5d4ffb6-cwdwg": "93690f35-57f9-48ad-a5f0-cfb10c08e9b6",
+    "prometheus-7b8cd77ff6-scwbj": "dda10d90-4c1d-41f3-b655-f4bcbd91cc02"
+  },
+  "inference": [
+    200,
+    {
+      "predictions": [
+        {
+          "class_id": 892,
+          "label": "wall clock",
+          "score": 0.10007000714540482
+        },
+        {
+          "class_id": 111,
+          "label": "nematode",
+          "score": 0.05154604837298393
+        },
+        {
+          "class_id": 844,
+          "label": "switch",
+          "score": 0.04302732273936272
+        }
+      ],
+      "input_kind": "synthetic benchmark tensor",
+      "pretrained": true,
+      "device": "cpu",
+      "latency_ms": 11.48053799988702,
+      "queue_ms": 0.0198540001292713,
+      "execution_ms": 11.454623999270552,
+      "sla_breach": false,
+      "gateway_latency_ms": 12.60396399993624,
+      "gateway_sla_breach": false,
+      "routed_to": "http://10.244.0.11:8080"
+    }
+  ],
+  "pod_uids_after": {
+    "gateway-59d468dbcc-lr5tx": "9338b768-d984-4bee-96d8-7b23df224ab1",
+    "grafana-7d5d696b54-2kmj5": "6cb59941-7a59-4429-aaa5-574340de5e2f",
+    "inference-58c5d4ffb6-7zfpf": "e20ade41-e55f-4299-ba4e-2414b4cc47be",
+    "inference-58c5d4ffb6-cwdwg": "93690f35-57f9-48ad-a5f0-cfb10c08e9b6",
+    "prometheus-7b8cd77ff6-scwbj": "dda10d90-4c1d-41f3-b655-f4bcbd91cc02"
+  },
+  "idempotent_redeploy_preserved_all_pods": true,
+  "replicas_preserved": 2
+}

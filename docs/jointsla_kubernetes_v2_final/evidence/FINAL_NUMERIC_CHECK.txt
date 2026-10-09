@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "blocks": 30,
+  "trials": 180,
+  "offered_outcomes": 230400,
+  "policies": 6,
+  "native_charts": 6,
+  "slides": 14,
+  "documents": 2,
+  "figures": 7,
+  "checks": [
+    "run counts and independently recomputed means/sample SD",
+    "exact frozen paired table and all-run byte copies",
+    "failure and tier count reconciliation",
+    "resource ratios",
+    "all policy summary rows in both Word files",
+    "chart caches against canonical values within six-decimal rounding",
+    "shared claims and interpretation in all three artifacts",
+    "title border removal",
+    "PNG/vector PDF pairs"
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "status": "passed",
+  "cluster": "kind-jointsla-prototype",
+  "physical_hosts": 1,
+  "kubernetes_nodes": 1,
+  "cpu_inference": true,
+  "pretrained": true,
+  "baseline": {
+    "seed": 11,
+    "rate_rps": null,
+    "offered": 60,
+    "completed": 60,
+    "sla_failure_rate": 0.0,
+    "failed_or_rejected_rate": 0.0,
+    "rejected_rate": 0.0,
+    "transport_error_rate": 0.0,
+    "mean_client_latency_ms": 124.15460833323475,
+    "tier_sla_failure_rate": {
+      "Gold": 0.0,
+      "Silver": 0.0,
+      "Bronze": 0.0
+    }
+  },
+  "burst": {
+    "seed": 23,
+    "rate_rps": 120.0,
+    "offered": 1280,
+    "completed": 852,
+    "sla_failure_rate": 0.47265625,
+    "failed_or_rejected_rate": 0.334375,
+    "rejected_rate": 0.334375,
+    "transport_error_rate": 0.0,
+    "mean_client_latency_ms": 141.76817078127328,
+    "tier_sla_failure_rate": {
+      "Gold": 0.7377049180327869,
+      "Silver": 0.3957845433255269,
+      "Bronze": 0.284037558685446
+    }
+  },
+  "failure": {
+    "seed": 31,
+    "rate_rps": null,
+    "offered": 80,
+    "completed": 80,
+    "sla_failure_rate": 0.0,
+    "failed_or_rejected_rate": 0.0,
+    "rejected_rate": 0.0,
+    "transport_error_rate": 0.0,
+    "mean_client_latency_ms": 29.927712500011694,
+    "tier_sla_failure_rate": {
+      "Gold": 0.0,
+      "Silver": 0.0,
+      "Bronze": 0.0
+    }
+  },
+  "peak_deployment_replicas": 4,
+  "final_ready_replicas": 2,
+  "applied_controller_actions": [
+    {
+      "event": "reconciliation",
+      "unix_s": 1791476150.9248776,
+      "backend": "KubernetesAdapter",
+      "outcome": "applied",
+      "desired_replicas": 4,
+      "ready_replicas": 2,
+      "queue": 14,
+      "reason": "Observed queue/rate and JointSLA-v2 warm-headroom rule",
+      "observed_rate_rps": 26.0
+    },
+    {
+      "event": "reconciliation",
+      "unix_s": 1791476181.0847545,
+      "backend": "KubernetesAdapter",
+      "outcome": "applied",
+      "desired_replicas": 2,
+      "ready_replicas": 4,
+      "queue": 0,
+      "reason": "Observed queue/rate and JointSLA-v2 warm-headroom rule",
+      "observed_rate_rps": 0.0
+    }
+  ],
+  "removed_pod_uid": "c09d388a-39fc-4a3a-a469-d62d16ac378c",
+  "removed_pod_ip": "10.244.0.56",
+  "verified_request_outcomes": {
+    "baseline": 60,
+    "burst": 1280,
+    "failure": 80
+  },
+  "kube_replaces_failed_pods": true,
+  "paper_statistics_updated": false
+}

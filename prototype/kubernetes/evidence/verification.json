@@ -1,0 +1,85 @@
+{
+  "status": "passed",
+  "physical_hosts": 1,
+  "kubernetes_nodes": 1,
+  "cpu_inference": true,
+  "pretrained": true,
+  "peak_deployment_replicas": 4,
+  "final_ready_replicas": 2,
+  "applied_controller_actions": [
+    {
+      "event": "reconciliation",
+      "unix_s": 1791472337.2429237,
+      "backend": "KubernetesAdapter",
+      "outcome": "applied",
+      "desired_replicas": 2,
+      "ready_replicas": 1,
+      "queue": 0,
+      "reason": "Observed queue/rate and JointSLA-v2 warm-headroom rule",
+      "observed_rate_rps": 0.0
+    },
+    {
+      "event": "reconciliation",
+      "unix_s": 1791472381.374488,
+      "backend": "KubernetesAdapter",
+      "outcome": "applied",
+      "desired_replicas": 4,
+      "ready_replicas": 2,
+      "queue": 16,
+      "reason": "Observed queue/rate and JointSLA-v2 warm-headroom rule",
+      "observed_rate_rps": 7.6
+    },
+    {
+      "event": "reconciliation",
+      "unix_s": 1791472411.5224376,
+      "backend": "KubernetesAdapter",
+      "outcome": "applied",
+      "desired_replicas": 2,
+      "ready_replicas": 4,
+      "queue": 0,
+      "reason": "Observed queue/rate and JointSLA-v2 warm-headroom rule",
+      "observed_rate_rps": 0.0
+    }
+  ],
+  "paper_statistics_updated": false,
+  "source_run": "prototype\\.cache\\kubernetes_20261008T151215",
+  "summary": [
+    {
+      "phase": "baseline",
+      "offered": 60,
+      "completed": 60,
+      "sla_failure_pct": 0.0,
+      "failed_or_rejected_pct": 0.0,
+      "mean_completed_latency_ms": 78.74532500004534,
+      "p95_completed_latency_ms": 110.04023000050438,
+      "serving_endpoints": 2
+    },
+    {
+      "phase": "burst",
+      "offered": 1280,
+      "completed": 943,
+      "sla_failure_pct": 38.828125,
+      "failed_or_rejected_pct": 26.328125000000004,
+      "mean_completed_latency_ms": 168.84088928951218,
+      "p95_completed_latency_ms": 308.847770000375,
+      "serving_endpoints": 4
+    },
+    {
+      "phase": "failure",
+      "offered": 80,
+      "completed": 79,
+      "sla_failure_pct": 1.25,
+      "failed_or_rejected_pct": 1.25,
+      "mean_completed_latency_ms": 53.60981392408852,
+      "p95_completed_latency_ms": 81.33391999990634,
+      "serving_endpoints": 1
+    }
+  ],
+  "tests_passed": 285,
+  "frozen_sources_unchanged": true,
+  "frozen_result_metadata_changes": [],
+  "controller_scale_permission": true,
+  "controller_secret_permission": false,
+  "prometheus_targets_up": 3,
+  "grafana_panels": 8
+}

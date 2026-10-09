@@ -1,0 +1,209 @@
+{
+  "status": "passed",
+  "output": "C:\\Users\\dioni\\Documents\\ChatGPT\\6g\\prototype\\.cache\\infrastructure_20261008T161627",
+  "started_utc": "2026-10-08T16:16:27.885646+00:00",
+  "smoke": {
+    "inference": {
+      "predictions": [
+        {
+          "class_id": 892,
+          "label": "wall clock",
+          "score": 0.10007000714540482
+        },
+        {
+          "class_id": 111,
+          "label": "nematode",
+          "score": 0.05154604837298393
+        },
+        {
+          "class_id": 844,
+          "label": "switch",
+          "score": 0.04302732273936272
+        }
+      ],
+      "input_kind": "synthetic benchmark tensor",
+      "pretrained": true,
+      "device": "cpu",
+      "latency_ms": 11.65233600022475,
+      "queue_ms": 0.017455000488553196,
+      "execution_ms": 11.62782099981996,
+      "sla_breach": false,
+      "gateway_latency_ms": 12.71234599971649,
+      "gateway_sla_breach": false,
+      "routed_to": "http://10.244.0.54:8080"
+    },
+    "healthy_targets": [
+      {
+        "labels": {
+          "instance": "gateway:8090",
+          "job": "gateway"
+        },
+        "health": "up"
+      },
+      {
+        "labels": {
+          "instance": "10.244.0.59:8080",
+          "job": "inference"
+        },
+        "health": "up"
+      },
+      {
+        "labels": {
+          "instance": "10.244.0.54:8080",
+          "job": "inference"
+        },
+        "health": "up"
+      }
+    ],
+    "grafana_panels": 12
+  },
+  "probe_resource_security_deployments": [
+    "gateway",
+    "grafana",
+    "inference",
+    "prometheus"
+  ],
+  "alerts": [
+    "JointSLAGatewayUnavailable",
+    "JointSLATelemetryStale",
+    "JointSLANoReadyInference",
+    "JointSLAReconciliationFailure"
+  ],
+  "rbac": {
+    "patch deployments/inference/scale": "yes",
+    "patch deployments/gateway/scale": "no",
+    "get secrets": "no",
+    "delete pods": "no"
+  },
+  "pod_drain": {
+    "queued_before_sigterm": 6,
+    "busy_before_sigterm": true,
+    "requests": 8,
+    "complete_http_responses": 8,
+    "removed_uid": "00800bab-7d6f-4653-9fc3-10dac200c083",
+    "outcomes": [
+      {
+        "request": 0,
+        "status": 200,
+        "prediction_count": 3
+      },
+      {
+        "request": 1,
+        "status": 200,
+        "prediction_count": 3
+      },
+      {
+        "request": 2,
+        "status": 200,
+        "prediction_count": 3
+      },
+      {
+        "request": 3,
+        "status": 200,
+        "prediction_count": 3
+      },
+      {
+        "request": 4,
+        "status": 200,
+        "prediction_count": 3
+      },
+      {
+        "request": 5,
+        "status": 200,
+        "prediction_count": 3
+      },
+      {
+        "request": 6,
+        "status": 200,
+        "prediction_count": 3
+      },
+      {
+        "request": 7,
+        "status": 200,
+        "prediction_count": 3
+      }
+    ]
+  },
+  "warmup_exclusion_samples": [
+    {
+      "uid": "4342edea-7d7c-4d30-acfc-75c0c339818d",
+      "ready": false,
+      "routed": false
+    },
+    {
+      "uid": "4342edea-7d7c-4d30-acfc-75c0c339818d",
+      "ready": false,
+      "routed": false
+    }
+  ],
+  "gateway_crash_recovery": {
+    "uid": "ecb42e92-938b-42ac-b5b9-1bdf4853e6fa",
+    "restart_count_increased": true,
+    "ready_after_restart": true
+  },
+  "liveness_recovery": {
+    "hung_process_restarted": true,
+    "gateway_unavailable_alert_fired": true
+  },
+  "grafana_annotation_id": 2,
+  "monitoring_restart_persistence": {
+    "prometheus_historical_samples_preserved": true,
+    "grafana_annotation_preserved": true
+  },
+  "final_smoke": {
+    "inference": {
+      "predictions": [
+        {
+          "class_id": 892,
+          "label": "wall clock",
+          "score": 0.10007000714540482
+        },
+        {
+          "class_id": 111,
+          "label": "nematode",
+          "score": 0.05154604837298393
+        },
+        {
+          "class_id": 844,
+          "label": "switch",
+          "score": 0.04302732273936272
+        }
+      ],
+      "input_kind": "synthetic benchmark tensor",
+      "pretrained": true,
+      "device": "cpu",
+      "latency_ms": 12.446792000446294,
+      "queue_ms": 0.015712999811512418,
+      "execution_ms": 12.423718000718509,
+      "sla_breach": false,
+      "gateway_latency_ms": 13.659256000210007,
+      "gateway_sla_breach": false,
+      "routed_to": "http://10.244.0.54:8080"
+    },
+    "healthy_targets": [
+      {
+        "labels": {
+          "instance": "gateway:8090",
+          "job": "gateway"
+        },
+        "health": "up"
+      },
+      {
+        "labels": {
+          "instance": "10.244.0.54:8080",
+          "job": "inference"
+        },
+        "health": "up"
+      },
+      {
+        "labels": {
+          "instance": "10.244.0.60:8080",
+          "job": "inference"
+        },
+        "health": "up"
+      }
+    ],
+    "grafana_panels": 12
+  },
+  "finished_utc": "2026-10-08T16:18:36.587316+00:00"
+}

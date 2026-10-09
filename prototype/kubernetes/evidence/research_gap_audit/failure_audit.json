@@ -1,0 +1,28 @@
+{
+  "status": "descriptive_audit_passed",
+  "policy_comparison_performed": false,
+  "causal_attribution_performed": false,
+  "independent_repetitions": 1,
+  "repetitions_definition": "One recorded final burst; earlier revision is not an independent replicate of it.",
+  "observed_final_burst": {
+    "offered": 1280,
+    "on_time": 675,
+    "late_completed": 177,
+    "late_gold": 177,
+    "backend_503_reason_unrecorded": 428,
+    "other_failed": 0,
+    "sla_failures": 605,
+    "sla_failure_percent": 47.265625,
+    "late_even_excluding_client_queue": 176
+  },
+  "missing_evidence": [
+    "Per-request response error/rejection reason",
+    "Backend execution and queue duration retained in client CSV",
+    "Absolute offer/dispatch/completion timestamps and pod UID mapping",
+    "Identical Kubernetes baseline runs and paired independent blocks"
+  ],
+  "source_hashes": {
+    "prototype/kubernetes/evidence/final_dashboard/earlier_burst_request_outcomes.csv": "11145aa842f1a83e0e219a98a26e1a7510b4764f2ec443785d4d1d9210f32dba",
+    "prototype/kubernetes/evidence/infrastructure/request_outcomes.csv": "e79b05910b519c43900c275dfe3bee039b24720c115ea6f4569213f063e8ca9a"
+  }
+}

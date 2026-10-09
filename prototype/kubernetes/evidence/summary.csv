@@ -1,0 +1,4 @@
+phase,offered,completed,sla_failure_pct,failed_or_rejected_pct,mean_completed_latency_ms,p95_completed_latency_ms,serving_endpoints
+baseline,60,60,0.0,0.0,78.74532500004534,110.04023000050438,2
+burst,1280,943,38.828125,26.328125000000004,168.84088928951218,308.847770000375,4
+failure,80,79,1.25,1.25,53.60981392408852,81.33391999990634,1

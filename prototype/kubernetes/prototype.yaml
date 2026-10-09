@@ -1,0 +1,241 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: jointsla-prototype
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: jointsla-controller
+  namespace: jointsla-prototype
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: jointsla-controller
+  namespace: jointsla-prototype
+rules:
+- apiGroups:
+  - ''
+  resources:
+  - pods
+  verbs:
+  - get
+  - list
+- apiGroups:
+  - apps
+  resources:
+  - deployments/scale
+  resourceNames:
+  - inference
+  verbs:
+  - get
+  - patch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: jointsla-controller
+  namespace: jointsla-prototype
+subjects:
+- kind: ServiceAccount
+  name: jointsla-controller
+  namespace: jointsla-prototype
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: jointsla-controller
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inference
+  namespace: jointsla-prototype
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jointsla-inference
+  template:
+    metadata:
+      labels:
+        app: jointsla-inference
+      annotations:
+        prometheus.io/scrape: 'true'
+        prometheus.io/port: '8080'
+    spec:
+      automountServiceAccountToken: false
+      terminationGracePeriodSeconds: 75
+      containers:
+      - name: inference
+        image: jointsla-inference:prototype
+        imagePullPolicy: IfNotPresent
+        lifecycle:
+          preStop:
+            exec:
+              command: [python, -c, 'import time; time.sleep(2)']
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PRETRAINED
+          value: 'true'
+        - name: DEVICE
+          value: cpu
+        resources:
+          requests:
+            cpu: 500m
+            memory: 1Gi
+          limits:
+            cpu: '1'
+            memory: 2Gi
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8080
+          periodSeconds: 2
+          timeoutSeconds: 1
+          failureThreshold: 1
+        startupProbe:
+          httpGet:
+            path: /live
+            port: 8080
+          periodSeconds: 2
+          timeoutSeconds: 1
+          failureThreshold: 150
+        livenessProbe:
+          httpGet:
+            path: /live
+            port: 8080
+          periodSeconds: 10
+          timeoutSeconds: 2
+          failureThreshold: 3
+        securityContext:
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
+          capabilities:
+            drop:
+            - ALL
+        volumeMounts:
+        - name: tmp
+          mountPath: /tmp
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        runAsGroup: 1000
+        seccompProfile:
+          type: RuntimeDefault
+      volumes:
+      - name: tmp
+        emptyDir:
+          sizeLimit: 128Mi
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gateway
+  namespace: jointsla-prototype
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jointsla-gateway
+  template:
+    metadata:
+      labels:
+        app: jointsla-gateway
+      annotations:
+        prometheus.io/scrape: 'true'
+        prometheus.io/port: '8090'
+    spec:
+      serviceAccountName: jointsla-controller
+      terminationGracePeriodSeconds: 75
+      containers:
+      - name: gateway
+        image: jointsla-controller:prototype
+        imagePullPolicy: IfNotPresent
+        lifecycle:
+          preStop:
+            exec:
+              command: [python, -c, 'import time; time.sleep(2)']
+        env:
+        - name: BACKEND
+          value: kubernetes
+        ports:
+        - containerPort: 8090
+        resources:
+          requests:
+            cpu: 100m
+            memory: 256Mi
+          limits:
+            cpu: '1'
+            memory: 512Mi
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8090
+          periodSeconds: 2
+          timeoutSeconds: 1
+          failureThreshold: 1
+        securityContext:
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
+          capabilities:
+            drop:
+            - ALL
+        volumeMounts:
+        - name: tmp
+          mountPath: /tmp
+        startupProbe:
+          httpGet:
+            path: /live
+            port: 8090
+          periodSeconds: 2
+          timeoutSeconds: 1
+          failureThreshold: 150
+        livenessProbe:
+          httpGet:
+            path: /live
+            port: 8090
+          periodSeconds: 10
+          timeoutSeconds: 2
+          failureThreshold: 3
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        runAsGroup: 1000
+        seccompProfile:
+          type: RuntimeDefault
+      volumes:
+      - name: tmp
+        emptyDir:
+          sizeLimit: 128Mi
+  strategy:
+    type: Recreate
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gateway
+  namespace: jointsla-prototype
+spec:
+  selector:
+    app: jointsla-gateway
+  ports:
+  - port: 8090
+    targetPort: 8090
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: inference
+  namespace: jointsla-prototype
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: jointsla-inference

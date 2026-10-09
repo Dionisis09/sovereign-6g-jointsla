@@ -1,0 +1,194 @@
+{
+  "status": "passed",
+  "checked_utc": "2026-10-08T16:42:22.488009+00:00",
+  "dashboard_uid": "jointsla-runtime",
+  "panels": 28,
+  "queries": [
+    {
+      "panel": "Target replicas",
+      "expr": "jointsla_gateway_desired_replicas",
+      "samples": 1
+    },
+    {
+      "panel": "Ready replicas",
+      "expr": "jointsla_gateway_ready_replicas",
+      "samples": 1
+    },
+    {
+      "panel": "Request load (1m)",
+      "expr": "sum(rate(jointsla_gateway_requests_total[1m]))",
+      "samples": 1
+    },
+    {
+      "panel": "SLA failures % (1m)",
+      "expr": "(100 * (sum(rate(jointsla_gateway_sla_failures_total[1m])) or (0 * sum(rate(jointsla_gateway_outcomes_total[1m])))) / sum(rate(jointsla_gateway_outcomes_total[1m]))) and (sum(rate(jointsla_gateway_outcomes_total[1m])) > 0)",
+      "samples": 0
+    },
+    {
+      "panel": "Completed requests",
+      "expr": "sum(jointsla_gateway_outcomes_total{outcome=\"completed\"})",
+      "samples": 1
+    },
+    {
+      "panel": "SLA failure count",
+      "expr": "sum(jointsla_gateway_sla_failures_total) or (0 * sum(jointsla_gateway_outcomes_total))",
+      "samples": 1
+    },
+    {
+      "panel": "Applied scale actions",
+      "expr": "sum(jointsla_gateway_actions_total{outcome=\"applied\"}) or (0 * jointsla_gateway_snapshot_timestamp_seconds)",
+      "samples": 1
+    },
+    {
+      "panel": "Restarts (current pods)",
+      "expr": "sum(jointsla_kubernetes_container_restarts)",
+      "samples": 1
+    },
+    {
+      "panel": "Request load and completed throughput",
+      "expr": "sum(rate(jointsla_gateway_requests_total[1m]))",
+      "samples": 1
+    },
+    {
+      "panel": "Request load and completed throughput",
+      "expr": "sum(rate(jointsla_gateway_outcomes_total{outcome=\"completed\"}[1m]))",
+      "samples": 1
+    },
+    {
+      "panel": "Completed latency \u00b7 mean and p95",
+      "expr": "1000 * sum(rate(jointsla_gateway_latency_seconds_sum[1m])) / sum(rate(jointsla_gateway_latency_seconds_count[1m]))",
+      "samples": 1
+    },
+    {
+      "panel": "Completed latency \u00b7 mean and p95",
+      "expr": "1000 * histogram_quantile(0.95, sum by (le) (rate(jointsla_gateway_latency_seconds_bucket[1m])))",
+      "samples": 1
+    },
+    {
+      "panel": "SLA failures by tier \u00b7 late + rejected + failed",
+      "expr": "(100 * (sum by (tier) (rate(jointsla_gateway_sla_failures_total[1m])) or (0 * sum by (tier) (rate(jointsla_gateway_outcomes_total[1m])))) / sum by (tier) (rate(jointsla_gateway_outcomes_total[1m]))) and (sum by (tier) (rate(jointsla_gateway_outcomes_total[1m])) > 0)",
+      "samples": 0
+    },
+    {
+      "panel": "Request outcomes by tier",
+      "expr": "sum by (tier,outcome) (rate(jointsla_gateway_outcomes_total[1m]))",
+      "samples": 3
+    },
+    {
+      "panel": "Scaling and warm recovery \u00b7 target vs ready",
+      "expr": "jointsla_gateway_desired_replicas",
+      "samples": 1
+    },
+    {
+      "panel": "Scaling and warm recovery \u00b7 target vs ready",
+      "expr": "jointsla_kubernetes_deployment_replicas",
+      "samples": 1
+    },
+    {
+      "panel": "Scaling and warm recovery \u00b7 target vs ready",
+      "expr": "jointsla_gateway_ready_replicas",
+      "samples": 1
+    },
+    {
+      "panel": "Waiting queues per inference replica",
+      "expr": "jointsla_inference_queue",
+      "samples": 2
+    },
+    {
+      "panel": "JointSLA actions \u00b7 applied / failed / observed",
+      "expr": "sum by (outcome) (increase(jointsla_gateway_actions_total[1m]))",
+      "samples": 0
+    },
+    {
+      "panel": "Container restarts \u00b7 failure and recovery evidence",
+      "expr": "jointsla_kubernetes_container_restarts",
+      "samples": 5
+    },
+    {
+      "panel": "Pod readiness \u00b7 warm-up / replacement / recovery",
+      "expr": "jointsla_kubernetes_pod_ready",
+      "samples": 5
+    },
+    {
+      "panel": "Pod readiness \u00b7 warm-up / replacement / recovery",
+      "expr": "jointsla_kubernetes_pod_terminating",
+      "samples": 5
+    },
+    {
+      "panel": "Pod waiting and last termination reasons",
+      "expr": "jointsla_kubernetes_container_waiting",
+      "samples": 0
+    },
+    {
+      "panel": "Pod waiting and last termination reasons",
+      "expr": "jointsla_kubernetes_container_last_termination",
+      "samples": 0
+    },
+    {
+      "panel": "Serving process CPU \u00b7 cores",
+      "expr": "rate(jointsla_inference_process_cpu_seconds_total[1m]) or rate(jointsla_gateway_process_cpu_seconds_total[1m])",
+      "samples": 3
+    },
+    {
+      "panel": "Serving process RAM \u00b7 resident memory",
+      "expr": "jointsla_inference_process_resident_memory_bytes or jointsla_gateway_process_resident_memory_bytes",
+      "samples": 3
+    },
+    {
+      "panel": "Actual allocated CUDA VRAM \u00b7 zero in CPU mode",
+      "expr": "jointsla_inference_vram_bytes",
+      "samples": 2
+    },
+    {
+      "panel": "JointSLA decision-step wall time",
+      "expr": "1000 * jointsla_gateway_decision_seconds",
+      "samples": 1
+    },
+    {
+      "panel": "Telemetry freshness",
+      "expr": "time() - jointsla_gateway_snapshot_timestamp_seconds",
+      "samples": 1
+    },
+    {
+      "panel": "Telemetry freshness",
+      "expr": "time() - jointsla_kubernetes_snapshot_timestamp_seconds",
+      "samples": 1
+    },
+    {
+      "panel": "Scrape and Kubernetes observer health",
+      "expr": "up{job=~\"gateway|inference\"}",
+      "samples": 3
+    },
+    {
+      "panel": "Scrape and Kubernetes observer health",
+      "expr": "jointsla_kubernetes_observer_up",
+      "samples": 1
+    },
+    {
+      "panel": "HTTP saturation rejections \u00b7 before tier parsing",
+      "expr": "increase(jointsla_gateway_http_saturation_rejections_total[1m]) or increase(jointsla_inference_http_saturation_rejections_total[1m])",
+      "samples": 3
+    },
+    {
+      "panel": "Infrastructure alerts",
+      "expr": "ALERTS{alertname=~\"JointSLA.*\"}",
+      "samples": 0
+    }
+  ],
+  "observer_up": true,
+  "observer_matches_current_pod_restart_counts": true,
+  "healthy_scrape_targets": 3,
+  "frozen_source_hashes_verified": 12,
+  "demo_requests": 96,
+  "demo_completed": 96,
+  "demo_sla_failures": 0,
+  "demo_seed": 41,
+  "demo_rate_rps": 8,
+  "audit_outcomes_unchanged": 1420,
+  "zero_failure_demo_has_measured_zero_sla_rate": true,
+  "historical_audit_source_hashes_unchanged": true,
+  "tests_passed": 310,
+  "historical_audit_tests": 306,
+  "demo_is_separate_from_audit": true,
+  "dashboard_sha256": "328f4b63d6e8cec1d8c3c7fa2636f7f1f5c81b66bf238aaf7b4e859558c9ec66"
+}

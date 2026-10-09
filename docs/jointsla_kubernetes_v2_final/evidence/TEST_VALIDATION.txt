@@ -1,0 +1,5 @@
+9 October 2026
+Command: .venv/Scripts/python.exe -m pytest -q -p no:cacheprovider
+PYTHONDONTWRITEBYTECODE=1
+330 passed in 32.50s
+No serving or experimental code changes in this publication task.

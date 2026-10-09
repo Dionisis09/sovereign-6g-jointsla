@@ -1,0 +1,50 @@
+{
+  "earlier_run": "prototype/.cache/kubernetes_20261008T151215",
+  "final_run": "prototype/.cache/kubernetes_20261008T161511",
+  "outcomes_verified": 1420,
+  "comparison": [
+    {
+      "run_utc": "20261008T151215",
+      "offered": 1280,
+      "completed": 943,
+      "on_time": 783,
+      "late_completed": 160,
+      "rejected": 337,
+      "other_failed": 0,
+      "sla_failures": 497,
+      "sla_failure_percent": 38.828125,
+      "mean_completed_latency_ms": 168.84088928951218,
+      "p95_completed_latency_ms": 308.847770000375
+    },
+    {
+      "run_utc": "20261008T161511",
+      "offered": 1280,
+      "completed": 852,
+      "on_time": 675,
+      "late_completed": 177,
+      "rejected": 428,
+      "other_failed": 0,
+      "sla_failures": 605,
+      "sla_failure_percent": 47.265625,
+      "mean_completed_latency_ms": 204.56968791081272,
+      "p95_completed_latency_ms": 307.1219200001906
+    }
+  ],
+  "protocol": {
+    "seed": 23,
+    "offered": 1280,
+    "rate_rps": 120,
+    "concurrency": 32,
+    "deadlines_ms": [
+      200,
+      400,
+      800
+    ]
+  },
+  "sources": {
+    "prototype/kubernetes/evidence/final_dashboard/earlier_burst_request_outcomes.csv": "11145aa842f1a83e0e219a98a26e1a7510b4764f2ec443785d4d1d9210f32dba",
+    "prototype/kubernetes/evidence/infrastructure/request_outcomes.csv": "e79b05910b519c43900c275dfe3bee039b24720c115ea6f4569213f063e8ca9a",
+    "prototype/kubernetes/evidence/infrastructure/replica_timeline.csv": "e9deff21bf6a4b1f90131cdd83e3440c04e5076b9a90a7672dbcae4201f26e98",
+    "prototype/kubernetes/evidence/infrastructure/verdict.json": "384565747f895b47c2983b6026e10b5a25b45ea5185d859beee268a7cd5c4fd4"
+  }
+}

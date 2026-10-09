@@ -1,0 +1,3 @@
+comparison,blocks,sla_failure_difference_pp,ci95_low_pp,ci95_high_pp,paired_wilcoxon_p,role,holm_three_core_comparisons_p,comparator_sla_mean,comparator_sla_std,comparator_target_replica_seconds_mean,comparator_target_replica_seconds_std,interpretation
+joint minus joint_sq,30,-2.1015625,-4.843749999999998,0.7317708333333326,0.1588444824223146,registered_exploratory_mechanism,,51.9921875,7.140310500600743,112.83904283841451,12.786886411917468,router effect not established
+joint minus reactive_joint,30,-11.0546875,-13.734440104166667,-8.301953125000002,3.1478703022003174e-07,registered_exploratory_mechanism,,60.9453125,7.273784871469023,65.44442013104756,4.005289527558733,consistent with scaling/headroom contribution; exploratory

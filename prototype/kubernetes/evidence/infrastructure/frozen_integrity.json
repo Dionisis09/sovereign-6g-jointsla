@@ -1,0 +1,11 @@
+{
+  "freeze_verified": true,
+  "frozen_sources": 12,
+  "historical_hashes": {
+    "protected_files": 20769,
+    "changed_files": []
+  },
+  "additional_439_hash_mismatches": [],
+  "protected_results_metadata_files": 24364,
+  "protected_results_metadata_changes": []
+}

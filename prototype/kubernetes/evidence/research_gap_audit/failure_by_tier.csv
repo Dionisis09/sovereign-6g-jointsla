@@ -1,0 +1,7 @@
+run,tier,offered,completed,completed_on_time,late_completed,rejected_503,backend_503_reason_unrecorded,other_failed,sla_failures,sla_failure_percent,late_even_after_excluding_client_queue,mean_client_queue_ms_late
+earlier_integration,Bronze,426,282,282,0,144,144,0,144,33.80281690140845,0,
+earlier_integration,Gold,427,332,172,160,95,95,0,255,59.71896955503513,160,0.066258124968499
+earlier_integration,Silver,427,329,329,0,98,98,0,98,22.950819672131146,0,
+final_infrastructure_audit,Bronze,426,305,305,0,121,121,0,121,28.4037558685446,0,
+final_infrastructure_audit,Gold,427,289,112,177,138,138,0,315,73.77049180327869,176,0.06434632772354518
+final_infrastructure_audit,Silver,427,258,258,0,169,169,0,169,39.578454332552695,0,

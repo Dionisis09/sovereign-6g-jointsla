@@ -1,0 +1,12 @@
+{
+  "original": "prototype/gateway.py",
+  "original_sha256": "c1577e875e35136297e8cd0ced12a5b00be3ca2398bc4930daf8a1eaf33c5b53",
+  "changes": [
+    "Adapter and Policy imports",
+    "Policy constructor",
+    "Planner hook",
+    "Router hook",
+    "Read-only detailed state export"
+  ],
+  "benchmark_sha256": "03bf52aa86bc069259659ea1454e54edf564b99710cdcaeab3e4a2615734ca8b"
+}

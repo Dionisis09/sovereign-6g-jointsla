@@ -17,6 +17,14 @@ Alternative:
 
 Open http://127.0.0.1:8501. Stop with Ctrl+C. Generic environments can use `pip install -r dashboard/requirements.txt` and `streamlit run dashboard/app.py`. NumPy and pandas already belong to the main environment; only Streamlit and Plotly are added here. Main requirement files are unchanged.
 
+## Final Kubernetes comparison and publication package
+
+Open [Kubernetes Comparison v2](http://127.0.0.1:8501/?view=kubernetes-v2) for the completed thirty-block real CPU inference evaluation, distinct from the simulator views. The overview links to this section. Tabs show all-offered SLA failures, completed p95, HTTP 503, per-tier failures, paired bootstrap intervals and Holm-corrected core p-values, exploratory ablations, target replica-time and the performance/resource scatter.
+
+`publication.py` reads only small, checksum-verified aggregates from `docs/jointsla_kubernetes_v2_final`. It neither imports the benchmark controller nor runs experiments or writes results. Plots distinguish sample SD from paired CIs. Downloads include the final Word report, conference draft, fourteen-slide deck and seven PNG/vector-PDF figures. The complete ZIP is loaded only after explicit selection, avoiding a default 49 MB download allocation.
+
+The final finding is 49.89% versus 61.43% reactive SLA failures, with 58.84% more target replica-time. The below-15% target remains unmet; the router ablation is inconclusive. The 330-test publication record and preserved-file counts are dated evidence, separate from the current dashboard test count and live Grafana counters. Existing frozen simulator and Kubernetes results remain unchanged.
+
 ## Views and controls
 
 21 navigation views: Overview; System & JointSLA; Synthetic Results; Scalability; Controller Optimization; Strong Baseline; Hardware Profiling; Hardware-Grounded Reversal; Pressure Sweep; Tier Behavior; Model Class Behavior; Mechanism Analysis; Burst Recovery; JointSLA-v2; v2 Held-out Results; Performance–Resource Trade-off; SOVEREIGN / Intent; Experiment Timeline; Research Story; Data / Reproducibility; Live Experiments. QoS, resources and seed explorer are supporting tabs within comparative views.

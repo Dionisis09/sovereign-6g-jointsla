@@ -1,0 +1,32 @@
+{
+  "inference": {
+    "image_id": "sha256:d0c55c05906c5dac02758e3851f23aa73551828917c53470692e95cf61fab3ef",
+    "source": "jointsla-prototype-inference:latest",
+    "repo_digests": [
+      "jointsla-prototype-inference@sha256:d0c55c05906c5dac02758e3851f23aa73551828917c53470692e95cf61fab3ef"
+    ]
+  },
+  "gateway": {
+    "image_id": "sha256:42528cf0e863a510e7db9d5235a2c465d5dbe15ac633c706790340824ae40035",
+    "source": "jointsla-prototype-gateway:latest",
+    "repo_digests": [
+      "jointsla-prototype-gateway@sha256:42528cf0e863a510e7db9d5235a2c465d5dbe15ac633c706790340824ae40035"
+    ]
+  },
+  "prometheus": {
+    "image_id": "sha256:63805ebb8d2b3920190daf1cb14a60871b16fd38bed42b857a3182bc621f4996",
+    "source": "prom/prometheus@sha256:63805ebb8d2b3920190daf1cb14a60871b16fd38bed42b857a3182bc621f4996",
+    "repo_digests": [
+      "jointsla-prometheus@sha256:63805ebb8d2b3920190daf1cb14a60871b16fd38bed42b857a3182bc621f4996",
+      "prom/prometheus@sha256:63805ebb8d2b3920190daf1cb14a60871b16fd38bed42b857a3182bc621f4996"
+    ]
+  },
+  "grafana": {
+    "image_id": "sha256:6ac590e7cabc2fbe8d7b8fc1ce9c9f0582177b334e0df9c927ebd9670469440f",
+    "source": "grafana/grafana@sha256:6ac590e7cabc2fbe8d7b8fc1ce9c9f0582177b334e0df9c927ebd9670469440f",
+    "repo_digests": [
+      "grafana/grafana@sha256:6ac590e7cabc2fbe8d7b8fc1ce9c9f0582177b334e0df9c927ebd9670469440f",
+      "jointsla-grafana@sha256:6ac590e7cabc2fbe8d7b8fc1ce9c9f0582177b334e0df9c927ebd9670469440f"
+    ]
+  }
+}
