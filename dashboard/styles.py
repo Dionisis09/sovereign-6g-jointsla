@@ -11,7 +11,10 @@ def apply(presentation=False):
     h2 {{font-size:26px!important;}}
     p,li,[data-testid="stMarkdownContainer"] {{font-size:{size}px;}}
     [data-testid="stMetric"] {{background:#152338;border:1px solid #293b52;border-radius:10px;padding:18px;}}
-    [data-testid="stMetricLabel"] {{color:#b7c6da;}}
+    [data-testid="stMetricLabel"], [data-testid="stMetricLabel"] p {{color:#b7c6da!important;}}
+    [data-testid="stMetricValue"] {{color:#e9eff8!important;}}
+    [data-testid="stForm"] [data-testid="stWidgetLabel"] p,
+    [data-testid="stForm"] label p {{color:#e9eff8!important;}}
     .notice {{padding:14px 20px;border-left:3px solid #55b7ec;background:#13243a;border-radius:5px;margin:16px 0;}}
     .story {{border:1px solid #34465d;border-radius:9px;padding:19px;background:#111d2d;height:160px;}}
     .story b {{color:#79c8f4;font-size:19px;}}

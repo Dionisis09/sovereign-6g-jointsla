@@ -1,6 +1,6 @@
 # JointSLA — project entry point
 
-Start with the [organized JointSLA folder](JointSLA/README.md): mathematical scaler/router Word, full 100-slide presentation, final technical report, conference paper, figures, tables and links to all implementation modules.
+Start with the [organized JointSLA folder](JointSLA/README.md): mathematical scaler/router Word, full 107-slide presentation, final technical report, conference paper, figures, tables and links to all implementation modules.
 
 For a fresh GitHub clone, installation and what is included/excluded, use the [repository guide](REPOSITORY_GUIDE.md). Install `requirements-research.txt` to run the dashboard and tests from the clone.
 

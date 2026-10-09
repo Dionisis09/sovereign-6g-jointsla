@@ -1,0 +1,26 @@
+{
+  "capture_date": "2026-10-09",
+  "timezone": "Europe/Athens",
+  "scope": "Illustrative live UI evidence; not an additional research experiment or a modification of frozen results.",
+  "sources": {
+    "maas_input.jpg": "http://127.0.0.1:8501/?view=maas",
+    "maas_result.jpg": "http://127.0.0.1:8501/?view=maas",
+    "research_dashboard.jpg": "http://127.0.0.1:8501/?view=kubernetes-v2",
+    "grafana_overview.jpg": "http://127.0.0.1:3001/d/jointsla-runtime",
+    "grafana_latency.jpg": "http://127.0.0.1:3001/d/jointsla-runtime",
+    "grafana_resources.jpg": "http://127.0.0.1:3001/d/jointsla-runtime"
+  },
+  "image_credit": "https://raw.githubusercontent.com/pytorch/hub/master/images/dog.jpg (PyTorch Hub example image)",
+  "model": "Existing pretrained MobileNetV3-Large, CPU Kubernetes pods",
+  "demo_traffic": "One real image request plus 24 low-rate synthetic connectivity requests to show telemetry; separate from registered experiments.",
+  "outcome": "illustrative_image_outcome.json",
+  "interpretation": "Single image prediction scores are not model accuracy measurements. Live p95 is a histogram estimate, not the exact frozen CSV quantile. Historical audit banners refer to 306 tests / 1420 outcomes, while current repository validation has 345 tests. CPU-mode CUDA VRAM is zero.",
+  "sha256": {
+    "maas_input.jpg": "5f48eb2e619919b5c593cfeed1032dfc139ed06fd68cd765a52c62abd7bbf62d",
+    "maas_result.jpg": "0ab71f7430e3fb51c89ec28dde545d0d12b779c402041c4324e5da9cdf482462",
+    "research_dashboard.jpg": "6828418643b5689bade619c361b5374aa788a253e435eb078d58691c0bc3ee91",
+    "grafana_overview.jpg": "bd4d5c9c662034f11f866d8637380b85f1bb9bf615db823181cd184d254e587d",
+    "grafana_latency.jpg": "ede6e4b3cf5450cd605f2a3658d80546f92c3977266f8811b89abf7899180028",
+    "grafana_resources.jpg": "d976b2585b542f27d95a44f6b9530911474ea04b7fb60a23558896e35e6b2662"
+  }
+}

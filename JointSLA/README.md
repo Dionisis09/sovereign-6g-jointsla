@@ -6,13 +6,13 @@
 
 | Τι χρειάζεσαι | Αρχείο |
 |---|---|
-| Κύρια παρουσίαση όλου του project · 100 διαφάνειες | [JointSLA Complete Presentation](02_Presentations/JointSLA_Complete_Presentation.pptx) |
+| Κύρια παρουσίαση όλου του project · 107 διαφάνειες | [JointSLA Complete Presentation](02_Presentations/JointSLA_Complete_Presentation.pptx) |
 | Scaler και router · συναρτήσεις, προέλευση παραμέτρων και παραδείγματα στα ελληνικά | [Μαθηματικό Word](01_Methodology/JointSLA_Mathematical_Methodology.docx) |
 | Κύρια τεχνική αναφορά με τελική Kubernetes αξιολόγηση | [Technical Report](03_Reports/JointSLA_Technical_Report.docx) |
 | Κύριο conference paper draft | [Paper](04_Paper/JointSLA_Paper.docx) |
 | Συμπληρωματική πλήρης αναφορά simulation | [Word](03_Reports/JointSLA_Simulation_Report.docx) · [PDF](03_Reports/JointSLA_Simulation_Report.pdf) |
 
-Η παρουσίαση των 100 διαφανειών είναι η πληρέστερη παρουσίαση και περιλαμβάνει την ερευνητική διαδρομή, αρχιτεκτονική, συναρτήσεις, simulation και Kubernetes αποτελέσματα, graphs, συμπεράσματα και περιορισμούς. Δεν υπάρχουν εναλλακτικές παλιότερες παρουσιάσεις σε αυτόν τον φάκελο. Η μαθηματική, simulation και infrastructure τεκμηρίωση είναι συμπληρωματικά θέματα, όχι ανταγωνιστικές εκδόσεις της κύριας αναφοράς.
+Η παρουσίαση των 107 διαφανειών είναι η πληρέστερη παρουσίαση και περιλαμβάνει την ερευνητική διαδρομή, αρχιτεκτονική, συναρτήσεις, simulation και Kubernetes αποτελέσματα, graphs, συμπεράσματα, περιορισμούς και MaaS request pipeline με πραγματικά screenshots των dashboards (διαφάνειες 55–61). Δεν υπάρχουν εναλλακτικές παλιότερες παρουσιάσεις σε αυτόν τον φάκελο. Η μαθηματική, simulation και infrastructure τεκμηρίωση είναι συμπληρωματικά θέματα, όχι ανταγωνιστικές εκδόσεις της κύριας αναφοράς.
 
 ## Δομή αυτού του φακέλου
 
@@ -26,6 +26,7 @@ JointSLA/
   04_Paper/                Conference draft και SOVEREIGN mapping
   05_Figures/              7 τελικά Kubernetes figures σε PNG και vector PDF
   06_Tables/               Τελικοί πίνακες CSV και canonical_results.json
+  08_Dashboard_Screenshots/ MaaS, research dashboard και live Grafana captures
 ```
 
 Οι φάκελοι περιέχουν τα επιλεγμένα κύρια αρχεία με καθαρά ονόματα χωρίς version suffix, για εύκολη ανάγνωση και αποστολή. Δεν αποτελούν νέο πείραμα ούτε αντικαθιστούν τα frozen πρωτότυπα. Το manifest καταγράφει την ακριβή αρχική διαδρομή και το hash κάθε αντιγράφου. Αν αλλάξει στο μέλλον ένα πρωτότυπο, αυτό το snapshot χρειάζεται ρητή ανανέωση. Οι επιστημονικές αναφορές σε v1/v2 μέσα στο περιεχόμενο διατηρούνται, επειδή προσδιορίζουν διαφορετικές μεθόδους και experiments.
@@ -84,3 +85,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File prototype/kubernetes/deploy.
 Το τελικό Kubernetes comparison δείχνει **49,89% SLA failures έναντι 61,43% reactive**, με **58,84% περισσότερα target replica-seconds**. Δεν ισχυριζόμαστε καλύτερη resource efficiency. Οι τιμές 38,83% και 47,27% αφορούν διαφορετικά παλαιότερα runs. Οι συναρτήσεις και οι σταθερές του scaler/router τεκμηριώνονται ως design / engineering choices, χωρίς ισχυρισμό ότι προέκυψαν από optimization.
 
 Οι προσωρινές μετρήσεις του MaaS demo δεν ενσωματώνονται στα frozen research results.
+
+## Screenshots και σημερινό demo
+
+[Έξι dashboard screenshots και provenance](08_Dashboard_Screenshots/README.md) ενσωματώνονται στην κύρια παρουσίαση. Το πραγματικό image request επέστρεψε HTTP 200, 98,1 ms client latency και SLA MET για deadline 200 ms. Αποτελεί λειτουργικό παράδειγμα· δεν προστίθεται στο frozen benchmark ούτε αποδεικνύει model accuracy ή γενική SLA εγγύηση.

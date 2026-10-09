@@ -7,7 +7,7 @@ results, figures and the archived inputs needed by dashboard simulation replays.
 ## Read the project
 
 Start with [JointSLA/README.md](JointSLA/README.md). It points to one complete
-100-slide presentation, the mathematical scaler/router Word, the main technical
+107-slide presentation, the mathematical scaler/router Word, the main technical
 report and paper. Supporting simulation and infrastructure reports describe
 distinct experiments. Their original frozen artifacts remain under `docs/` and
 `results/`, with manifests and hashes preserved.
@@ -75,9 +75,15 @@ modify frozen research results.
 
 ## Delivery validation (9 October 2026)
 
-The clean staged-file export passed **345 tests**. The 33 curated artifacts match
-their original hashes, and the 54 included publication/source files checked
+The repository suite passed **345 tests** after the MaaS presentation update.
+The 42 curated artifacts match their recorded source hashes, and the 54 included publication/source files checked
 against frozen manifests match byte for byte in Git. The excluded complete raw
 evidence ZIP remains local. No credentials, environments or runtime caches were
 included; no tracked file exceeds 95 MB. These checks do not rerun or modify the
 frozen scientific experiments.
+
+The current presentation contains 107 slides, including six dated dashboard
+screenshots and the MaaS request/control/observability flow. Screenshot metadata
+and an illustrative image outcome are in `docs/figures/dashboard/`; they are
+separate from frozen experiment outcomes. The existing charts and original
+simulation figures retain their values and appearance.

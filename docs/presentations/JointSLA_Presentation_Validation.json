@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-09",
+  "scope": "Current complete presentation and live UI evidence, not new research trials",
+  "presentation": "JointSLA/02_Presentations/JointSLA_Complete_Presentation.pptx",
+  "sha256": "abe2844ea4950b87833908e5d9fa8add2569789c860700df93924262cb7d3377",
+  "bytes": 2343449,
+  "slides": 107,
+  "main_slides": 92,
+  "original_simulation_figures": 15,
+  "new_section_slides": [
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61
+  ],
+  "native_charts": 27,
+  "native_tables": 25,
+  "embedded_editable_chart_workbooks": 27,
+  "package_integrity": "pass",
+  "artifact_tool_import": "pass",
+  "native_powerpoint": "Opened read-only and exported all 107 slides; inspected new/changed slides",
+  "layout_warning_review": "The estimated slide-62 table overflow warning does not occur in the native PowerPoint rendering; table, conclusion and footer are separate and readable.",
+  "preservation": {
+    "slides": 107,
+    "notes": 107,
+    "unchanged_original_chart_parts": 27,
+    "unchanged_original_slide_texts": 98,
+    "original_media_preserved": 15,
+    "native_render_differences_excluding_footers": [],
+    "reviewed_new_slides": [
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61
+    ],
+    "reviewed_changed_slides": [
+      3,
+      62
+    ]
+  },
+  "tests": {
+    "passed": 345,
+    "runtime_seconds": 29.39
+  },
+  "math_word_sha256": "bfa35737812b045f274b4ab856560eacbe0309c00f1b6b755b81864abec8fe16",
+  "technical_report_sha256": "344ad5c4f24d91574f3046d3c2a4ab5ed90c62975e3c7f1c4cf4b4d0f5098f83",
+  "frozen_research": "Scientific policies/results unchanged; existing frozen manifests remain authoritative",
+  "runtime_change": "Metric label/value and form label contrast improved; no controller/model policy changes",
+  "provenance": "docs/figures/dashboard/CAPTURE_METADATA.json"
+}

@@ -1,6 +1,6 @@
 {
   "date": "2026-10-09",
-  "scope": "Curated current reading package with one complete presentation and one main technical report, plus distinct simulation/mathematical/infrastructure evidence. Original sources and frozen package remain unchanged. Version numbers stay in scientific provenance, not convenience filenames. Markdown reports retain source-relative links.",
+  "scope": "Curated current reading package with one complete presentation and one main technical report, plus distinct simulation/mathematical/infrastructure evidence. Original sources and frozen package remain unchanged. Version numbers stay in scientific provenance, not convenience filenames. Markdown reports retain source-relative links. The current presentation now has 107 slides including a seven-slide MaaS section and six dated live UI screenshots; these are illustrative evidence outside the frozen scientific comparison.",
   "files": [
     {
       "file": "01_Methodology/JointSLA_Mathematical_Methodology.docx",
@@ -11,8 +11,8 @@
     {
       "file": "02_Presentations/JointSLA_Complete_Presentation.pptx",
       "source": "docs/presentations/JointSLA_Complete_Project_Presentation_GR_v1.pptx",
-      "sha256": "d55013549b163bea2fb4cad5ae36c671fae5c6b7f9635a15231253ee4f73eea2",
-      "bytes": 2011886
+      "sha256": "abe2844ea4950b87833908e5d9fa8add2569789c860700df93924262cb7d3377",
+      "bytes": 2343449
     },
     {
       "file": "03_Reports/JointSLA_Technical_Report.docx",
@@ -199,6 +199,60 @@
       "source": "docs/jointsla_kubernetes_v2_final/canonical_results.json",
       "sha256": "44ab1db0ba9b43d719a1cf4f7fb75694b97e0af15faa98b3d23233a6ae9af021",
       "bytes": 19882
+    },
+    {
+      "file": "08_Dashboard_Screenshots/CAPTURE_METADATA.json",
+      "source": "docs/figures/dashboard/CAPTURE_METADATA.json",
+      "sha256": "7ac6d60a905fd5be240f13e4c68dd02f5a32a8170d0c8c2cf7636a133745d75a",
+      "bytes": 1912
+    },
+    {
+      "file": "08_Dashboard_Screenshots/grafana_latency.jpg",
+      "source": "docs/figures/dashboard/grafana_latency.jpg",
+      "sha256": "ede6e4b3cf5450cd605f2a3658d80546f92c3977266f8811b89abf7899180028",
+      "bytes": 60891
+    },
+    {
+      "file": "08_Dashboard_Screenshots/grafana_overview.jpg",
+      "source": "docs/figures/dashboard/grafana_overview.jpg",
+      "sha256": "bd4d5c9c662034f11f866d8637380b85f1bb9bf615db823181cd184d254e587d",
+      "bytes": 67419
+    },
+    {
+      "file": "08_Dashboard_Screenshots/grafana_resources.jpg",
+      "source": "docs/figures/dashboard/grafana_resources.jpg",
+      "sha256": "d976b2585b542f27d95a44f6b9530911474ea04b7fb60a23558896e35e6b2662",
+      "bytes": 86792
+    },
+    {
+      "file": "08_Dashboard_Screenshots/illustrative_image_outcome.json",
+      "source": "docs/figures/dashboard/illustrative_image_outcome.json",
+      "sha256": "435cc14a21c2b5ee8ff050ce9196b1f1acfe1651bbff6e8b06360bfbf4809e2a",
+      "bytes": 844
+    },
+    {
+      "file": "08_Dashboard_Screenshots/maas_input.jpg",
+      "source": "docs/figures/dashboard/maas_input.jpg",
+      "sha256": "5f48eb2e619919b5c593cfeed1032dfc139ed06fd68cd765a52c62abd7bbf62d",
+      "bytes": 55575
+    },
+    {
+      "file": "08_Dashboard_Screenshots/maas_result.jpg",
+      "source": "docs/figures/dashboard/maas_result.jpg",
+      "sha256": "0ab71f7430e3fb51c89ec28dde545d0d12b779c402041c4324e5da9cdf482462",
+      "bytes": 63676
+    },
+    {
+      "file": "08_Dashboard_Screenshots/README.md",
+      "source": "docs/figures/dashboard/README.md",
+      "sha256": "7e3f030b619b2af2a911a8c63a4b812d5d56de0e95fb1f518132c159af0c32bd",
+      "bytes": 1325
+    },
+    {
+      "file": "08_Dashboard_Screenshots/research_dashboard.jpg",
+      "source": "docs/figures/dashboard/research_dashboard.jpg",
+      "sha256": "6828418643b5689bade619c361b5374aa788a253e435eb078d58691c0bc3ee91",
+      "bytes": 69761
     }
   ]
 }
