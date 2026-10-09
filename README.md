@@ -1,4 +1,14 @@
-# CATALYST: runtime cross-layer contracts, Phase 0
+# JointSLA — project entry point
+
+Start with the [organized JointSLA folder](JointSLA/README.md): mathematical scaler/router Word, full 100-slide presentation, final technical report, conference paper, figures, tables and links to all implementation modules.
+
+For a fresh GitHub clone, installation and what is included/excluded, use the [repository guide](REPOSITORY_GUIDE.md). Install `requirements-research.txt` to run the dashboard and tests from the clone.
+
+Open the [research dashboard](http://127.0.0.1:8501/?view=kubernetes-v2) or the [real inference / MaaS demo](http://127.0.0.1:8501/?view=maas). See [dashboard/README.md](dashboard/README.md) and [Kubernetes setup](prototype/kubernetes/README.md) for local runtime prerequisites. Frozen research remains under its original paths in `results/` and `docs/jointsla_kubernetes_v2_final/`.
+
+The existing research history and run instructions follow below; dated test counts are historical records.
+
+## CATALYST: runtime cross-layer contracts, Phase 0
 
 The separate [real-inference infrastructure prototype](prototype/README.md)
 adds Docker, real PyTorch serving, Prometheus/Grafana and a scoped Kubernetes

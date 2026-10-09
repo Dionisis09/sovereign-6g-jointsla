@@ -27,6 +27,12 @@ The final finding is 49.89% versus 61.43% reactive SLA failures, with 58.84% mor
 
 ## Views and controls
 
+### Real inference button (MaaS)
+
+Open [AI Inference / MaaS Demo](http://127.0.0.1:8501/?view=maas), upload a JPEG/PNG up to 1 MB, choose a request tier/deadline, and click **Run real inference**. Each click sends one request to the existing Kubernetes gateway at `127.0.0.1:8091`. The page displays top-three predictions, client/gateway latency, queue/execution time, HTTP status and client SLA outcome, with a downloadable JSON outcome and a link to live Grafana. A synthetic-tensor connectivity option executes the real model but does not produce meaningful image classifications.
+
+Docker and the local Kubernetes prototype must be running. The page never retries, creates background traffic, or modifies controller parameters or frozen experiment files. Demo traffic does affect live telemetry and may trigger the unchanged autoscaler. Request deadlines affect routing and outcome classification; the scaler keeps its configured control deadline. This interface is a local model-serving demonstration, not a model registry, accuracy benchmark or multi-tenant MaaS platform.
+
 21 navigation views: Overview; System & JointSLA; Synthetic Results; Scalability; Controller Optimization; Strong Baseline; Hardware Profiling; Hardware-Grounded Reversal; Pressure Sweep; Tier Behavior; Model Class Behavior; Mechanism Analysis; Burst Recovery; JointSLA-v2; v2 Held-out Results; Performance–Resource Trade-off; SOVEREIGN / Intent; Experiment Timeline; Research Story; Data / Reproducibility; Live Experiments. QoS, resources and seed explorer are supporting tabs within comparative views.
 
 Controls appear only in the applicable scope: policy, scale, load, metric, tier, class, model, measured statistic and seed. Across-load graphs retain the complete load series; the selected load scopes metric cards, source rows and the associated statistical details. Seed selection changes inspected rows, while distributions explicitly retain all selected run seeds. Presentation Mode enlarges charts/fonts and keeps long context collapsed. Learning Mode offers 11 expandable explanations. The system sliders are explicitly illustrative arithmetic, not experimental evidence or a simulator run.

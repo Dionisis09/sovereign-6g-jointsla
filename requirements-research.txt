@@ -1,0 +1,8 @@
+# Dashboard, simulator analysis and the existing unit tests (Python 3.12+).
+# Real inference is built in Docker; native PyTorch has its own requirements.
+-r requirements-paper.txt
+-r dashboard/requirements.txt
+-r prototype/requirements.txt
+pillow==12.3.0
+pydantic==2.13.5
+pytest==9.1.1

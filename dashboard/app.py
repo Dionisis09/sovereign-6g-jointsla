@@ -12,7 +12,7 @@ from dashboard.metrics import METRICS, spec, policy_label, paired_table, wide_me
 from dashboard.data_validation import validate
 from dashboard.styles import apply
 
-PAGES=['Overview','Kubernetes Comparison v2','System & JointSLA','Synthetic Results','Scalability','Controller Optimization',
+PAGES=['Overview','Kubernetes Comparison v2','AI Inference / MaaS Demo','System & JointSLA','Synthetic Results','Scalability','Controller Optimization',
  'Strong Baseline','Hardware Profiling','Hardware-Grounded Reversal','Pressure Sweep','Tier Behavior',
  'Model Class Behavior','Mechanism Analysis','Burst Recovery','JointSLA-v2','v2 Held-out Results',
  'Performance–Resource Trade-off','SOVEREIGN / Intent','Experiment Timeline','Research Story','Data / Reproducibility','Live Experiments']
@@ -28,12 +28,12 @@ with st.sidebar:
     st.caption('SOVEREIGN-6G · frozen research evidence')
     presentation=st.toggle('Presentation Mode',key='presentation')
     learn=st.toggle('Learning Mode',key='learning')
-    initial=PAGES.index('Kubernetes Comparison v2') if st.query_params.get('view')=='kubernetes-v2' else 0
+    initial=PAGES.index({'kubernetes-v2':'Kubernetes Comparison v2','maas':'AI Inference / MaaS Demo'}.get(st.query_params.get('view'),'Overview'))
     page=st.radio('PROJECT',PAGES,index=initial,key='page')
     st.divider()
     st.caption('Frozen evidence stays read-only. Live replays have separate outputs.')
 apply(presentation)
-ui.notice('Live execution — archived inputs, unchanged policies, isolated outputs.' if page=='Live Experiments' else 'Visualization only — no experiment execution or parameter tuning.')
+ui.notice('Live real inference — one request per click; frozen experiments stay unchanged.' if page=='AI Inference / MaaS Demo' else 'Live execution — archived inputs, unchanged policies, isolated outputs.' if page=='Live Experiments' else 'Visualization only — no experiment execution or parameter tuning.')
 
 @st.cache_data(show_spinner=False)
 def startup_validation():return validate()
@@ -167,7 +167,10 @@ def generic(dataset,conclusion=None):
     if conclusion:ui.notice(conclusion)
     figures(dataset)
 
-if page=='Live Experiments':
+if page=='AI Inference / MaaS Demo':
+    from dashboard.maas import render
+    render()
+elif page=='Live Experiments':
     from dashboard.live_page import render
     render(presentation)
 elif page=='Kubernetes Comparison v2':
@@ -475,4 +478,4 @@ elif page=='Data / Reproducibility':
 if learn:
     st.divider();st.subheader('Learning Mode · plain-language explanations');ui.learning()
 if presentation:st.caption('Presentation Mode: larger typography and plots; long technical context stays in expanders.')
-st.caption(f'View: {page} · '+('Isolated live replay' if page=='Live Experiments' else 'Frozen evidence only'))
+st.caption(f'View: {page} · '+('Live Kubernetes inference demo' if page=='AI Inference / MaaS Demo' else 'Isolated live replay' if page=='Live Experiments' else 'Frozen evidence only'))

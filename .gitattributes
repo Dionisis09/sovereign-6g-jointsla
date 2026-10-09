@@ -1,2 +1,10 @@
 # Retained artifacts fit normal Git; gzip files remain binary.
+# Source checkouts use LF consistently; sealed research artifacts retain bytes.
+* text=auto eol=lf
+results/** -text
+docs/** -text
+JointSLA/** -text
+joint_sla_v2/** -text
+run_jointsla_v2.py -text
+tests/test_joint_sla_v2.py -text
 *.gz -filter -diff -merge -text
