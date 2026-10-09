@@ -1,0 +1,3 @@
+# Optional preview tooling; not needed for the simulator or live services.
+pypdfium2==5.13.0
+pillow==12.3.0

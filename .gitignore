@@ -49,3 +49,6 @@ results/**/lifecycle_events.csv
 results/**/deployment_audit.csv
 results/**/actions.csv
 
+
+# Local report rendering diagnostics
+docs/jointsla_v2_report/render.log

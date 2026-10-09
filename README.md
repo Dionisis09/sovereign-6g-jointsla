@@ -37,21 +37,20 @@ The newer five-node service-placement experiment is documented in
 [placement_experiment/README.md](placement_experiment/README.md). Run it with
 `python -m placement_experiment.runner`; its outputs are separate in `results/placement`.
 
-New research branch: `codex/catalyst-phase0`. One configurable synthetic service
+The Phase 0 study uses one configurable synthetic service
 engine, B0 PLAIN_LOCAL, B1 STRONG_LOCAL_SAFE, CATALYST RUNTIME_CONTRACT, and only
 the two requested ablations. See [the protocol](docs/protocol.md) and
 [the code reuse audit](docs/reuse-audit.md).
 
-The previous **6g 1** artifacts were found at
-`C:/Users/dioni/Documents/Codex/2026-10-06/kan/outputs`. Generic helpers are
-extracted into this repository with [exact provenance](docs/reuse-provenance.json).
-The previous artifacts remain untouched; their controllers, claims and tuned
-parameters are not imported. That old directory had no Git repository.
+Generic helpers from the earlier AIMCO/VISTA projects are included with
+[exact provenance](docs/reuse-provenance.json). Their controllers, claims and tuned
+parameters are not imported. The provenance record preserves historical source
+locations and hashes; these external originals are not included in a fresh clone.
 
 ## Run
 
-The supplied `.venv` inherits the desktop's bundled Python 3.12 packages. For a
-fresh environment, use Python >=3.12 and install the pinned project dependencies:
+Create a local environment with Python >=3.12 and install the pinned project
+dependencies (`.venv` is not included in the repository):
 
 ```powershell
 python -m venv .venv

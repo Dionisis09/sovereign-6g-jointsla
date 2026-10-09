@@ -1,14 +1,11 @@
 # Repository audit, before implementation
 
-Audit date: 2026-10-06. Workspace: `C:/Users/dioni/Documents/ChatGPT/6g`.
-The repository contained only `.git`, with no commits, branches with content,
-remotes, source files, or AGENTS.md. The parent ChatGPT directory contained only
-this workspace. The user was asked for the prior AIMCO/VISTA repository location.
-The user subsequently identified the previous chat as **6g 1**. Its files are at
-`C:/Users/dioni/Documents/Codex/2026-10-06/kan/outputs`; that directory is not a
-Git repository. The new branch remains in the user-provided current repository,
-and the old artifacts are read-only references. No prior scientific assumptions,
-objectives, tuning, or claims are imported.
+Audit date: 2026-10-06. The repository was initially empty. Earlier AIMCO/VISTA
+artifacts were supplied as external, read-only references and were not stored
+in a Git repository. No prior scientific assumptions, objectives, tuning or
+claims are imported. Historical source locations and hashes are retained in
+`reuse-provenance.json` for provenance verification; those external originals
+are not distributed with this repository.
 
 ## Existing code reusable
 

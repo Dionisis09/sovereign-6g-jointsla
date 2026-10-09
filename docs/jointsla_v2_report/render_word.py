@@ -1,25 +1,68 @@
-"""Use the packaged rasterizer with native Word PDF on Windows without LO."""
+"""Preview the archived Word-exported PDF without modifying the report.
+
+This helper rasterizes the existing PDF; it does not regenerate it from Word.
+Install requirements-preview.txt and run this script from any working directory.
+"""
+import argparse
+import json
 from pathlib import Path
-import importlib.util,shutil,json
-from PIL import Image,ImageDraw
-BASE=Path(__file__).resolve().parent
-SKILL=Path('C:/Users/dioni/.codex/plugins/cache/openai-primary-runtime/documents/26.921.10847/skills/documents')
-spec=importlib.util.spec_from_file_location('packaged_renderer',SKILL/'render_docx.py')
-module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
-pdf=BASE/'qa/JointSLA_v2_Experimental_Report.pdf'
-def convert(doc_path,user_profile,out_dir,stem,verbose=False):
-    destination=Path(out_dir)/(stem+'.pdf');shutil.copy2(pdf,destination)
-    return str(destination),'Native Microsoft Word PDF export; bundled LibreOffice unavailable on Windows.'
-module.convert_to_pdf=convert
-for old in (BASE/'qa').iterdir():
-    if old.is_file() and (old.name.startswith('page-') or old.name.startswith('contact_')) and old.suffix=='.png':
-        old.unlink()
-pages=module.rasterize(str(BASE/'JointSLA_v2_Experimental_Report.docx'),str(BASE/'qa'),150,verbose=False,emit_pdf=False)
-for start in range(0,len(pages),9):
-    selected=pages[start:start+9];canvas=Image.new('RGB',(1800,3*850),'#dddddd');draw=ImageDraw.Draw(canvas)
-    for i,path in enumerate(selected):
-        pic=Image.open(path).convert('RGB');pic.thumbnail((585,810));x=(i%3)*600;y=(i//3)*850
-        canvas.paste(pic,(x+(600-pic.width)//2,y+30));draw.text((x+10,y+8),Path(path).stem,fill='black')
-    canvas.save(BASE/'qa'/f'contact_{start//9+1}.png')
-(BASE/'qa/render_receipt.json').write_text(json.dumps(dict(pages=len(pages),engine='Microsoft Word PDF plus packaged render_docx.py rasterizer',dpi=150),indent=2))
-print('Rendered pages:',len(pages))
+
+BASE = Path(__file__).resolve().parent
+ROOT = BASE.parents[1]
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--dpi", type=int, default=150)
+    parser.add_argument("--output", type=Path,
+                        default=ROOT / ".cache" / "v2_report_preview")
+    args = parser.parse_args()
+    if not 36 <= args.dpi <= 300:
+        parser.error("--dpi must be between 36 and 300")
+    output = args.output.resolve()
+    if output == ROOT or output.is_relative_to(BASE):
+        parser.error("Choose a preview directory outside the archived report folder")
+    try:
+        import pypdfium2 as pdfium
+        from PIL import Image, ImageDraw
+    except ImportError:
+        parser.error("Install docs/jointsla_v2_report/requirements-preview.txt first")
+
+    source = BASE / "qa" / "JointSLA_v2_Experimental_Report.pdf"
+    output.mkdir(parents=True, exist_ok=True)
+    pages = []
+    with pdfium.PdfDocument(source) as document:
+        for i in range(len(document)):
+            page = document[i]
+            bitmap = page.render(scale=args.dpi / 72)
+            picture = bitmap.to_pil()
+            path = output / f"page-{i + 1}.png"
+            picture.save(path)
+            picture.close()
+            bitmap.close()
+            page.close()
+            pages.append(path)
+
+    for start in range(0, len(pages), 9):
+        with Image.new("RGB", (1800, 2550), "#dddddd") as canvas:
+            draw = ImageDraw.Draw(canvas)
+            for i, path in enumerate(pages[start:start + 9]):
+                with Image.open(path) as original:
+                    picture = original.convert("RGB")
+                    picture.thumbnail((585, 810))
+                    x, y = (i % 3) * 600, (i // 3) * 850
+                    canvas.paste(picture, (x + (600 - picture.width) // 2, y + 30))
+                    draw.text((x + 10, y + 8), path.stem, fill="black")
+                    picture.close()
+            canvas.save(output / f"contact_{start // 9 + 1}.png")
+
+    receipt = {"pages": len(pages), "engine": "pypdfium2", "dpi": args.dpi,
+               "source": source.relative_to(ROOT).as_posix(),
+               "scope": "Preview of archived PDF; report and QA evidence unchanged"}
+    (output / "render_receipt.json").write_text(
+        json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
+    print(f"Rendered {len(pages)} pages to {output}")
+
+
+if __name__ == "__main__":
+    main()
