@@ -27,7 +27,7 @@ def ready(url: str) -> None:
         try:
             if request(url)[0] == 200:
                 return
-        except (urllib.error.URLError, TimeoutError):
+        except (urllib.error.URLError, TimeoutError, ConnectionError):
             pass
         time.sleep(1)
     raise RuntimeError(f"service did not become ready: {url}")
