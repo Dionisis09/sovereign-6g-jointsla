@@ -1,0 +1,95 @@
+{
+  "evidence": "SIMULATION_ONLY_CPU",
+  "mask_violations": 0,
+  "paired_vs_jointsla": {
+    "breach_reduction": 0.0,
+    "lower_95pct": 0.0,
+    "upper_95pct": 0.0
+  },
+  "promotion_eligible": false,
+  "selected_policy": "q_seed_23",
+  "test": {
+    "jointsla_gate": {
+      "action_rate": 0.99,
+      "episodes": 100,
+      "failed_attempt_rate": 0.03,
+      "mean_return": 9.1857606,
+      "simulated_any_breach_rate": 0.62,
+      "simulated_breach_tick_rate": 0.16333333333333333
+    },
+    "noop": {
+      "action_rate": 0.0,
+      "episodes": 100,
+      "failed_attempt_rate": 0.0,
+      "mean_return": -1.10606262,
+      "simulated_any_breach_rate": 0.87,
+      "simulated_breach_tick_rate": 0.7983333333333333
+    },
+    "q_seed_23": {
+      "action_rate": 0.91,
+      "episodes": 100,
+      "failed_attempt_rate": 0.03,
+      "mean_return": 8.243466419999999,
+      "simulated_any_breach_rate": 0.62,
+      "simulated_breach_tick_rate": 0.21916666666666668
+    },
+    "sla_threshold_70ms": {
+      "action_rate": 0.95,
+      "episodes": 100,
+      "failed_attempt_rate": 0.03,
+      "mean_return": 8.87623055,
+      "simulated_any_breach_rate": 0.74,
+      "simulated_breach_tick_rate": 0.18416666666666667
+    }
+  },
+  "validation": {
+    "jointsla_gate": {
+      "action_rate": 0.99,
+      "episodes": 100,
+      "failed_attempt_rate": 0.06,
+      "mean_return": 9.289367969999999,
+      "simulated_any_breach_rate": 0.61,
+      "simulated_breach_tick_rate": 0.15083333333333335
+    },
+    "noop": {
+      "action_rate": 0.0,
+      "episodes": 100,
+      "failed_attempt_rate": 0.0,
+      "mean_return": -0.92691749,
+      "simulated_any_breach_rate": 0.86,
+      "simulated_breach_tick_rate": 0.7866666666666666
+    },
+    "q_seed_11": {
+      "action_rate": 0.98,
+      "episodes": 100,
+      "failed_attempt_rate": 0.06,
+      "mean_return": 9.15258861,
+      "simulated_any_breach_rate": 0.61,
+      "simulated_breach_tick_rate": 0.15916666666666668
+    },
+    "q_seed_23": {
+      "action_rate": 0.96,
+      "episodes": 100,
+      "failed_attempt_rate": 0.06,
+      "mean_return": 8.88938962,
+      "simulated_any_breach_rate": 0.61,
+      "simulated_breach_tick_rate": 0.175
+    },
+    "q_seed_37": {
+      "action_rate": 0.98,
+      "episodes": 100,
+      "failed_attempt_rate": 0.06,
+      "mean_return": 9.15258861,
+      "simulated_any_breach_rate": 0.61,
+      "simulated_breach_tick_rate": 0.15916666666666668
+    },
+    "sla_threshold_70ms": {
+      "action_rate": 0.9,
+      "episodes": 100,
+      "failed_attempt_rate": 0.05,
+      "mean_return": 8.955568190000001,
+      "simulated_any_breach_rate": 0.71,
+      "simulated_breach_tick_rate": 0.17333333333333334
+    }
+  }
+}

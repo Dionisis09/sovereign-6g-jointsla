@@ -1,0 +1,17 @@
+{
+  "evidence": "SIMULATION_ONLY_CPU",
+  "output_sha256": {
+    "episodes.jsonl": "9d42dda8a92134eb49a5c28efbdf09b6039f66ca926a730c51560817ba919886",
+    "metrics.json": "caa987719c39996407ea7e74fed61fc5979300259852caf0552829d51a2612eb",
+    "models.json": "0d1bfeb94d5f2910d4f500faac9270734fea94d832ec0362e029cd6dd68e3be0"
+  },
+  "protocol_version": "phase7-sequence-v1",
+  "source_sha256": {
+    "docs/PHASE7_SEQUENCE_PROTOCOL.json": "ce70e101c024896b48a11f5a85332d88b2b419dac386e298410b0bdf8725ccc7",
+    "sovereign_maas/decision.py": "a4498b52761d16a7cfb5d0c1e0859ea4670db3005ff681206825f25c5173e1c2",
+    "sovereign_maas/research_data.py": "c98db1e06b34d8a3f8cdffbc7c465f4bb6d6bac12506020496c4e4d96b919bd6",
+    "sovereign_maas/research_phase7.py": "9eee4a02440645b2b659d06a67741396c17665b1f09413e9655555ad57bd8758",
+    "sovereign_maas/research_phase7_sequence.py": "516be5dac9637fa310bb02e313d045b8a495a2e2c16599e192e339866d14f217",
+    "sovereign_maas/simulation.py": "89fcd19fdd625f832ffc0a6f0afc459fe517bb9eb09f08504522cbfbda2f7f9f"
+  }
+}

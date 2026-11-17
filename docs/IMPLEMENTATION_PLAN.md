@@ -82,6 +82,7 @@ Phase 7 acceptance checklist:
 - [x] Enforce no automatic runtime promotion; document human rejection of v1 because it exactly matches JointSLA with no incremental benefit.
 - [x] Focused tests, lint, type-check and exact rerun of the frozen output.
 - [x] Fresh seed-disjoint synthetic holdout for frozen v1 weights, with registered arrival-pressure sweep and manual rejection; this is not external validation.
-- [ ] Multi-step RL environment, live LLM reward proposals and hardware transfer validation. None is claimed by v1 or the fresh-seed follow-up.
+- [x] Multi-step CPU-only RL environment with two-tick scale delay, persistent queue, action masks, new seed splits and rejected holdout comparison. See `PHASE7_SEQUENCE_REPORT.md`; no runtime promotion.
+- [ ] Live LLM reward proposals and hardware transfer validation. Neither is claimed by the offline follow-ups.
 - [x] Read-only integrity gate for frozen Phase 2/4/7 and fresh Phase 7 output/source hashes; included in CI.
 - [x] Repository-wide Python suite in Ubuntu CI: 417 passed in run 44055591073. The Windows host remains locally blocked.

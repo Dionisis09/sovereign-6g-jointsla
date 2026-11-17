@@ -143,6 +143,34 @@ def verify_repository(root: Path = ROOT) -> dict[str, int]:
     )
     _expect_hash(phase7 / "manifest.json", fresh_protocol["frozen_phase7_manifest_sha256"])
     checked["fresh_sources"] += 1
+
+    sequence = root / "results" / "phase7-sequence-v1"
+    sequence_manifest = _read_json(sequence / "manifest.json")
+    if sequence_manifest["protocol_version"] != "phase7-sequence-v1":
+        raise EvidenceError("unexpected sequential protocol version")
+    checked["sequence_outputs"] = _check_mapping(
+        root,
+        sequence_manifest["output_sha256"],
+        {
+            name: f"results/phase7-sequence-v1/{name}"
+            for name in ("models.json", "metrics.json", "episodes.jsonl")
+        },
+    )
+    checked["sequence_sources"] = _check_mapping(
+        root,
+        sequence_manifest["source_sha256"],
+        {
+            name: name
+            for name in (
+                "docs/PHASE7_SEQUENCE_PROTOCOL.json",
+                "sovereign_maas/research_phase7_sequence.py",
+                "sovereign_maas/research_data.py",
+                "sovereign_maas/research_phase7.py",
+                "sovereign_maas/decision.py",
+                "sovereign_maas/simulation.py",
+            )
+        },
+    )
     return checked
 
 

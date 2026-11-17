@@ -283,7 +283,18 @@ It found no improvement over JointSLA; at higher pressure the hard gate allowed
 no scaling and both arms missed every simulated SLO. The policy remains disabled.
 See [the fresh holdout report](docs/PHASE7_FRESH_REPORT.md).
 
-Verify the checked Phase 2/4/7 evidence and source lineage without rewriting it:
+A separate preregistered CPU experiment evaluates a stateful twelve-step masked
+Q-learning policy with delayed scale-out on new seed-disjoint scenarios:
+
+```powershell
+& .\.venv\Scripts\python.exe -m sovereign_maas.research_phase7_sequence
+```
+
+It did not reduce the test episode breach rate against the JointSLA gate and
+was not promoted. See [the sequential report](docs/PHASE7_SEQUENCE_REPORT.md).
+
+Verify the checked Phase 2/4/7 evidence and source lineage, including both
+follow-ups, without rewriting it:
 
 ```powershell
 & .\.venv\Scripts\python.exe -m sovereign_maas.evidence
