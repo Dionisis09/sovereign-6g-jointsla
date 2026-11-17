@@ -1,0 +1,11 @@
+FROM python:3.12-slim
+WORKDIR /app
+RUN pip install --no-cache-dir simpy==4.1.2 numpy==2.3.5 pandas==3.0.1 pyarrow==25.0.1 pydantic==2.13.5 fastapi==0.163.1 uvicorn==0.54.0 httpx==0.28.1 langgraph==1.2.22 langgraph-checkpoint-sqlite==3.1.3
+COPY sovereign_maas /app/sovereign_maas
+COPY docs/PHASE2_SPLITS.json /app/docs/PHASE2_SPLITS.json
+COPY prototype/__init__.py prototype/controller.py /app/prototype/
+COPY joint_sla_v2 /app/joint_sla_v2
+COPY dynamic_placement /app/dynamic_placement
+COPY joint_routing /app/joint_routing
+ENV PYTHONPATH=/app
+CMD ["python", "-m", "uvicorn", "sovereign_maas.api:app", "--host", "0.0.0.0", "--port", "8000"]

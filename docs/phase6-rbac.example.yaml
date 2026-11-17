@@ -1,0 +1,38 @@
+# Example only. Review names/namespace and apply separately with cluster authorization.
+# Kubernetes grants the same update permission for dry-run and live requests.
+# Verify that this service account can also create SelfSubjectAccessReview
+# under the cluster's default RBAC before attempting a preview.
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: sovereign-maas-dryrun
+  namespace: tenant-a-edge
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: sovereign-maas-scale-preview
+  namespace: tenant-a-edge
+rules:
+  - apiGroups: ["apps"]
+    resources: ["deployments"]
+    resourceNames: ["vision-demo"]
+    verbs: ["get"]
+  - apiGroups: ["apps"]
+    resources: ["deployments/scale"]
+    resourceNames: ["vision-demo"]
+    verbs: ["get", "update"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: sovereign-maas-scale-preview
+  namespace: tenant-a-edge
+subjects:
+  - kind: ServiceAccount
+    name: sovereign-maas-dryrun
+    namespace: tenant-a-edge
+roleRef:
+  kind: Role
+  name: sovereign-maas-scale-preview
+  apiGroup: rbac.authorization.k8s.io

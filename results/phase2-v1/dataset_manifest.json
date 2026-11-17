@@ -1,0 +1,15 @@
+{
+  "data_source": "SIMULATED",
+  "files": {
+    "actions.parquet": "2c0be496adccc2c6045b40a0bc5438da36ed66603812ea0a15462c4b509bf27b",
+    "episodes.parquet": "f3f533eff3adc30dbbd8f99e754e6514a6fc50ee659a5dc558f1ce43e0b2d697"
+  },
+  "generator_sha256": "c98db1e06b34d8a3f8cdffbc7c465f4bb6d6bac12506020496c4e4d96b919bd6",
+  "horizon_s": 12,
+  "protocol_version": "phase2-replay-v1",
+  "rows": {
+    "actions": 1500,
+    "episodes": 500
+  },
+  "split_sha256": "db47f7dea90528759212d25a3ca20ea49d5797e489c9f4e8601d329d4d6ec5ab"
+}

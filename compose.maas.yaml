@@ -1,0 +1,38 @@
+name: sovereign-maas-local
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.maas
+    environment:
+      SOVEREIGN_TENANT_TOKENS: ${SOVEREIGN_TENANT_TOKENS:?Set tenant token mapping in the environment}
+      SOVEREIGN_DB_PATH: /data/sovereign_maas.sqlite3
+      SOVEREIGN_MODEL_DIR: ${SOVEREIGN_MODEL_DIR:-}
+      SOVEREIGN_RESEARCH_DIR: /models
+      SOVEREIGN_APPROVER_TOKENS:
+      SOVEREIGN_METRICS_TOKEN: ${SOVEREIGN_METRICS_TOKEN:-}
+    volumes:
+      - maas-data:/data
+      - ./results:/models:ro
+    ports:
+      - "127.0.0.1:8000:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health/ready')"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+  web:
+    build:
+      context: ./apps/web
+      dockerfile: Dockerfile
+    environment:
+      SOVEREIGN_API_BASE_URL: http://api:8000
+      SOVEREIGN_DASHBOARD_TENANT_TOKEN: ${SOVEREIGN_DASHBOARD_TENANT_TOKEN:?Set dashboard tenant token}
+      SOVEREIGN_DASHBOARD_APPROVER_TOKEN: ${SOVEREIGN_DASHBOARD_APPROVER_TOKEN:-}
+    ports:
+      - "127.0.0.1:3000:3000"
+    depends_on:
+      api:
+        condition: service_healthy
+volumes:
+  maas-data:

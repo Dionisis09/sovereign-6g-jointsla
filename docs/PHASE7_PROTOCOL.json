@@ -1,0 +1,39 @@
+{
+  "protocol_version": "phase7-masked-bandit-v1",
+  "evidence": "SIMULATION_ONLY",
+  "input_dataset": "results/phase2-v1",
+  "seed_split_source": "docs/PHASE2_SPLITS.json",
+  "train_seeds": [0, 59],
+  "validation_seeds": [60, 79],
+  "test_seeds": [80, 99],
+  "policy_training_seeds": [11, 23, 37, 51, 73],
+  "algorithm": "masked_one_step_reinforce_contextual_bandit",
+  "epochs": 50,
+  "learning_rate": 0.02,
+  "reward_baseline_decay": 0.9,
+  "features": ["bias", "queue_depth/20", "arrival_rps/100", "cycle_ms/50", "network_ms/100", "slo_ms/200", "headroom_ms/200"],
+  "actions": ["noop", "scale_out"],
+  "migration_mask": "always_invalid_without_residency_evidence",
+  "scale_mask": "existing_deterministic_gate_on_current_snapshot",
+  "research_profile": {
+    "tier": "Gold",
+    "quality_floor": 0.9,
+    "max_replicas": 2,
+    "allowed_regions": ["eu-gr"],
+    "allowed_actions": ["scale_out"],
+    "edge_region": "eu-gr",
+    "cloud_region": "eu-de"
+  },
+  "reward_proposals": [
+    {"id": "slo_first", "source": "OFFLINE_FIXTURE", "slo_weight": 1.0, "latency_weight": 0.2, "recovery_weight": 0.1, "failure_weight": 1.0, "action_cost": 0.05},
+    {"id": "action_efficient", "source": "OFFLINE_FIXTURE", "slo_weight": 1.0, "latency_weight": 0.1, "recovery_weight": 0.05, "failure_weight": 1.0, "action_cost": 0.25},
+    {"id": "latency_sensitive", "source": "OFFLINE_FIXTURE", "slo_weight": 1.0, "latency_weight": 0.4, "recovery_weight": 0.1, "failure_weight": 1.0, "action_cost": 0.05}
+  ],
+  "selection": "highest_validation_simulated_slo_rate_then_lowest_action_rate_then_proposal_id",
+  "baselines": ["noop", "sla_threshold_70ms", "jointsla_gate"],
+  "bootstrap": {"unit": "episode_seed", "draws": 2000, "seed": 2027, "confidence": 0.95},
+  "promotion": {
+    "requires": ["no_hard_gate_violations", "test_slo_delta_lower_95pct_at_least_zero", "test_action_rate_no_higher_than_jointsla", "manual_review"],
+    "maximum_stage": "OFFLINE_REVIEW_CANDIDATE"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "evidence": "SIMULATION_ONLY",
+  "output_sha256": {
+    "metrics.json": "d491d5746587c24b66421aa566c95ce618b079127a339a9bb93e067589e9613f"
+  },
+  "protocol_version": "phase7-fresh-v1",
+  "source_sha256": {
+    "decision_gate": "a4498b52761d16a7cfb5d0c1e0859ea4670db3005ff681206825f25c5173e1c2",
+    "fresh_evaluator": "1c27581df78e1190dbb8dad543d9c9512a978d94e2955dfc0f716600992a7fd5",
+    "fresh_protocol": "c2302fe2880aa41175626ad00cb9c10f549ccb507d2ff1956e238b0b5114e82e",
+    "frozen_model": "39c8a4d15edff1e51b8af7010f9d3ce63f711381adb8aa498f73c032da5723f7",
+    "frozen_phase7_manifest": "9ef893a6835ffcc4c39ae63f6d70f88ca63c905cb292b2be70674739126545fb",
+    "phase2_simulator": "c98db1e06b34d8a3f8cdffbc7c465f4bb6d6bac12506020496c4e4d96b919bd6",
+    "phase7_policy": "9eee4a02440645b2b659d06a67741396c17665b1f09413e9655555ad57bd8758"
+  }
+}

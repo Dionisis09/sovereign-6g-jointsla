@@ -1,0 +1,550 @@
+{
+  "iterations": [
+    {
+      "outcome": "NO_SLO_GAIN_OVER_JOINTSLA",
+      "proposal_id": "slo_first",
+      "source": "OFFLINE_FIXTURE",
+      "validation": {
+        "mean_action_rate": 0.4600000000000001,
+        "mean_simulated_slo_rate": 0.43,
+        "per_training_seed": {
+          "11": {
+            "action_rate": 0.46,
+            "by_family": {
+              "burst": {
+                "action_rate": 0.55,
+                "n": 20,
+                "simulated_slo_rate": 0.55
+              },
+              "capacity": {
+                "action_rate": 0.5,
+                "n": 20,
+                "simulated_slo_rate": 0.5
+              },
+              "network": {
+                "action_rate": 0.45,
+                "n": 20,
+                "simulated_slo_rate": 0.3
+              },
+              "ramp": {
+                "action_rate": 0.45,
+                "n": 20,
+                "simulated_slo_rate": 0.45
+              },
+              "steady": {
+                "action_rate": 0.35,
+                "n": 20,
+                "simulated_slo_rate": 0.35
+              }
+            },
+            "failed_action_rate": 0.01,
+            "mean_simulated_post_p95_ms": 875.88343,
+            "n": 100,
+            "simulated_slo_rate": 0.43
+          },
+          "23": {
+            "action_rate": 0.46,
+            "by_family": {
+              "burst": {
+                "action_rate": 0.55,
+                "n": 20,
+                "simulated_slo_rate": 0.55
+              },
+              "capacity": {
+                "action_rate": 0.5,
+                "n": 20,
+                "simulated_slo_rate": 0.5
+              },
+              "network": {
+                "action_rate": 0.45,
+                "n": 20,
+                "simulated_slo_rate": 0.3
+              },
+              "ramp": {
+                "action_rate": 0.45,
+                "n": 20,
+                "simulated_slo_rate": 0.45
+              },
+              "steady": {
+                "action_rate": 0.35,
+                "n": 20,
+                "simulated_slo_rate": 0.35
+              }
+            },
+            "failed_action_rate": 0.01,
+            "mean_simulated_post_p95_ms": 875.88343,
+            "n": 100,
+            "simulated_slo_rate": 0.43
+          },
+          "37": {
+            "action_rate": 0.46,
+            "by_family": {
+              "burst": {
+                "action_rate": 0.55,
+                "n": 20,
+                "simulated_slo_rate": 0.55
+              },
+              "capacity": {
+                "action_rate": 0.5,
+                "n": 20,
+                "simulated_slo_rate": 0.5
+              },
+              "network": {
+                "action_rate": 0.45,
+                "n": 20,
+                "simulated_slo_rate": 0.3
+              },
+              "ramp": {
+                "action_rate": 0.45,
+                "n": 20,
+                "simulated_slo_rate": 0.45
+              },
+              "steady": {
+                "action_rate": 0.35,
+                "n": 20,
+                "simulated_slo_rate": 0.35
+              }
+            },
+            "failed_action_rate": 0.01,
+            "mean_simulated_post_p95_ms": 875.88343,
+            "n": 100,
+            "simulated_slo_rate": 0.43
+          },
+          "51": {
+            "action_rate": 0.46,
+            "by_family": {
+              "burst": {
+                "action_rate": 0.55,
+                "n": 20,
+                "simulated_slo_rate": 0.55
+              },
+              "capacity": {
+                "action_rate": 0.5,
+                "n": 20,
+                "simulated_slo_rate": 0.5
+              },
+              "network": {
+                "action_rate": 0.45,
+                "n": 20,
+                "simulated_slo_rate": 0.3
+              },
+              "ramp": {
+                "action_rate": 0.45,
+                "n": 20,
+                "simulated_slo_rate": 0.45
+              },
+              "steady": {
+                "action_rate": 0.35,
+                "n": 20,
+                "simulated_slo_rate": 0.35
+              }
+            },
+            "failed_action_rate": 0.01,
+            "mean_simulated_post_p95_ms": 875.88343,
+            "n": 100,
+            "simulated_slo_rate": 0.43
+          },
+          "73": {
+            "action_rate": 0.46,
+            "by_family": {
+              "burst": {
+                "action_rate": 0.55,
+                "n": 20,
+                "simulated_slo_rate": 0.55
+              },
+              "capacity": {
+                "action_rate": 0.5,
+                "n": 20,
+                "simulated_slo_rate": 0.5
+              },
+              "network": {
+                "action_rate": 0.45,
+                "n": 20,
+                "simulated_slo_rate": 0.3
+              },
+              "ramp": {
+                "action_rate": 0.45,
+                "n": 20,
+                "simulated_slo_rate": 0.45
+              },
+              "steady": {
+                "action_rate": 0.35,
+                "n": 20,
+                "simulated_slo_rate": 0.35
+              }
+            },
+            "failed_action_rate": 0.01,
+            "mean_simulated_post_p95_ms": 875.88343,
+            "n": 100,
+            "simulated_slo_rate": 0.43
+          }
+        }
+      }
+    },
+    {
+      "outcome": "NO_SLO_GAIN_OVER_JOINTSLA",
+      "proposal_id": "action_efficient",
+      "source": "OFFLINE_FIXTURE",
+      "validation": {
+        "mean_action_rate": 0.4600000000000001,
+        "mean_simulated_slo_rate": 0.43,
+        "per_training_seed": {
+          "11": {
+            "action_rate": 0.46,
+            "by_family": {
+              "burst": {
+                "action_rate": 0.55,
+                "n": 20,
+                "simulated_slo_rate": 0.55
+              },
+              "capacity": {
+                "action_rate": 0.5,
+                "n": 20,
+                "simulated_slo_rate": 0.5
+              },
+              "network": {
+                "action_rate": 0.45,
+                "n": 20,
+                "simulated_slo_rate": 0.3
+              },
+              "ramp": {
+                "action_rate": 0.45,
+                "n": 20,
+                "simulated_slo_rate": 0.45
+              },
+              "steady": {
+                "action_rate": 0.35,
+                "n": 20,
+                "simulated_slo_rate": 0.35
+              }
+            },
+            "failed_action_rate": 0.01,
+            "mean_simulated_post_p95_ms": 875.88343,
+            "n": 100,
+            "simulated_slo_rate": 0.43
+          },
+          "23": {
+            "action_rate": 0.46,
+            "by_family": {
+              "burst": {
+                "action_rate": 0.55,
+                "n": 20,
+                "simulated_slo_rate": 0.55
+              },
+              "capacity": {
+                "action_rate": 0.5,
+                "n": 20,
+                "simulated_slo_rate": 0.5
+              },
+              "network": {
+                "action_rate": 0.45,
+                "n": 20,
+                "simulated_slo_rate": 0.3
+              },
+              "ramp": {
+                "action_rate": 0.45,
+                "n": 20,
+                "simulated_slo_rate": 0.45
+              },
+              "steady": {
+                "action_rate": 0.35,
+                "n": 20,
+                "simulated_slo_rate": 0.35
+              }
+            },
+            "failed_action_rate": 0.01,
+            "mean_simulated_post_p95_ms": 875.88343,
+            "n": 100,
+            "simulated_slo_rate": 0.43
+          },
+          "37": {
+            "action_rate": 0.46,
+            "by_family": {
+              "burst": {
+                "action_rate": 0.55,
+                "n": 20,
+                "simulated_slo_rate": 0.55
+              },
+              "capacity": {
+                "action_rate": 0.5,
+                "n": 20,
+                "simulated_slo_rate": 0.5
+              },
+              "network": {
+                "action_rate": 0.45,
+                "n": 20,
+                "simulated_slo_rate": 0.3
+              },
+              "ramp": {
+                "action_rate": 0.45,
+                "n": 20,
+                "simulated_slo_rate": 0.45
+              },
+              "steady": {
+                "action_rate": 0.35,
+                "n": 20,
+                "simulated_slo_rate": 0.35
+              }
+            },
+            "failed_action_rate": 0.01,
+            "mean_simulated_post_p95_ms": 875.88343,
+            "n": 100,
+            "simulated_slo_rate": 0.43
+          },
+          "51": {
+            "action_rate": 0.46,
+            "by_family": {
+              "burst": {
+                "action_rate": 0.55,
+                "n": 20,
+                "simulated_slo_rate": 0.55
+              },
+              "capacity": {
+                "action_rate": 0.5,
+                "n": 20,
+                "simulated_slo_rate": 0.5
+              },
+              "network": {
+                "action_rate": 0.45,
+                "n": 20,
+                "simulated_slo_rate": 0.3
+              },
+              "ramp": {
+                "action_rate": 0.45,
+                "n": 20,
+                "simulated_slo_rate": 0.45
+              },
+              "steady": {
+                "action_rate": 0.35,
+                "n": 20,
+                "simulated_slo_rate": 0.35
+              }
+            },
+            "failed_action_rate": 0.01,
+            "mean_simulated_post_p95_ms": 875.88343,
+            "n": 100,
+            "simulated_slo_rate": 0.43
+          },
+          "73": {
+            "action_rate": 0.46,
+            "by_family": {
+              "burst": {
+                "action_rate": 0.55,
+                "n": 20,
+                "simulated_slo_rate": 0.55
+              },
+              "capacity": {
+                "action_rate": 0.5,
+                "n": 20,
+                "simulated_slo_rate": 0.5
+              },
+              "network": {
+                "action_rate": 0.45,
+                "n": 20,
+                "simulated_slo_rate": 0.3
+              },
+              "ramp": {
+                "action_rate": 0.45,
+                "n": 20,
+                "simulated_slo_rate": 0.45
+              },
+              "steady": {
+                "action_rate": 0.35,
+                "n": 20,
+                "simulated_slo_rate": 0.35
+              }
+            },
+            "failed_action_rate": 0.01,
+            "mean_simulated_post_p95_ms": 875.88343,
+            "n": 100,
+            "simulated_slo_rate": 0.43
+          }
+        }
+      }
+    },
+    {
+      "outcome": "NO_SLO_GAIN_OVER_JOINTSLA",
+      "proposal_id": "latency_sensitive",
+      "source": "OFFLINE_FIXTURE",
+      "validation": {
+        "mean_action_rate": 0.4600000000000001,
+        "mean_simulated_slo_rate": 0.43,
+        "per_training_seed": {
+          "11": {
+            "action_rate": 0.46,
+            "by_family": {
+              "burst": {
+                "action_rate": 0.55,
+                "n": 20,
+                "simulated_slo_rate": 0.55
+              },
+              "capacity": {
+                "action_rate": 0.5,
+                "n": 20,
+                "simulated_slo_rate": 0.5
+              },
+              "network": {
+                "action_rate": 0.45,
+                "n": 20,
+                "simulated_slo_rate": 0.3
+              },
+              "ramp": {
+                "action_rate": 0.45,
+                "n": 20,
+                "simulated_slo_rate": 0.45
+              },
+              "steady": {
+                "action_rate": 0.35,
+                "n": 20,
+                "simulated_slo_rate": 0.35
+              }
+            },
+            "failed_action_rate": 0.01,
+            "mean_simulated_post_p95_ms": 875.88343,
+            "n": 100,
+            "simulated_slo_rate": 0.43
+          },
+          "23": {
+            "action_rate": 0.46,
+            "by_family": {
+              "burst": {
+                "action_rate": 0.55,
+                "n": 20,
+                "simulated_slo_rate": 0.55
+              },
+              "capacity": {
+                "action_rate": 0.5,
+                "n": 20,
+                "simulated_slo_rate": 0.5
+              },
+              "network": {
+                "action_rate": 0.45,
+                "n": 20,
+                "simulated_slo_rate": 0.3
+              },
+              "ramp": {
+                "action_rate": 0.45,
+                "n": 20,
+                "simulated_slo_rate": 0.45
+              },
+              "steady": {
+                "action_rate": 0.35,
+                "n": 20,
+                "simulated_slo_rate": 0.35
+              }
+            },
+            "failed_action_rate": 0.01,
+            "mean_simulated_post_p95_ms": 875.88343,
+            "n": 100,
+            "simulated_slo_rate": 0.43
+          },
+          "37": {
+            "action_rate": 0.46,
+            "by_family": {
+              "burst": {
+                "action_rate": 0.55,
+                "n": 20,
+                "simulated_slo_rate": 0.55
+              },
+              "capacity": {
+                "action_rate": 0.5,
+                "n": 20,
+                "simulated_slo_rate": 0.5
+              },
+              "network": {
+                "action_rate": 0.45,
+                "n": 20,
+                "simulated_slo_rate": 0.3
+              },
+              "ramp": {
+                "action_rate": 0.45,
+                "n": 20,
+                "simulated_slo_rate": 0.45
+              },
+              "steady": {
+                "action_rate": 0.35,
+                "n": 20,
+                "simulated_slo_rate": 0.35
+              }
+            },
+            "failed_action_rate": 0.01,
+            "mean_simulated_post_p95_ms": 875.88343,
+            "n": 100,
+            "simulated_slo_rate": 0.43
+          },
+          "51": {
+            "action_rate": 0.46,
+            "by_family": {
+              "burst": {
+                "action_rate": 0.55,
+                "n": 20,
+                "simulated_slo_rate": 0.55
+              },
+              "capacity": {
+                "action_rate": 0.5,
+                "n": 20,
+                "simulated_slo_rate": 0.5
+              },
+              "network": {
+                "action_rate": 0.45,
+                "n": 20,
+                "simulated_slo_rate": 0.3
+              },
+              "ramp": {
+                "action_rate": 0.45,
+                "n": 20,
+                "simulated_slo_rate": 0.45
+              },
+              "steady": {
+                "action_rate": 0.35,
+                "n": 20,
+                "simulated_slo_rate": 0.35
+              }
+            },
+            "failed_action_rate": 0.01,
+            "mean_simulated_post_p95_ms": 875.88343,
+            "n": 100,
+            "simulated_slo_rate": 0.43
+          },
+          "73": {
+            "action_rate": 0.46,
+            "by_family": {
+              "burst": {
+                "action_rate": 0.55,
+                "n": 20,
+                "simulated_slo_rate": 0.55
+              },
+              "capacity": {
+                "action_rate": 0.5,
+                "n": 20,
+                "simulated_slo_rate": 0.5
+              },
+              "network": {
+                "action_rate": 0.45,
+                "n": 20,
+                "simulated_slo_rate": 0.3
+              },
+              "ramp": {
+                "action_rate": 0.45,
+                "n": 20,
+                "simulated_slo_rate": 0.45
+              },
+              "steady": {
+                "action_rate": 0.35,
+                "n": 20,
+                "simulated_slo_rate": 0.35
+              }
+            },
+            "failed_action_rate": 0.01,
+            "mean_simulated_post_p95_ms": 875.88343,
+            "n": 100,
+            "simulated_slo_rate": 0.43
+          }
+        }
+      }
+    }
+  ],
+  "selected_on": "validation_only",
+  "selected_proposal": "action_efficient",
+  "source": "OFFLINE_FIXTURE"
+}

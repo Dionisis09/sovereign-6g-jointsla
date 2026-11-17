@@ -12,6 +12,8 @@ dist/
 htmlcov/
 .mypy_cache/
 .ruff_cache/
+sovereign_maas.sqlite3
+*.checkpoints.sqlite3
 
 # Local runtime caches and live experiment outputs
 .cache/
@@ -52,3 +54,7 @@ results/**/actions.csv
 
 # Local report rendering diagnostics
 docs/jointsla_v2_report/render.log
+.next/
+node_modules/
+apps/web/.env.local
+*.tsbuildinfo

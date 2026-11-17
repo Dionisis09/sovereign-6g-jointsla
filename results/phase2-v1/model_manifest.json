@@ -1,0 +1,28 @@
+{
+  "data_source": "SIMULATION_ONLY",
+  "dataset_files": {
+    "actions.parquet": "2c0be496adccc2c6045b40a0bc5438da36ed66603812ea0a15462c4b509bf27b",
+    "episodes.parquet": "f3f533eff3adc30dbbd8f99e754e6514a6fc50ee659a5dc558f1ce43e0b2d697"
+  },
+  "estimator": "numpy_logistic_and_linear_quantile",
+  "features": [
+    "queue_depth",
+    "arrival_rps",
+    "cycle_ms",
+    "network_ms",
+    "slo_ms",
+    "headroom_ms"
+  ],
+  "model_sha256": "6413e1376472f3c13fed2cb05e953cb61e154b953dec9e38f8e86f09f66a8ac0",
+  "protocol_version": "phase2-model-v1",
+  "split_sha256": "db47f7dea90528759212d25a3ca20ea49d5797e489c9f4e8601d329d4d6ec5ab",
+  "train_rows": {
+    "actions": 900,
+    "episodes": 300
+  },
+  "trainer_sha256": "d1311ff8307d455cb951868d04c5574a84a1c578dfc93789339981f34a0da197",
+  "validation_rows": {
+    "actions": 300,
+    "episodes": 100
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "version": "phase3-kb-v1",
+  "documents": [
+    {"id": "catalog-vision", "version": "1", "tenant_id": null, "classification": "public", "kind": "catalog", "text": "simulated-vision-small-v1 is a simulator-only vision model with declared quality 0.95. No hardware validation is claimed."},
+    {"id": "topology-gr", "version": "1", "tenant_id": null, "classification": "public", "kind": "topology", "text": "The local simulator starts on edge-a in eu-gr. cloud-a is in eu-de. Tenant residency and node capacity are checked by deterministic policy."},
+    {"id": "policy-approval", "version": "1", "tenant_id": null, "classification": "public", "kind": "policy", "text": "Scale and migration proposals require a separate human approver credential in the Phase 3 workflow. Approval never overrides the deterministic policy gate."},
+    {"id": "runbook-incident", "version": "1", "tenant_id": null, "classification": "public", "kind": "runbook", "text": "For a simulated latency incident, inspect the telemetry snapshot, candidate rejection reasons, predicted recovery time, and post-action verification. Use no-op when no safe action exists."},
+    {"id": "tenant-a-note", "version": "1", "tenant_id": "tenant-a", "classification": "tenant", "kind": "runbook", "text": "Tenant-a local demo note: review simulated vision service scale proposals before approval."}
+  ]
+}

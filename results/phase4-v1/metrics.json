@@ -1,0 +1,57 @@
+{
+  "classic_ml": {
+    "breach_brier": 0.08622915887640432,
+    "selected_actions": {
+      "migrate": 0,
+      "noop": 97,
+      "scale_out": 3
+    },
+    "simulated_slo_rate": 0.16
+  },
+  "dataset_files": {
+    "actions.parquet": "2c0be496adccc2c6045b40a0bc5438da36ed66603812ea0a15462c4b509bf27b",
+    "episodes.parquet": "f3f533eff3adc30dbbd8f99e754e6514a6fc50ee659a5dc558f1ce43e0b2d697"
+  },
+  "dataset_manifest_sha256": "41e3c2619cb5c0ebc34498cb8f7c8fae9bf225f4e352a629676579df86b74dc7",
+  "decisions_sha256": "9cb2a0783cd364552eba5d808e0a57a86f3cf383e03113161433ff83c1c5653f",
+  "evaluator_sha256": "0e6ce7121dfa3a69927d6878cb0fb8d10a8043cd1c059a9792fc4e44a9972185",
+  "evidence": "SIMULATION_ONLY_FIXTURE_PROXY_NOT_JEV",
+  "fixture_only": {
+    "breach_brier_uncalibrated_proxy": 0.124,
+    "review_rate": 1.0,
+    "selected_actions": {
+      "migrate": 0,
+      "noop": 100,
+      "scale_out": 0
+    },
+    "simulated_slo_rate": 0.16
+  },
+  "fixture_sha256": "a606dcb6eac1c81a1a041bbdfd1485065e3c66b2821b3cbe2c3bca310963c2f1",
+  "hybrid_advisory_only": {
+    "review_rate": 1.0,
+    "same_actions_as_classic_ml": true,
+    "simulated_slo_rate": 0.16
+  },
+  "live_jev_accuracy": null,
+  "live_jev_cost_usd": null,
+  "live_jev_latency_ms": null,
+  "model_sha256": "6413e1376472f3c13fed2cb05e953cb61e154b953dec9e38f8e86f09f66a8ac0",
+  "n_episodes": 100,
+  "note": "The fixture is a deterministic rule proxy, not Jev output; held-out test seeds were reused from Phase 2 without threshold tuning.",
+  "paired_seed_bootstrap_95pct": {
+    "fixture_minus_classic_slo_rate": [
+      0.0,
+      0.0
+    ],
+    "fixture_minus_ml_brier": [
+      -0.0137439525554558,
+      0.0887625114878198
+    ]
+  },
+  "policy_sha256": "a4498b52761d16a7cfb5d0c1e0859ea4670db3005ff681206825f25c5173e1c2",
+  "protocol_version": "phase4-fixture-comparison-v1",
+  "test_seed_range": [
+    80,
+    99
+  ]
+}

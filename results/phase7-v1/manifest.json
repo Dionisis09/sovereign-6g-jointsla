@@ -1,0 +1,22 @@
+{
+  "dataset_files": {
+    "actions.parquet": "2c0be496adccc2c6045b40a0bc5438da36ed66603812ea0a15462c4b509bf27b",
+    "episodes.parquet": "f3f533eff3adc30dbbd8f99e754e6514a6fc50ee659a5dc558f1ce43e0b2d697"
+  },
+  "evidence": "SIMULATION_ONLY",
+  "output_sha256": {
+    "metrics.json": "62d234df96664002fccb32fb1c4c3c77301215349414a71a3fe427817d06ac6d",
+    "models.json": "39c8a4d15edff1e51b8af7010f9d3ce63f711381adb8aa498f73c032da5723f7",
+    "reflection.json": "51c606e15ebad69174e1116d1d8fd6a622db72a91c1c03a9c860023a19ac5579"
+  },
+  "protocol_version": "phase7-masked-bandit-v1",
+  "source_sha256": {
+    "decision_gate": "a4498b52761d16a7cfb5d0c1e0859ea4670db3005ff681206825f25c5173e1c2",
+    "jointsla_adapter": "82699b391d860c16024892c0264de1461393486997cf5f49bbed461290333960",
+    "phase2_dataset_manifest": "41e3c2619cb5c0ebc34498cb8f7c8fae9bf225f4e352a629676579df86b74dc7",
+    "phase2_split_plan": "db47f7dea90528759212d25a3ca20ea49d5797e489c9f4e8601d329d4d6ec5ab",
+    "phase7_protocol": "55af44291ec3126f82459c7a9177554a6a69cd7af1ef94524bf042c10cb59398",
+    "phase7_trainer": "9eee4a02440645b2b659d06a67741396c17665b1f09413e9655555ad57bd8758",
+    "simulator": "89fcd19fdd625f832ffc0a6f0afc459fe517bb9eb09f08504522cbfbda2f7f9f"
+  }
+}

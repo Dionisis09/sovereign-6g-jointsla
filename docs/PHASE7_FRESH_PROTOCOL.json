@@ -1,0 +1,23 @@
+{
+  "protocol_version": "phase7-fresh-v1",
+  "registered_before_outcome_generation": true,
+  "evidence": "SIMULATION_ONLY",
+  "frozen_model": "results/phase7-v1/models.json",
+  "frozen_model_sha256": "39c8a4d15edff1e51b8af7010f9d3ce63f711381adb8aa498f73c032da5723f7",
+  "frozen_phase7_manifest_sha256": "9ef893a6835ffcc4c39ae63f6d70f88ca63c905cb292b2be70674739126545fb",
+  "seed_range_inclusive": [100, 119],
+  "scenario_families": ["steady", "ramp", "burst", "network", "capacity"],
+  "horizon_s": 12,
+  "arrival_pressure_factors": [1.0, 1.2, 1.5],
+  "pressure_definition": "Multiply initial arrival_rps only; preserve queue, cycle, network, SLO, action recovery time and failure draw; recompute each action outcome using the frozen Phase 2 simulator.",
+  "frozen_policy_rule": "Evaluate all five saved weight matrices independently with their existing current-state action mask; no training, policy selection, or threshold tuning on fresh cases.",
+  "baselines": ["noop", "sla_threshold_70ms", "jointsla_gate"],
+  "bootstrap": {"unit": "episode_seed", "draws": 2000, "seed": 2028, "confidence": 0.95},
+  "review_gate": {
+    "each_pressure_slo_delta_lower_95pct_strictly_positive": true,
+    "each_pressure_action_rate_no_higher_than_jointsla": true,
+    "masked_action_violations": 0,
+    "automatic_runtime_promotion": false,
+    "manual_review_required": true
+  }
+}
