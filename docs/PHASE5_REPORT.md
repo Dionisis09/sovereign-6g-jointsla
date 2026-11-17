@@ -55,13 +55,13 @@ Docker Compose is defined but **not tested on this host**. With a local `.env` c
 | Ruff lint/format and Python compileall | Passed after fixes |
 | `python -m pip check` and `git diff --check` | Passed |
 | Compose and GitHub Actions YAML parse | Passed; neither runtime was executed |
-| Docker Compose/browser E2E | Not executed; Docker CLI unavailable and API could not start for browser test |
+| Docker Compose/browser E2E | Not executable on this Windows host; later passed in Ubuntu CI run 44059192658 |
 
 The first focused run found two failing Phase 3 assertions because schema v3 replaces v2; those assertions were updated. Ruff initially found import ordering and formatting issues; they were corrected. The local full-suite gate remains blocked by Windows Application Control. Ubuntu CI later passed the full suite and the production HTTP smoke; see the verified follow-up below.
 
 ## Evidence and limitations
 
-All operational snapshots, decisions, verifications and monitoring rates come from the simulator. The p95 bar chart is a historical snapshot view with a capped visual scale, not a live telemetry stream. Research panels read the existing Phase 2/4 metrics files, including their explicit simulation and fixture provenance. Phase 4 contains no measured live Jev accuracy. No hardware, GPU, Kubernetes, live traffic or energy measurements were available. Drift is `NOT_EVALUATED`; there is no live labeled baseline. No distributed trace exporter, browser automation pass, Docker run, or production auth has been validated. A local dashboard exposed beyond loopback would need human authentication and role enforcement first.
+All operational snapshots, decisions, verifications and monitoring rates come from the simulator. The p95 bar chart is a historical snapshot view with a capped visual scale, not a live telemetry stream. Research panels read the existing Phase 2/4 metrics files, including their explicit simulation and fixture provenance. Phase 4 contains no measured live Jev accuracy. No hardware, GPU, live traffic or energy measurements were available. Drift is `NOT_EVALUATED`; there is no live labeled baseline. No distributed trace exporter or production auth has been validated. A local dashboard exposed beyond loopback would need human authentication and role enforcement first. A later Compose/Chromium CI validation is recorded below.
 
 ## Architecture decisions
 
@@ -80,3 +80,7 @@ Run a browser interaction smoke and Docker Compose where those tools are availab
 ## Verified Ubuntu CI follow-up (2026-11-17)
 
 [Run 44055591073](https://github.com/Dionisis09/sovereign-6g-jointsla/actions/runs/44055591073) on commit `42b9593` passed both jobs. The Python job passed **417 tests**, the frozen-evidence verifier, Ruff lint/format, mypy and all configured demos/research reproductions. The web job passed npm lint, TypeScript, production build, frontend smoke and the end-to-end production HTTP smoke (`Next → FastAPI → SQLite → simulator → research`), including the check that secrets were absent from HTML. These results verify the CI environment; they do not remove the Windows host's local `ormsgpack` block or validate Docker, browser interaction, Kubernetes or hardware.
+
+## Container and browser follow-up (2026-11-17)
+
+[Run 44059192658](https://github.com/Dionisis09/sovereign-6g-jointsla/actions/runs/44059192658) passed all four jobs on commit `80bbec9`: real Docker Compose API/web containers, an end-to-end Compose smoke, and **2 Playwright Chromium interactions** across desktop and mobile. The separate kind job validated Kubernetes API dry-run on a Ready CPU fixture Pod. See `MAAS_INTEGRATION_VALIDATION.md` for commands and limits. The Windows host still has no Docker CLI and cannot import `ormsgpack` locally.

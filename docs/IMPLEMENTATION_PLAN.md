@@ -9,8 +9,8 @@ Status values: `NOT_STARTED`, `STUB`, `SIMULATED`, `IMPLEMENTED`, `TESTED`, `VAL
 | 2 | Replay dataset, frozen holdout, SLA/TTV/TTR/PostSLA baselines and conservative prediction adapter | TESTED |
 | 3 | Optional structured LLM intent parser, tenant-filtered RAG, bounded checkpointed workflow | TESTED |
 | 4 | Verified optional Jev adapter and OFF/ON comparative experiments | TESTED |
-| 5 | Operations dashboard, observability and gated model registry | TESTED IN CI; LOCAL VERIFICATION BLOCKED |
-| 6 | Tenant-bound Kubernetes/HAMi dry-run adapter and simulated canary/rollback | TESTED OFFLINE; CLUSTER NOT VALIDATED |
+| 5 | Operations dashboard, observability and gated model registry | TESTED IN COMPOSE/CHROMIUM CI; LOCAL WINDOWS BLOCKED |
+| 6 | Tenant-bound Kubernetes/HAMi dry-run adapter and simulated canary/rollback | KUBERNETES DRY-RUN TESTED IN KIND; HAMi/GPU NOT VALIDATED |
 | 7 | Masked one-step policy-gradient proposer and offline reward supervisor | TESTED OFFLINE; NO PROMOTION |
 
 Phase 1 acceptance checklist:
@@ -60,7 +60,7 @@ Phase 5 acceptance checklist:
 - [x] Docker/CI definitions and a production Next → FastAPI → SQLite HTTP smoke script.
 - [x] Next production build, ESLint, TypeScript, mypy and frontend-only production HTTP smoke in the local environment.
 - [x] Rerun full Python suite and HTTP smoke in an environment that can load the LangGraph `ormsgpack` native extension. Ubuntu CI run 44055591073 passed 417 tests and the production Next → API → SQLite HTTP smoke. The local Windows host still blocks `ormsgpack`.
-- [ ] Execute Docker Compose and browser interaction smoke. Docker CLI is unavailable on this Windows host, and no browser E2E run has been completed.
+- [x] Execute Docker Compose and browser interaction smoke on Ubuntu CI run 44059192658: real container smoke and two Chromium tests passed. Docker CLI remains unavailable on this Windows host.
 
 Phase 6 acceptance checklist:
 
@@ -69,7 +69,8 @@ Phase 6 acceptance checklist:
 - [x] Typed Kubernetes `Deployment`/`Scale` subset, namespace and owner labels, replica/resourceVersion preconditions, SelfSubjectAccessReview, strict server `dryRun=All` for canary and target only.
 - [x] Validate explicit CPU/memory requests and limits plus HAMi NVIDIA GPU/memory/core resource shape; read configured HAMi host metrics with exact node allowlist and provenance.
 - [x] MockTransport tests require no network or cluster; demo runs on CPU. No production writes or arbitrary kubectl path exists.
-- [ ] Live Kubernetes dry-run and HAMi exporter scrape on a provisioned test cluster with appropriate RBAC/CA, GPU plugin, observability and approval; none is available here.
+- [x] Real Kubernetes API-server dry-run and RBAC denial in an ephemeral CPU-only kind cluster; a fixture Pod reached Ready and replicas stayed unchanged (CI run 44059192658).
+- [ ] HAMi exporter scrape and GPU scheduling on an authorized NVIDIA GPU cluster; none is available here.
 - [x] Re-run the repository-wide Python suite in CI: 417 passed on Ubuntu in run 44055591073. Phase 6 module tests also run independently on Windows.
 
 Phase 7 acceptance checklist:

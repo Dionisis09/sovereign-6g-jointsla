@@ -36,13 +36,13 @@ $env:PYTEST_DISABLE_PLUGIN_AUTOLOAD='1'
 | `python -m sovereign_maas.phase6_demo` | Passed; simulated success and rollback, `cluster_called=false` |
 | Ruff lint/format, mypy (21 package files), pip check, YAML parse and `git diff --check` | Passed after corrections |
 | Repository-wide pytest | Failed at collection in five modules; same Windows `ormsgpack` Application Control block |
-| Live Kubernetes dry-run, HAMi scrape, GPU/hardware rollout | Not executed: no cluster/credentials/GPU/exporter available |
+| Real Kubernetes dry-run, HAMi scrape, GPU/hardware rollout | Initial Phase 6 run: not executed; later CPU-only kind dry-run passed in CI run 44059192658. HAMi/GPU remain untested |
 
 Mock receipts use `MOCK_KUBERNETES_DRY_RUN` and mock GPU samples use `MOCK_HAMI_EXPORTER`. They are tests of request shape and fail-closed parsing, not live infrastructure evidence.
 
 ## Evidence and limitations
 
-The adapter cannot make a live change: it has no request path without `dryRun=All`. The canary/rollback state machine is a simulation, not a proof of Kubernetes readiness or compensation. Deployment resource and HAMi shape checks do not prove that HAMi is installed, a GPU is schedulable or a Pod will meet latency. The HAMi reader returns host-level numbers only when an exporter is actually configured; no values were measured in this run. The repo-wide Python gate and Phase 5 end-to-end HTTP smoke remain outstanding because of the host DLL policy.
+The adapter cannot make a live change: it has no request path without `dryRun=All`. The canary/rollback state machine is a simulation, not a proof of Kubernetes readiness or compensation. Deployment resource and HAMi shape checks do not prove that HAMi is installed, a GPU is schedulable or a Pod will meet latency. The HAMi reader returns host-level numbers only when an exporter is actually configured; no values were measured in this run. The local Windows Python gate and Phase 5 end-to-end HTTP smoke remain blocked by the host DLL policy; both later passed in Ubuntu CI.
 
 ## Architecture decisions
 
@@ -56,4 +56,8 @@ The binding is trusted configuration, not a field accepted from intent text or a
 
 ## Next phase
 
-First rerun the full repository suite and Phase 5 end-to-end smoke in a Python environment permitted to load `ormsgpack`. Cluster validation requires a provisioned test namespace, reviewed RBAC, compatible Deployment/HAMi installation, CA/token and exporter. With those gates recorded, Phase 7 can explore offline masked RL proposals and supervisor experiments without granting an agent cluster mutation authority.
+The full suite and HTTP smoke later passed in Ubuntu CI. An ephemeral kind cluster later validated the real API-server dry-run and RBAC denial; see the follow-up below. HAMi exporter and GPU scheduling validation still require a provisioned NVIDIA GPU cluster. A live actuator would need separate approval, readiness/SLO measurements and rollback tests.
+
+## Ephemeral Kubernetes follow-up (2026-11-17)
+
+[Run 44059192658](https://github.com/Dionisis09/sovereign-6g-jointsla/actions/runs/44059192658) passed the `kind_dryrun` job. It created a CPU-only kind cluster, namespace, narrow service-account role and Ready Deployment, then used a real Kubernetes API server with a short-lived token and CA to call `KubernetesDryRunAdapter.preview()`. The response had `KUBERNETES_SERVER_DRY_RUN`, and a separate read confirmed the Deployment still had one replica. A second service account without Deployment access was denied. The cluster was deleted. This does not validate HAMi, NVIDIA resources, live scaling or hardware latency. See `MAAS_INTEGRATION_VALIDATION.md`.

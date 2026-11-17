@@ -288,3 +288,8 @@ Verify the checked Phase 2/4/7 evidence and source lineage without rewriting it:
 ```powershell
 & .\.venv\Scripts\python.exe -m sovereign_maas.evidence
 ```
+
+The containerized Next/API flow, Chromium browser interactions and a real
+Kubernetes API-server dry-run were validated in ephemeral Ubuntu CI. See
+[the integration report](docs/MAAS_INTEGRATION_VALIDATION.md) for commands,
+the passing run and the remaining NVIDIA/HAMi hardware gap.
