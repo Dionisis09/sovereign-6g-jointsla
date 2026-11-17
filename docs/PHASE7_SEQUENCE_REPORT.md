@@ -22,7 +22,7 @@ The experiment command verifies existing output hashes and refuses to overwrite 
 
 ## 4. Tests actually executed
 
-Five focused sequential tests passed. Ruff check and format, mypy, and the read-only evidence gate passed locally. The gate now verifies 40 hashes. Ubuntu CI is the repository-wide test environment because Windows Application Control blocks the local `ormsgpack` native extension; record the exact CI run after it completes.
+Five focused sequential tests passed; the focused sequential and evidence tests passed 7/7. Ruff check and format, mypy, and the read-only evidence gate passed locally. The gate now verifies 40 hashes. [Ubuntu CI run 44096329678](https://github.com/Dionisis09/sovereign-6g-jointsla/actions/runs/44096329678) passed all four jobs: **422 Python tests**, evidence, Ruff, mypy, web lint/type/build and HTTP smoke, Compose/API smoke plus Chromium browser tests, and a CPU-only kind Kubernetes dry-run. Windows Application Control still blocks the local `ormsgpack` native extension.
 
 ## 5. Evidence and limitations
 
