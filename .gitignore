@@ -58,3 +58,5 @@ docs/jointsla_v2_report/render.log
 node_modules/
 apps/web/.env.local
 *.tsbuildinfo
+apps/web/test-results/
+apps/web/playwright-report/

@@ -7,7 +7,13 @@
 .pytest-tmp
 results
 output
-docs
+docs/*
+!docs/PHASE2_SPLITS.json
+apps
+**/node_modules
+**/.next
+**/playwright-report
+**/test-results
 tests
 dashboard/screenshots
 .env
