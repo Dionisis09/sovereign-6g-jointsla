@@ -9,7 +9,7 @@ Status values: `NOT_STARTED`, `STUB`, `SIMULATED`, `IMPLEMENTED`, `TESTED`, `VAL
 | 2 | Replay dataset, frozen holdout, SLA/TTV/TTR/PostSLA baselines and conservative prediction adapter | TESTED |
 | 3 | Optional structured LLM intent parser, tenant-filtered RAG, bounded checkpointed workflow | TESTED |
 | 4 | Verified optional Jev adapter and OFF/ON comparative experiments | TESTED |
-| 5 | Operations dashboard, observability and gated model registry | IMPLEMENTED; LOCAL VERIFICATION BLOCKED |
+| 5 | Operations dashboard, observability and gated model registry | TESTED IN CI; LOCAL VERIFICATION BLOCKED |
 | 6 | Tenant-bound Kubernetes/HAMi dry-run adapter and simulated canary/rollback | TESTED OFFLINE; CLUSTER NOT VALIDATED |
 | 7 | Masked one-step policy-gradient proposer and offline reward supervisor | TESTED OFFLINE; NO PROMOTION |
 
@@ -59,7 +59,7 @@ Phase 5 acceptance checklist:
 - [x] Separate approver gate for workflow approval and shadow review; model promotion cannot switch the configured predictor.
 - [x] Docker/CI definitions and a production Next → FastAPI → SQLite HTTP smoke script.
 - [x] Next production build, ESLint, TypeScript, mypy and frontend-only production HTTP smoke in the local environment.
-- [ ] Rerun full Python suite and HTTP smoke in an environment that can load the LangGraph `ormsgpack` native extension. Four focused Phase 5 tests passed before the local Windows Application Control block appeared; current collection fails before any test executes.
+- [x] Rerun full Python suite and HTTP smoke in an environment that can load the LangGraph `ormsgpack` native extension. Ubuntu CI run 44055591073 passed 417 tests and the production Next → API → SQLite HTTP smoke. The local Windows host still blocks `ormsgpack`.
 - [ ] Execute Docker Compose and browser interaction smoke. Docker CLI is unavailable on this Windows host, and no browser E2E run has been completed.
 
 Phase 6 acceptance checklist:
@@ -70,7 +70,7 @@ Phase 6 acceptance checklist:
 - [x] Validate explicit CPU/memory requests and limits plus HAMi NVIDIA GPU/memory/core resource shape; read configured HAMi host metrics with exact node allowlist and provenance.
 - [x] MockTransport tests require no network or cluster; demo runs on CPU. No production writes or arbitrary kubectl path exists.
 - [ ] Live Kubernetes dry-run and HAMi exporter scrape on a provisioned test cluster with appropriate RBAC/CA, GPU plugin, observability and approval; none is available here.
-- [ ] Re-run the repository-wide Python suite when the Windows `ormsgpack` DLL block is removed or in CI. Phase 6 module tests run independently.
+- [x] Re-run the repository-wide Python suite in CI: 417 passed on Ubuntu in run 44055591073. Phase 6 module tests also run independently on Windows.
 
 Phase 7 acceptance checklist:
 
@@ -83,4 +83,4 @@ Phase 7 acceptance checklist:
 - [x] Fresh seed-disjoint synthetic holdout for frozen v1 weights, with registered arrival-pressure sweep and manual rejection; this is not external validation.
 - [ ] Multi-step RL environment, live LLM reward proposals and hardware transfer validation. None is claimed by v1 or the fresh-seed follow-up.
 - [x] Read-only integrity gate for frozen Phase 2/4/7 and fresh Phase 7 output/source hashes; included in CI.
-- [ ] Repository-wide Python suite once the host's `ormsgpack` Application Control block is resolved or CI runs.
+- [x] Repository-wide Python suite in Ubuntu CI: 417 passed in run 44055591073. The Windows host remains locally blocked.

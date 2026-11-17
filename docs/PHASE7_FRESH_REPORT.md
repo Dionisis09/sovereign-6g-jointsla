@@ -24,7 +24,7 @@ The evaluator uses the hash-locked `results/phase7-v1/models.json` and writes or
 
 ## Tests actually executed
 
-The four focused tests cover unused seed separation, the locked model/manifest hashes, all 300 pressure cases, action-mask structure, exact repeated output, tamper refusal and model hash rejection. The original and fresh Phase 7 test modules pass together (9/9). A separate read-only evidence gate verifies 31 recorded output/source hashes across Phases 2, 4 and 7; its two tests pass, including a tamper case. Ruff lint/format, mypy and YAML parsing pass. The local full suite still fails during collection because Windows Application Control blocks `ormsgpack`; Ubuntu CI now includes this evaluation and integrity gate but has not run remotely. No cluster or hardware test was executed.
+The four focused tests cover unused seed separation, the locked model/manifest hashes, all 300 pressure cases, action-mask structure, exact repeated output, tamper refusal and model hash rejection. The original and fresh Phase 7 test modules pass together (9/9). A separate read-only evidence gate verifies 31 recorded output/source hashes across Phases 2, 4 and 7; its two tests pass, including a tamper case. Ruff lint/format, mypy and YAML parsing pass. The local full suite still fails during collection because Windows Application Control blocks `ormsgpack`. [Ubuntu CI run 44055591073](https://github.com/Dionisis09/sovereign-6g-jointsla/actions/runs/44055591073) passed the integrity gate, all **417 tests** and the fresh evaluation command on commit `42b9593`. No cluster or hardware test was executed.
 
 ## Evidence and limitations
 
@@ -52,4 +52,4 @@ Freeze the evaluation protocol and model hash before producing fresh outcomes. K
 
 ## Next phase
 
-Keep the policy disabled. A new candidate needs a changed, preregistered policy or reward design and an independent workload environment where safe actions remain feasible under pressure. Measure real cluster admission, readiness, GPU contention, p95 latency and rollback before any deployment claim. Restore a permitted Python test environment and run the full suite and HTTP smoke in CI or on a host whose native dependencies are allowed.
+Keep the policy disabled. A new candidate needs a changed, preregistered policy or reward design and an independent workload environment where safe actions remain feasible under pressure. Measure real cluster admission, readiness, GPU contention, p95 latency and rollback before any deployment claim. Ubuntu CI now covers the full suite and HTTP smoke; a local Windows rerun awaits a host policy that permits the native dependency.

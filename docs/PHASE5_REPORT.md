@@ -57,7 +57,7 @@ Docker Compose is defined but **not tested on this host**. With a local `.env` c
 | Compose and GitHub Actions YAML parse | Passed; neither runtime was executed |
 | Docker Compose/browser E2E | Not executed; Docker CLI unavailable and API could not start for browser test |
 
-The first focused run found two failing Phase 3 assertions because schema v3 replaces v2; those assertions were updated. Ruff initially found import ordering and formatting issues; they were corrected. The final full-suite gate remains outstanding. The smoke script is kept as a repeatable test for an environment where the API dependencies can load.
+The first focused run found two failing Phase 3 assertions because schema v3 replaces v2; those assertions were updated. Ruff initially found import ordering and formatting issues; they were corrected. The local full-suite gate remains blocked by Windows Application Control. Ubuntu CI later passed the full suite and the production HTTP smoke; see the verified follow-up below.
 
 ## Evidence and limitations
 
@@ -75,4 +75,8 @@ The frontend uses server-side token forwarding to keep secrets out of browser bu
 
 ## Next phase
 
-First rerun the complete Python suite and HTTP smoke in a Python environment allowed to load LangGraph's native dependency, then run a browser interaction smoke and Docker Compose. After Phase 5 gates pass, Phase 6 can add typed Kubernetes/HAMi dry-run adapters, namespace/RBAC checks and cluster-dependent validation without altering the simulator safety gate.
+Run a browser interaction smoke and Docker Compose where those tools are available. Cluster-dependent validation remains separate from the simulator safety gate.
+
+## Verified Ubuntu CI follow-up (2026-11-17)
+
+[Run 44055591073](https://github.com/Dionisis09/sovereign-6g-jointsla/actions/runs/44055591073) on commit `42b9593` passed both jobs. The Python job passed **417 tests**, the frozen-evidence verifier, Ruff lint/format, mypy and all configured demos/research reproductions. The web job passed npm lint, TypeScript, production build, frontend smoke and the end-to-end production HTTP smoke (`Next → FastAPI → SQLite → simulator → research`), including the check that secrets were absent from HTML. These results verify the CI environment; they do not remove the Windows host's local `ormsgpack` block or validate Docker, browser interaction, Kubernetes or hardware.
