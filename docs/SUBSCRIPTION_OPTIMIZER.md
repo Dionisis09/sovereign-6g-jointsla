@@ -42,6 +42,15 @@ is substituted for `p(s,n)`.
 Enumeration stops if the candidate product exceeds 100,000 combinations; a
 larger deployment would need a bounded integer optimizer and a separate gate.
 
+For a finite table within that cap, exactness is immediate: every possible
+combination of one allowed option per service appears once in the Cartesian
+product; the pod-budget check removes precisely the over-budget combinations;
+the minimum remaining score is therefore the global minimum **of this stated
+one-step discrete problem**. It does not prove optimality of the forecasts,
+weights, tier limits, or behavior over future control steps. Comparing TTV q10
+with TTR q90 is a conservative timing rule, not a calibrated probability that
+an action will finish before breach; that claim needs joint outcome data.
+
 ## Evidence boundary and next experiment
 
 The tests use hand-authored numerical cases to verify allocation, timing,
