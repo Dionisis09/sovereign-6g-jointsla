@@ -1,0 +1,10 @@
+{
+  "docs\\SUBSCRIPTION_FORECAST_PROTOCOL.json": "88ed5415e9282cdc179c458aa2346add39484be5acf2c7f0a46d56d289df1de6",
+  "docs\\SUBSCRIPTION_EXPERIMENT_PROTOCOL.json": "8262a3a12b753ebb46ab4664e192539a368c5cd1e21881266466ef073fd29645",
+  "sovereign_maas\\research_subscription_data.py": "addbe52a389a72d6a1ae160dec1b98dc9527dc6f1100525daca2f3a7726a00ff",
+  "sovereign_maas\\research_subscription.py": "8a0cf39a7671229bc42922d449be1c49c95f38d143ddff9ba253b5022ca98cb5",
+  "results\\subscription-forecast-v1\\train.jsonl.gz": "59cad3e6d5c01c805e8f6ebd1cc43e47145ee33a7b49d9774554760dad956345",
+  "results\\subscription-forecast-v1\\validation.jsonl.gz": "667da634860865320e8d7cfae11dbddf2a06bc310f1263e6b17b71c3614c86c8",
+  "results\\subscription-forecast-v1\\test.jsonl.gz": "2e5fcf7a78d532c4159035c1985660da175ab9af0188ae75561663c9e1a9fc46",
+  "results\\subscription-forecast-v1\\counts.json": "b5206c45d1ecc755aab59e4e48cb3274c1a1de3de55449e117a1476d5bdb2407"
+}

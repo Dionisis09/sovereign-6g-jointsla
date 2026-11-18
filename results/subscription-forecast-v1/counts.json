@@ -1,0 +1,20 @@
+{
+  "train": {
+    "rows": 45246,
+    "ttv_observed": 21223,
+    "ttr_observed": 37641,
+    "post_slo_positive": 33065
+  },
+  "validation": {
+    "rows": 22666,
+    "ttv_observed": 10689,
+    "ttr_observed": 18864,
+    "post_slo_positive": 16542
+  },
+  "test": {
+    "rows": 22660,
+    "ttv_observed": 10628,
+    "ttr_observed": 18852,
+    "post_slo_positive": 16581
+  }
+}
