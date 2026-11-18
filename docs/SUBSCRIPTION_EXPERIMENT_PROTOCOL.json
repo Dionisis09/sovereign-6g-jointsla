@@ -1,0 +1,19 @@
+{
+  "version": "subscription-multiservice-v1",
+  "registered_before_outcome_generation": true,
+  "evidence": "SYNTHETIC_CPU_HEURISTIC_FORECASTS",
+  "scenario_families": ["steady", "ramp", "burst"],
+  "seed_splits": {"development": [200, 219], "test": [220, 239]},
+  "horizon_ticks": 20,
+  "tick_seconds": 1,
+  "pod_budget": 7,
+  "scale_ready_after_ticks": 2,
+  "tiers": {"Gold": {"slo_ms": 250, "initial_replicas": 2, "base_arrival_rps": 34}, "Silver": {"slo_ms": 400, "initial_replicas": 1, "base_arrival_rps": 22}, "Bronze": {"slo_ms": 600, "initial_replicas": 1, "base_arrival_rps": 15}},
+  "cycle_ms": 50,
+  "network_ms": 10,
+  "max_replicas_per_service": 4,
+  "policies": ["fixed_floor", "reactive", "jointsla_warm", "subscription_optimizer"],
+  "selection": "No parameter tuning. Development is a mechanics check; test is final once.",
+  "primary_metrics": ["all_service_tick_breach_rate", "Gold_breach_rate", "Silver_breach_rate", "Bronze_breach_rate", "pod_ticks", "infeasible_decisions"],
+  "promotion": "none; no calibrated multi-service forecasts or GPU validation"
+}
