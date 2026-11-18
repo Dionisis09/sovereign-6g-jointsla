@@ -244,19 +244,19 @@ def main() -> None:
     output = {}
     for split in ("development", "test"):
         rows = evaluate(protocol, split)
-        (args.output / f"{split}_episodes.json").write_text(
-            json.dumps(rows, indent=2) + "\n", encoding="utf-8"
+        (args.output / f"{split}_episodes.json").write_bytes(
+            (json.dumps(rows, indent=2) + "\n").encode("utf-8")
         )
         output[split] = summarize(rows, protocol)
-    (args.output / "summary.json").write_text(json.dumps(output, indent=2) + "\n", encoding="utf-8")
+    (args.output / "summary.json").write_bytes((json.dumps(output, indent=2) + "\n").encode("utf-8"))
     files = [
         PROTOCOL,
         Path(__file__),
         ROOT / "sovereign_maas" / "subscription_optimizer.py",
         *(args.output / name for name in ("development_episodes.json", "test_episodes.json", "summary.json")),
     ]
-    (args.output / "manifest.json").write_text(
-        json.dumps({str(p.relative_to(ROOT)): sha256(p) for p in files}, indent=2) + "\n", encoding="utf-8"
+    (args.output / "manifest.json").write_bytes(
+        (json.dumps({str(p.relative_to(ROOT)): sha256(p) for p in files}, indent=2) + "\n").encode("utf-8")
     )
     print(json.dumps(output["test"], indent=2))
 
