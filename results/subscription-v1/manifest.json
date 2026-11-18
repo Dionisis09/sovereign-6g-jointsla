@@ -1,0 +1,8 @@
+{
+  "docs\\SUBSCRIPTION_EXPERIMENT_PROTOCOL.json": "8262a3a12b753ebb46ab4664e192539a368c5cd1e21881266466ef073fd29645",
+  "sovereign_maas\\research_subscription.py": "aa5b407fc660e8d35ef785ad5f596c223d799a047c036e18edd87f63dbcfa130",
+  "sovereign_maas\\subscription_optimizer.py": "e2ce1e439547fdf70880c553bc99760d19d4f478a845349aa6e26937488aa160",
+  "results\\subscription-v1\\development_episodes.json": "376218429fa945960a597331bbfed70692ff5195120896c103ec6ca946b6ee93",
+  "results\\subscription-v1\\test_episodes.json": "1e14d7eb6c58c14e77fcb71003d8b9743cc079234987b1a048f3c5134a04b8e1",
+  "results\\subscription-v1\\summary.json": "38b7c06ed222aa0c0f3e8e2618b6e897c1f417ee21c2723c8c233b58df81bc52"
+}
