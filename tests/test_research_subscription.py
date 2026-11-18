@@ -3,9 +3,11 @@
 import json
 
 from sovereign_maas.domain import Tier
+from sovereign_maas.research_data import sha256
 from sovereign_maas.research_subscription import (
     POLICIES,
     PROTOCOL,
+    ROOT,
     State,
     _bounded_targets,
     evaluate,
@@ -48,3 +50,9 @@ def test_seed_splits_and_result_shape() -> None:
     rows = evaluate(plan, "test")
     assert len(rows) == len(test) * len(plan["scenario_families"]) * len(POLICIES)
     assert {entry["policy"] for entry in summarize(rows, plan)} == set(POLICIES)
+
+
+def test_frozen_subscription_output_hashes() -> None:
+    manifest = json.loads((ROOT / "results/subscription-v1/manifest.json").read_text(encoding="utf-8"))
+    assert len(manifest) == 6
+    assert all(sha256(ROOT / path) == digest for path, digest in manifest.items())
