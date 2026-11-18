@@ -55,4 +55,5 @@ def test_frozen_data_hashes_and_split_separation() -> None:
         (ROOT / "results/subscription-forecast-v1/manifest.json").read_text(encoding="utf-8")
     )
     assert len(manifest) == 8
+    assert all("\\" not in path for path in manifest)
     assert all(sha256(ROOT / path) == digest for path, digest in manifest.items())

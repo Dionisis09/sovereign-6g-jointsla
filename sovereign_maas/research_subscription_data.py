@@ -174,7 +174,7 @@ def main() -> None:
         *(args.output / f"{split}.jsonl.gz" for split in ("train", "validation", "test")),
         args.output / "counts.json",
     ]
-    manifest = {str(path.relative_to(ROOT)): sha256(path) for path in paths}
+    manifest = {path.relative_to(ROOT).as_posix(): sha256(path) for path in paths}
     (args.output / "manifest.json").write_bytes((json.dumps(manifest, indent=2) + "\n").encode("utf-8"))
     print(json.dumps(counts, indent=2))
 
