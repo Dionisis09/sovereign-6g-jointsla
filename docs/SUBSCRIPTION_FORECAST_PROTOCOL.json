@@ -1,0 +1,16 @@
+{
+  "version": "subscription-forecast-data-v1",
+  "registered_before_outcome_generation": true,
+  "evidence": "SYNTHETIC_CPU_COUNTERFACTUALS",
+  "parent_protocol": "docs/SUBSCRIPTION_EXPERIMENT_PROTOCOL.json",
+  "seed_splits": {"train": [240, 279], "validation": [280, 299], "test": [300, 319]},
+  "scenario_families": ["steady", "ramp", "burst"],
+  "behavior_policies": ["fixed_floor", "reactive", "jointsla_warm"],
+  "horizon_ticks": 4,
+  "actions": "one target replica count from tier floor to four, subject to shared seven-pod budget",
+  "labels": ["first_noop_breach_tick_or_censored", "first_action_recovery_tick_or_censored", "post_slo_at_horizon", "any_breach_in_horizon"],
+  "features": ["tier", "queue", "ready_replicas", "observed_arrival_rps", "current_p95_ms", "slo_ms", "target_replicas", "other_ready_replicas", "tick"],
+  "leakage_rule": "features at tick t; labels from future exogenous tape t..t+3; no family or seed as model feature",
+  "gpu_follow_up": "record actual readiness, queue, arrivals, latency and per-tier offered outcomes; do not treat CPU counterfactual labels as hardware evidence",
+  "promotion": "none"
+}
